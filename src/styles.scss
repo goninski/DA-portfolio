@@ -3,7 +3,9 @@
 }
 :root {
     --px-page: 4vw;
-    --py-page: 8vh;
+    --py-sec: 2.5rem;
+    --py-sec-sm: 1.5rem;
+    --py-sec-lg: 4.0rem;
 }
 body {
     margin: 0;
@@ -12,20 +14,32 @@ body {
     background: radial-gradient(22.43% 43.85% at 1.22% 52.45%, rgba(8, 70, 59, 0.3) 0%, #1C1C1C 100%);
     color: white;
 }
+
+/** layout elements */
 section, .section {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-inline: var(--px-page);
+    padding-block: var(--py-sec);
 }
-.ct-container {
+.container, block {
     display: flex;
     width: 100%;
     max-width: 1260px;
 }
-.ct-container:not(.flex-row) {
+.container {
+    max-width: 1260px;
+}
+.container:not(.flex-row) {
+    flex-direction: column;
+    align-items: center;
+}
+.block:not(.flex-row) {
     flex-direction: column;
 }
+
+/** utility classes */
 .flex-col {
     display: flex;
     flex-direction: column;
@@ -40,6 +54,12 @@ section, .section {
 .align-center {
     align-items: center;
 }
-.py-page {
-    padding-block: var(--py-page);
+.py-sec {
+    padding-block: var(--py-sec);
+}
+.py-sec-sm {
+    padding-block: var(--py-sec-sm);
+}
+.py-sec-lg {
+    padding-block: var(--py-sec-lg);
 }
