@@ -1,0 +1,16 @@
+li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+    padding-block: var(--py-sec-sm);
+    span {
+        font-size: 80%;
+    }
+}
+
+
+.project-preview {
+    width: 33%;
+}

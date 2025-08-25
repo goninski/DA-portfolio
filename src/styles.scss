@@ -1,3 +1,6 @@
+@import url("assets/fonts/fira-code/fira-code.css");
+@import url("assets/fonts/karla/karla.css");
+
 * {
     box-sizing: border-box;   
 }
@@ -6,13 +9,34 @@
     --py-sec: 2.5rem;
     --py-sec-sm: 1.5rem;
     --py-sec-lg: 4.0rem;
+    --gap: 2rem;
+    --ff-primary: "Fira Code";
+    --ff-secondary: "Karla";
+    --clr-primary: hsl(170, 60%, 53%);
+    --clr-primary-subtle: hsla(170, 60%, 53%, 0.5);
+    --clr-base: white;
+    --full-height: 100vh;
+    --full-height: 100svh;
 }
 body {
     margin: 0;
     min-height: 100vh;
     min-height: 100svh;
-    background: radial-gradient(22.43% 43.85% at 1.22% 52.45%, rgba(8, 70, 59, 0.3) 0%, #1C1C1C 100%);
-    color: white;
+    background-color: #1c1c1c;
+    color: var(--clr-base);
+    font-family: var(--ff-primary);
+    font-size: 20px;
+}
+h2 {
+    color: var(--clr-primary);
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+    padding: 0;
+    margin: 0;
 }
 
 /** layout elements */
@@ -39,6 +63,33 @@ section, .section {
     flex-direction: column;
 }
 
+/** assets */
+button, .btn {
+    cursor: pointer;
+    font-family: var(--ff-secondary);
+    font-size: inherit;
+    color: var(--clr-base);
+    background-color: transparent;
+    transition: all 175ms;
+}
+.btn {
+    padding-inline: 1.5rem;
+    min-height: 48px;
+}
+.btn--outline {
+    border: solid 1px currentColor;
+    border-radius: 999rem;
+}
+.btn--outline:hover {
+    color: var(--clr-primary);
+}
+.description-box {
+    max-width: 520px;
+    border-radius: 30px;
+    border: solid 1px var(--clr-primary);
+    padding: 40px;
+}
+
 /** utility classes */
 .flex-col {
     display: flex;
@@ -48,11 +99,23 @@ section, .section {
     display: flex;
     flex-direction: row;
 }
+// .flex-row.split > * {
+//     flex-basis: 50%;
+// }
 .justify-center {
     justify-content: center;
 }
 .align-center {
     align-items: center;
+}
+.space-between {
+    justify-content: space-between;
+}
+.flex-grow {
+    flex-grow: 1;
+}
+.flex-wrap {
+    flex-wrap: wrap;
 }
 .py-sec {
     padding-block: var(--py-sec);
@@ -63,3 +126,27 @@ section, .section {
 .py-sec-lg {
     padding-block: var(--py-sec-lg);
 }
+.gap {
+    gap: var(--gap);
+}
+.ml-auto {
+    margin-left: auto;
+}
+.mr-auto {
+    margin-right: auto;
+}
+.text-align-center {
+    text-align: center;
+}
+
+
+/** responsiv */
+@media screen and (max-width: 719px) {
+    .flex-row, .flex-row.split {
+        flex-wrap: wrap;
+        > * {
+            flex-basis: 100%;
+        }
+    }
+}
+    

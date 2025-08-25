@@ -1,36 +1,26 @@
-<section class="">
-
-    <div class="container">
-
-        <h2>Contact Form</h2>
-
-        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" action="/submit-form" method="post">
-            <div>
-                <label for="name">Name:</label>
-                <input [(ngModel)]="contactData.name" #contactName="ngModel" type="text" id="contact_name" name="contact_name" required minlength="3" maxlength="64">
-                @if(!contactName.valid && contactName.touched) {
-                    <div role="alert">Please enter your name</div>
-                }
-            </div>
-            <div>
-                <label for="email">Email:</label>
-                <input [(ngModel)]="contactData.email" #email="ngModel" type="email" id="email" name="email" required maxlength="64" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
-                @if(!email.valid && email.touched) {
-                    <div role="alert">Please enter a valid email address</div>
-                }
-            </div>
-            <div>
-                <label for="message">Message:</label>
-                <textarea [(ngModel)]="contactData.message" #message="ngModel" id="message" name="message" required minlength="3" maxlength="512"></textarea>
-                @if(!message.valid && message.touched) {
-                    <div role="alert">Please enter a message</div>
-                }
-            </div>
-            <div>
-                <button type="submit">Send</button>
-            </div>
-        </form>
-
+<form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" action="/submit-form" method="post">
+    <div>
+        <label for="name">Name:</label>
+        <input [(ngModel)]="contactData.name" #contactName="ngModel" type="text" id="contact_name" name="contact_name" required minlength="3" maxlength="64">
+        @if(!contactName.valid && contactName.touched) {
+            <div role="alert">Please enter your name</div>
+        }
     </div>
-
-</section>
+    <div>
+        <label for="email">Email:</label>
+        <input [(ngModel)]="contactData.email" #email="ngModel" type="email" id="email" name="email" required maxlength="64" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+        @if(!email.valid && email.touched) {
+            <div role="alert">Please enter a valid email address</div>
+        }
+    </div>
+    <div>
+        <label for="message">Message:</label>
+        <textarea [(ngModel)]="contactData.message" #message="ngModel" id="message" name="message" required minlength="3" maxlength="512"></textarea>
+        @if(!message.valid && message.touched) {
+            <div role="alert">Please enter a message</div>
+        }
+    </div>
+    <div>
+        <button type="submit">Send</button>
+    </div>
+</form>
