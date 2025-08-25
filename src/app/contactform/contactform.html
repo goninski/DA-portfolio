@@ -1,0 +1,21 @@
+<section class="py-page">
+    <div class="ct-wrapper">
+        <form (ngSubmit)="onSubmit()" action="/submit-form" method="post">
+        <div>
+            <label for="name">Name:</label>
+            <input [(ngModel)]="contactData.name" type="text" id="name" name="user_name">
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input [(ngModel)]="contactData.email" type="email" id="email" name="user_email">
+        </div>
+        <div>
+            <label for="message">Message:</label>
+            <textarea [(ngModel)]="contactData.message" id="message" name="user_message"></textarea>
+        </div>
+        <div>
+            <button type="submit">Send</button>
+        </div>
+        </form>
+    </div>
+</section>
