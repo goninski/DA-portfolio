@@ -1,22 +1,35 @@
 @import url("assets/fonts/fira-code/fira-code.css");
 @import url("assets/fonts/karla/karla.css");
+// @import url("/src/variables.scss");
 
-* {
-    box-sizing: border-box;   
-}
+$bp-max: 1440px;
+$bp-tabl: 939px;
+$bp-mob: 719px;
+$bp-mob-sm: 511px;
+$bp-mob-xs: 389px;
+
 :root {
+    --full-height: 100vh;
+    --full-height: 100svh;
     --px-page: 4vw;
     --py-sec: 2.5rem;
     --py-sec-sm: 1.5rem;
     --py-sec-lg: 4.0rem;
-    --gap: 2rem;
-    --ff-primary: "Fira Code";
-    --ff-secondary: "Karla";
+    --block-gap: 6vw;
+    --ct-gap: 2rem;
     --clr-primary: hsl(170, 60%, 53%);
     --clr-primary-subtle: hsla(170, 60%, 53%, 0.5);
     --clr-base: white;
-    --full-height: 100vh;
-    --full-height: 100svh;
+    --box-radius: 30px;
+    --ff-primary: "Karla";
+    --ff-secondary: "Fira Code";
+    --fs-h2: 64px;
+}
+* {
+    box-sizing: border-box;   
+}
+html {
+    scroll-behavior: smooth;
 }
 body {
     margin: 0;
@@ -27,16 +40,41 @@ body {
     font-family: var(--ff-primary);
     font-size: 20px;
 }
-h2 {
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-family: var(--ff-secondary);
     color: var(--clr-primary);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -3%;
+}
+h2 {
+    font-size: var(--fs-h2);
+    margin-top: -24x;
+    margin-bottom: 24px;
 }
 a {
     text-decoration: none;
     color: inherit;
 }
-ul {
-    padding: 0;
+p, ul, figure {
     margin: 0;
+}
+ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 16px;
+}
+li {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    gap: 16px;
+}
+img {
+    display: block;
+    max-width: 100%;
 }
 
 /** layout elements */
@@ -47,13 +85,13 @@ section, .section {
     padding-inline: var(--px-page);
     padding-block: var(--py-sec);
 }
-.container, block {
+.container, .block {
     display: flex;
     width: 100%;
-    max-width: 1260px;
 }
 .container {
-    max-width: 1260px;
+    max-width: 1232px;
+    gap: var(--block-gap);
 }
 .container:not(.flex-row) {
     flex-direction: column;
@@ -84,13 +122,24 @@ button, .btn {
     color: var(--clr-primary);
 }
 .description-box {
-    max-width: 520px;
-    border-radius: 30px;
+    position: relative;
+    border-radius: var(--box-radius);
     border: solid 1px var(--clr-primary);
-    padding: 40px;
+    padding: 32px;
+    background-color: #222E2C;
+}
+.description-box .subtitle {
+    position: absolute;
+    top: -48px;
+    font-size: 24px;
+    color: var(--clr-primary);
+    font-weight: 500;
 }
 
 /** utility classes */
+.bg-debug {
+    background-color: red;
+}
 .flex-col {
     display: flex;
     flex-direction: column;
@@ -99,16 +148,13 @@ button, .btn {
     display: flex;
     flex-direction: row;
 }
-// .flex-row.split > * {
-//     flex-basis: 50%;
-// }
 .justify-center {
     justify-content: center;
 }
 .align-center {
     align-items: center;
 }
-.space-between {
+.justify-between {
     justify-content: space-between;
 }
 .flex-grow {
@@ -129,6 +175,9 @@ button, .btn {
 .gap {
     gap: var(--gap);
 }
+.block-gap {
+    gap: var(--block-gap);
+}
 .ml-auto {
     margin-left: auto;
 }
@@ -138,15 +187,44 @@ button, .btn {
 .text-align-center {
     text-align: center;
 }
+.box-radius {
+    border-radius: var(--box-radius);
+    overflow: hidden;
+    img {
+        border-radius: var(--box-radius);
+    }
+}
 
 
 /** responsiv */
-@media screen and (max-width: 719px) {
-    .flex-row, .flex-row.split {
+@media (max-width: $bp-tabl) {
+    .flex-row.stack-tabl {
         flex-wrap: wrap;
+        gap: 40px;
         > * {
             flex-basis: 100%;
         }
     }
 }
+@media (max-width: $bp-mob) {
+    .flex-row:not(.stack-no) {
+        flex-wrap: wrap;
+        gap: 40px;
+        > * {
+            flex-basis: 100%;
+        }
+    }
+}
+@media (max-width: $bp-mob-sm) {
+    :root {
+        --px-page: 16px;
+        --fs-h2: 56px;
+    }
+}
+@media (max-width: $bp-mob-xs) {
+    :root {
+        --fs-h2: 48px;
+    }
+}
+
     

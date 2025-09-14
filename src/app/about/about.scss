@@ -1,0 +1,31 @@
+.container {
+    min-height: 708px;
+    // background-color: red;
+    .ct-block {
+        align-self: end;
+        @media (min-width: 1440px) {
+            max-width: 568px;
+        }
+    }
+    .media-block {
+        max-width: 568px;        
+    }
+    .media-wrapper {
+        background-color: var(--clr-primary);
+    }
+}
+li {
+    align-items: start;
+    gap: 24px;
+}
+ul {
+    margin-top: 40px;
+}
+
+/** responsiv */
+@media (max-width: 939px) {
+    .container {
+        gap: 72px;
+    }
+}
+
