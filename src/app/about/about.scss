@@ -13,13 +13,13 @@
     .media-wrapper {
         background-color: var(--clr-primary);
     }
+    .block-inner {
+        gap: 32px;
+    }
 }
 li {
     align-items: start;
     gap: 24px;
-}
-ul {
-    margin-top: 40px;
 }
 
 /** responsiv */
@@ -27,8 +27,8 @@ ul {
     .container {
         gap: 72px;
     }
-    ul {
-        margin-top: 32px;
+    .block-inner {
+        gap: 24px;
     }
 }
 

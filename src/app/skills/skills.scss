@@ -1,0 +1,38 @@
+.container {
+    .ct-block {
+        @media (min-width: 1440px) {
+            max-width: 520px;
+        }
+    }
+    .media-block {
+        background-color: red;
+        // display: grid;
+        // width: 100%;
+        gap: 16px;
+        // grid-template-columns: repeat(4, 1fr);
+        // @media(max-width: 511px) {
+        //     grid-template-columns: repeat(3, 1fr);
+        // }
+    }
+    .block-inner {
+        gap: 32px;
+        div p {
+                max-width: 290px;
+                font-size: var(--fs-text-sm);
+            }
+    }
+    figure {
+        border: solid 1px black;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        max-width: 120px;
+        img {
+            height: 64px;
+            width: auto;
+        }
+        figcaption {
+            text-align: center;
+        }
+    }
+}
