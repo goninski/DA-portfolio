@@ -23,6 +23,7 @@ $bp-mob-xs: 389px;
     --box-radius: 30px;
     --ff-primary: "Karla";
     --ff-secondary: "Fira Code";
+    --fs-text: 18px;
     --fs-h2: 64px;
 }
 * {
@@ -38,7 +39,7 @@ body {
     background-color: #1c1c1c;
     color: var(--clr-base);
     font-family: var(--ff-primary);
-    font-size: 20px;
+    font-size: var(--fs-text);
 }
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
@@ -218,6 +219,7 @@ button, .btn {
 @media (max-width: $bp-mob-sm) {
     :root {
         --px-page: 16px;
+        --fs-text: 16px;
         --fs-h2: 56px;
     }
 }
