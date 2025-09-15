@@ -1,16 +1,91 @@
-li {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border-top: solid 1px;
-    border-bottom: solid 1px;
-    padding-block: var(--py-sec-sm);
-    span {
-        font-size: 80%;
+h2 {
+    margin-bottom: 40px;
+}
+.subtitle {
+    margin-bottom: 20px;
+}
+.intro {
+    max-width: 456px;
+    margin-bottom: 40px;
+}
+.container.main {
+    gap: 72px;
+    // background-color: red;
+}
+.project-listing ul {
+    gap: 0;
+    li {
+        max-height: 112px;
+        gap: 72px;
+        button {
+            border-top: solid 1px var(--clr-primary);
+            display: flex;
+            justify-content: space-between;
+            padding-block: 40px;
+            padding-inline: 32px;
+            font-size: var(--fs-text-lg);
+            font-family: var(--ff-secondary);
+            font-weight: 700;
+            width: 100%;
+            max-width: 68.6%;
+            > img {
+                display: none;
+                margin-left: 4px;
+                margin-right: auto;
+            }
+            .tags {
+                font-family: var(--ff-primary);
+                font-size: var(--fs-text);
+                font-weight: normal;
+                span {
+                    color: var(--clr-primary);
+                }
+            }
+        }
+        .item {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            max-width: 25%;
+            position: relative;
+            left: -20px;
+            img {
+                width: 295px;
+                height: auto;
+            }
+            .preview {
+                border-radius: 15px;
+            }
+            .decor {
+                position: absolute;
+                bottom: -20px;
+                right: -13px;
+                z-index: -1;
+            }
+        }
+        button:hover {
+            background-color: var(--clr-primary-hover);
+            img {
+                display: block;
+            }
+        }
+        button:hover + .item {
+            display: flex;
+        }
     }
+    li:first-of-type {
+        .item {
+            top: 28px;
+        }
+    }
+    li:last-of-type {
+        button {
+            border-bottom: solid 1px var(--clr-primary);
+        }
+        .item {
+            top: -28px;
+        }
+    }
+
 }
 
-
-.project-preview {
-    width: 33%;
-}

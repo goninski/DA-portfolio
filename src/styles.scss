@@ -19,12 +19,14 @@ $bp-mob-xs: 389px;
     --ct-gap: 2rem;
     --clr-primary: hsl(170, 60%, 53%);
     --clr-primary-subtle: hsla(170, 60%, 53%, 0.5);
+    --clr-primary-hover: hsla(170, 60%, 53%, 0.3);
     --clr-base: white;
     --box-radius: 30px;
     --ff-primary: "Karla";
     --ff-secondary: "Fira Code";
     --fs-text: 18px;
     --fs-text-sm: 16px;
+    --fs-text-lg: 24px;
     --fs-h2: 64px;
     --fs-h3: 24px;
 }
@@ -101,17 +103,22 @@ section, .section {
 }
 .container {
     max-width: 1232px;
+}
+.container.flex-row {
     gap: var(--block-gap);
 }
 .container:not(.flex-row) {
     flex-direction: column;
-    align-items: center;
+    // align-items: center;
 }
 .block:not(.flex-row) {
     flex-direction: column;
 }
 
 /** assets */
+button {
+    border: none;
+}
 button, .btn {
     cursor: pointer;
     font-family: var(--ff-secondary);
@@ -134,6 +141,11 @@ button, .btn {
 .btn--outline:hover {
     color: var(--clr-primary);
 }
+.subtitle {
+    font-size: 24px;
+    color: var(--clr-primary);
+    font-weight: 500;
+}
 .description-box {
     position: relative;
     border-radius: var(--box-radius);
@@ -145,9 +157,6 @@ button, .btn {
 .description-box .subtitle {
     position: absolute;
     top: -48px;
-    font-size: 24px;
-    color: var(--clr-primary);
-    font-weight: 500;
 }
 
 /** utility classes */
@@ -165,11 +174,11 @@ button, .btn {
 .justify-center {
     justify-content: center;
 }
-.align-center {
-    align-items: center;
-}
 .justify-between {
     justify-content: space-between;
+}
+.align-center {
+    align-items: center;
 }
 .flex-grow {
     flex-grow: 1;
@@ -237,6 +246,7 @@ button, .btn {
     :root {
         --px-page: 16px;
         --fs-text: 16px;
+        --fs-text-lg: 20px;
         --fs-h2: 56px;
         --fs-h3: 20px;
     }
