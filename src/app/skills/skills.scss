@@ -17,6 +17,10 @@
         grid-template-rows: repeat(auto-fit, 124px);
         column-gap: calc((100% - 360px) / 3);
         row-gap: 32px;
+        @media(min-width: 720px) and (max-width: 939px) {
+            column-gap: calc((100% - 450px) / 4);
+            row-gap: 24px;
+        }
         @media(max-width: 511px) {
             column-gap: calc((100% - 270px) / 2);
             row-gap: 16px;
