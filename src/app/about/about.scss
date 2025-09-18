@@ -1,17 +1,38 @@
 .container {
     min-height: 708px;
     // background-color: red;
-    .ct-block {
-        align-self: end;
-        @media (min-width: 1440px) {
-            max-width: 568px;
+    .media-block {
+        @media (max-width: 939px) {
+            max-width: 370px;
         }
     }
-    .media-block {
-        max-width: 568px;        
-    }
     .media-wrapper {
-        background-color: var(--clr-primary);
+        position: relative;
+        @media (min-width: 940px) {
+            left: 28px;
+        }
+        img {
+            border-radius: var(--box-radius);
+        }
+        .img {
+            background-color: var(--clr-primary);
+        }
+        .decor {
+            position: absolute;
+            z-index: -1;
+            bottom: -12px;
+            left: -12px;
+            @media (min-width: 940px) {
+                bottom: -30px;
+                left: -46px;
+            }
+        }
+    }
+    .ct-block {
+        align-self: end;
+        @media (min-width: 940px) {
+            max-width: 568px;
+        }
     }
     .block-inner {
         gap: 32px;

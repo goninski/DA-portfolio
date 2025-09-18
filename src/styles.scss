@@ -11,6 +11,7 @@ $bp-mob-xs: 389px;
 :root {
     --full-height: 100vh;
     --full-height: 100svh;
+    --ct-width: 1250px;
     --px-page: 4vw;
     --py-sec: 2.5rem;
     --py-sec-sm: 1.5rem;
@@ -102,7 +103,7 @@ section, .section {
     width: 100%;
 }
 .container {
-    max-width: 1232px;
+    max-width: var(--ct-width);
 }
 .container.flex-row {
     gap: var(--block-gap);
