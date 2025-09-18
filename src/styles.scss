@@ -2,7 +2,7 @@
 @import url("assets/fonts/karla/karla.css");
 // @import url("/src/variables.scss");
 
-$bp-max: 1440px;
+$bp-ct-width: 1356px;
 $bp-tabl: 939px;
 $bp-mob: 719px;
 $bp-mob-sm: 511px;
@@ -11,8 +11,8 @@ $bp-mob-xs: 389px;
 :root {
     --full-height: 100vh;
     --full-height: 100svh;
-    --ct-width: 1250px;
     --px-page: 4vw;
+    --ct-width: 1248px;
     --py-sec: 2.5rem;
     --py-sec-sm: 1.5rem;
     --py-sec-lg: 4.0rem;
@@ -181,6 +181,10 @@ button, .btn {
 .align-center {
     align-items: center;
 }
+.center {
+    justify-content: center;
+    align-items: center;
+}
 .flex-grow {
     flex-grow: 1;
 }
@@ -257,5 +261,9 @@ button, .btn {
         --fs-h2: 48px;
     }
 }
-
+@media (min-width: $bp-ct-width) {
+    :root {
+        --block-gap: 4rem;
+    }
+}
     

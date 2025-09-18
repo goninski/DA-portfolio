@@ -14,9 +14,12 @@ h2 {
 .project-listing ul {
     gap: 0;
     li {
-        gap: 72px;
+        gap: 4vw;
         @media(min-width: 940px) {
             max-height: 112px;
+        }
+        @media(min-width: 1356px) {
+            gap: 72px;
         }
         button {
             border-top: solid 1px var(--clr-primary);
@@ -36,7 +39,7 @@ h2 {
             @media(min-width: 940px) {
                 padding-block: 40px;
                 padding-inline: 32px;
-                max-width: 68.6%;
+                max-width: 70%;
             }
             .label {
                 display: flex;
