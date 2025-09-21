@@ -87,9 +87,12 @@ li {
     align-items: center;
     gap: 16px;
 }
+
 img {
     display: block;
+    width: auto;
     max-width: 100%;
+    object-fit: contain;
 }
 
 /** layout elements */
@@ -232,26 +235,36 @@ button, .btn {
 
 /** responsiv */
 @media (max-width: $bp-tabl) {
-    .flex-row.stack-tabl {
+    .flex-row:where(.stack--tabl, .wrap--tabl) {
         flex-wrap: wrap;
         gap: 40px;
+    }
+    .flex-row:where(.stack--tabl) {
         > * {
             flex-basis: 100%;
         }
     }
+    // .fw--tabl {
+    //     width: 100%;
+    // }
     .description-box {
         padding-inline: 24px;
         gap: 32px;
     }
 }
 @media (max-width: $bp-mob) {
-    .flex-row.stack-mob {
+    .flex-row:where(.stack--mob, .wrap--mob) {
         flex-wrap: wrap;
         gap: 40px;
+    }
+    .flex-row:where(.stack--mob) {
         > * {
             flex-basis: 100%;
         }
     }
+    // .fw--mob {
+    //     width: 100%;
+    // }
 }
 @media (max-width: $bp-mob-sm) {
     :root {
@@ -266,13 +279,18 @@ button, .btn {
     :root {
         --fs-h2: 48px;
     }
-    .flex-row.stack-mob-xs {
+    .flex-row:where(.stack--mob-xs, .wrap--mob-xs) {
         flex-wrap: wrap;
         gap: 16px;
+    }
+    .flex-row:where(.stack--mob-xs) {
         > * {
             flex-basis: 100%;
         }
     }
+    // .fw--mob-xs {
+    //     width: 100%;
+    // }
     .btn {
         max-width: unset;
     }

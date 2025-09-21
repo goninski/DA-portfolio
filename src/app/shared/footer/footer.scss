@@ -1,6 +1,49 @@
+footer {
+    font-size: var(--fs-text-sm);
+}
+.container {
+    gap: 2rem;
+}
+figure {
+    gap: 2rem;
+    img {
+        height: 48px;
+    }
+    figcaption {
+        line-height: 1.8;
+    }
+}
 .copyright {
     color: var(--clr-primary);
+    font-family: var(--ff-secondary);
+    font-size: 18px;
+    @media(max-width: 719px) {
+        order: 9;
+        justify-content: center;
+    }
 }
-nav a:hover {
-    color: var(--clr-primary);
+nav {
+    align-self: end;
+    ul {
+        gap: 8px;
+        li {
+            gap: 6px;
+            span {
+                font-size: 1.8em;
+                line-height: 0;
+                transform: translateY(-1px);
+                opacity: 0;
+                transition: all 175ms;
+            };
+        }
+        li:hover {
+            color: var(--clr-primary);
+            span {
+                opacity: 1;
+            }
+        }
+    }
+    @media(max-width: 719px) {
+        align-self: start;
+    }
 }
