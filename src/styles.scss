@@ -13,9 +13,9 @@ $bp-mob-xs: 389px;
     --full-height: 100svh;
     --px-page: 4vw;
     --ct-width: 1248px;
-    --py-sec: 2.5rem;
-    --py-sec-sm: 1.5rem;
-    --py-sec-lg: 4.0rem;
+    --py-sec: 75px;
+    // --py-sec-sm: 2.5rem;
+    // --py-sec-lg: 4.0rem;
     --block-gap: 6vw;
     --ct-gap: 2rem;
     --clr-primary: hsl(170, 60%, 53%);
@@ -118,6 +118,9 @@ section, .section {
     align-items: center;
     padding-inline: var(--px-page);
     padding-block: var(--py-sec);
+}
+section {
+    border-bottom: dotted 1px var(--clr-primary-subtle);
 }
 .container, .block {
     display: flex;
