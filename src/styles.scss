@@ -21,6 +21,7 @@ $bp-mob-xs: 389px;
     --clr-primary: hsl(170, 60%, 53%);
     --clr-primary-subtle: hsla(170, 60%, 53%, 0.5);
     --clr-primary-hover: hsla(170, 60%, 53%, 0.3);
+    --clr-alert: hsla(0, 75%, 70%, 0.8); 
     --clr-base: white;
     --box-radius: 30px;
     --ff-primary: "Karla";
@@ -87,12 +88,17 @@ li {
     align-items: center;
     gap: 16px;
 }
-
 img {
     display: block;
     width: auto;
     max-width: 100%;
     object-fit: contain;
+}
+input {
+    max-width: 100%;
+}
+textarea {
+    resize: vertical;
 }
 
 /** layout elements */
@@ -151,11 +157,6 @@ button, .btn {
 .btn--outline:hover {
     color: var(--clr-primary);
 }
-.subtitle {
-    font-size: 24px;
-    color: var(--clr-primary);
-    font-weight: 500;
-}
 .description-box {
     position: relative;
     border-radius: var(--box-radius);
@@ -167,6 +168,20 @@ button, .btn {
 .description-box .subtitle {
     position: absolute;
     top: -48px;
+}
+.subtitle, form label {
+    font-size: 24px;
+    color: var(--clr-primary);
+    font-weight: 500;
+}
+form, .form-group {
+    display: flex;
+    flex-direction: column;
+}
+input, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
 }
 
 /** utility classes */

@@ -16,6 +16,7 @@ export class Contactform {
     name: "",
     email: "",
     message: "",
+    gdpr: false,
   }
 
 mailTest = true;

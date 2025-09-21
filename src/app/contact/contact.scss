@@ -1,6 +1,18 @@
-.container > *:first-child {
-    // flex-basis: 50%;
+h2 {
+    margin-bottom: 40px;
 }
-.container > .contact-form {
-    flex-basis: 50%;
+.subtitle {
+    margin-bottom: 20px;
+}
+.ct-block {
+    max-width: 568px;
+    .block-inner {
+        p:not(.subtitle) {
+            font-size: var(--fs-text-sm);
+            margin-bottom: 1em;
+            span {
+                color: var(--clr-primary);
+            }
+        }
+    }
 }
