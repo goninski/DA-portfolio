@@ -1,8 +1,14 @@
 <header class="section">
-    <div class="container flex-row justify-between ct-gap align-center">
+    <div class="container flex-row justify-between align-center ct-gap">
 
-        <nav id="nav" class="flex-row mr-auto align-center visible">
-            <button class="btn lng-switch">EN | DE</button>
+        <nav id="header-nav" class="flex-row align-center visible">
+            <div class="switch flex-col">
+                <input id="lang-switch" type="checkbox" name="lang">
+                <label for="lang-switch" class="flex-row align-center">
+                    <span class="lang-en">EN</span>
+                    <span class="lang-de">DE</span>
+                </label>
+            </div>
             <ul class="flex-row">
                 <li><a href="#about">About me</a><span>&#x2022;</span></li>
                 <li><a href="#skills">Skills</a><span>&#x2022;</span></li>
@@ -11,8 +17,8 @@
         </nav>
 
         <figure>
-            <img class="desktop" src="assets/img/logo.png" alt="logo-francois-gonin">
-            <img class="mob" src="assets/img/logo-mob.svg" alt="logo-francois-gonin">
+            <a class="desktop" href="/"><img src="assets/img/logo.png" alt="logo-francois-gonin"></a>
+            <a class="mob" href="/"><img src="assets/img/logo-mob.svg" alt="logo-francois-gonin"></a>
         </figure>
 
         <button class="hamburger" onclick="toggleNav()"><img src="assets/icons/hamburger.svg" alt="hamburger-menu-icon"></button>
