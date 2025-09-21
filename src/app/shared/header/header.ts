@@ -8,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class Header {
 
+  toggleNav() {
+    let element = document.getElementById('nav');
+    if(element) {
+      element.classList.toggle('visible');
+    }
+  }  
+
 }
+

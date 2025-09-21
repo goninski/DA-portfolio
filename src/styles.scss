@@ -262,9 +262,9 @@ button, .btn {
             flex-basis: 100%;
         }
     }
-    // .fw--mob {
-    //     width: 100%;
-    // }
+    .fw--mob {
+        width: 100%;
+    }
 }
 @media (max-width: $bp-mob-sm) {
     :root {

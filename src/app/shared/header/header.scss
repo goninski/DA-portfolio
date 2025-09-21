@@ -1,9 +1,14 @@
 header {
     font-size: 20px;
+    .container {
+        position: relative;
+    }
 }
 nav {
+    gap: 1.5rem;
     ul {
         gap: 1.5rem;
+        margin-top: 4px;
         li {
             flex-direction: column;
             gap: 6px;
@@ -21,5 +26,50 @@ nav {
                 opacity: 1;
             }
         }
+    }
+}
+
+@media(max-width: 719px) {
+    figure {
+        order: -1;
+        .desktop {
+            display: none;
+        }
+    
+    }
+    nav {
+        display: none;
+    }
+    nav.visible {
+        display: flex;
+        background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+        border: 1px solid var(--clr-primary);
+        border-radius: var(--box-radius);
+        position: absolute;
+        padding-block: 40px;
+        padding-inline: 77px;
+        flex-direction: column;
+        right: 0;
+        top: 50px;
+        font-size: 18px;
+        gap: 12px;
+        ul {
+            margin-top: 0;
+            flex-direction: column;
+            order: -1;
+            align-items: start;
+            gap: 16px;
+        }
+    }
+    .hamburger:hover img {
+        content: url(../../../assets/icons/hamburger-primary.svg);
+    }
+}
+@media(min-width: 720px) {
+    figure .mob {
+        display: none;
+    }
+    .hamburger {
+        display: none;
     }
 }
