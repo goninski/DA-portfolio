@@ -21,14 +21,16 @@
         }
     </div>
     <div class="form-group submit-wrapper">
-        <label class="gdpr" for="gdpr">
-            <input [(ngModel)]="contactData.gdpr" type="checkbox" #gdpr="ngModel" id="gdpr" name="gdpr" required>
-            <img src="assets/icons/checkbox.svg" alt="checkbox">
-            <span>I've read the<a href="/legal-notice/"> privacy policy </a></span>and agree to the processing of my data as&nbsp;outlined
-        </label>
-        @if(!gdpr.valid) {
-            <div role="alert" class="gdpr">Please accept the privacy policy</div>
-        }
+        <div class="field-wrapper gdpr flex-row align-items">
+            <div class="custom-checkbox-wrapper">
+                <input [(ngModel)]="contactData.gdpr" type="checkbox" #gdpr="ngModel" id="gdpr" name="gdpr" class="hide-focus" required>
+                <img src="assets/icons/checkbox.svg" alt="checkbox">
+            </div>
+            <label for="gdpr"><span>I've read the<a href="/legal-notice/"> privacy policy </a></span>and agree to the processing of my data as&nbsp;outlined</label>
+            @if(!gdpr.valid) {
+                <div role="alert" class="alert-gdpr">Please accept the privacy policy</div>
+            }
+        </div>
         <button type="submit" class="btn btn--outline" disabled>Say Hello ;)</button>
     </div>
 </form>
