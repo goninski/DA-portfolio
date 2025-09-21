@@ -132,13 +132,15 @@ button {
     border: none;
 }
 button, .btn {
-    cursor: pointer;
     font-family: var(--ff-secondary);
     font-size: inherit;
     line-height: inherit;
     color: var(--clr-base);
     background-color: transparent;
     transition: all 175ms;
+}
+:where(button, .btn):not(:disabled) {
+    cursor: pointer;
 }
 .btn {
     display: flex;
@@ -154,7 +156,7 @@ button, .btn {
     border: solid 1px currentColor;
     border-radius: 999rem;
 }
-.btn--outline:hover {
+.btn--outline:hover:not(:disabled) {
     color: var(--clr-primary);
 }
 .description-box {
