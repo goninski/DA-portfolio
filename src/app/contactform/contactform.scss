@@ -14,9 +14,14 @@ form {
 input:where([type="text"],[type="email"]),
 textarea {
     background-color: transparent;
+    border-radius: 3px;
     border: none;
     width: 100%;
-    min-height: 22px;
+    min-height: 30px;
+    &:focus {
+        margin-left: -8px;
+        padding-inline: 8px;        
+    }
 }
 textarea {
     // min-height: 100px;
@@ -36,7 +41,7 @@ input:has(+[role="alert"])::placeholder {
     cursor: pointer;
 }
 [role="alert"].visible {
-    margin-top: -23px;
+    margin-top: -31px;
 }
 [role="alert"]:not(.visible) {
     display: none;

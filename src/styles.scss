@@ -23,6 +23,8 @@ $bp-mob-xs: 389px;
     --clr-primary-hover: hsla(170, 60%, 53%, 0.3);
     --clr-alert: hsla(0, 75%, 70%, 0.8); 
     --clr-base: white;
+    --clr-focus: var(--clr-primary-subtle);
+    --box-shadow-focus: 0 0 0 1px var(--clr-focus);
     --box-radius: 30px;
     --ff-primary: "Karla";
     --ff-secondary: "Fira Code";
@@ -35,6 +37,14 @@ $bp-mob-xs: 389px;
 }
 * {
     box-sizing: border-box;   
+}
+:focus {
+    outline: none; 
+    box-shadow: var(--box-shadow-focus);
+}
+.hide-focus {
+    outline: none !important;
+    box-shadow: none !important;
 }
 html {
     scroll-behavior: smooth;

@@ -1,6 +1,6 @@
 <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" action="/submit-form" method="post">
     <div class="form-group">
-        <label for="name">What's your name?</label>
+        <label for="contact_name">What's your name?</label>
         <input [(ngModel)]="contactData.name" #contactName="ngModel" type="text" id="contact_name" name="contact_name" required minlength="3" maxlength="64" placeholder="Your name goes here">
         @if(!contactName.valid && contactName.touched) {
             <div role="alert">Oops: it seems your name is missing</div>
