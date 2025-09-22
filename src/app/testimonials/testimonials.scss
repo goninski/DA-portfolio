@@ -8,6 +8,8 @@ section {
 h2 {
     font-size: 32px;
     margin-bottom: 48px;
+    text-align: center;
+    line-height: 1.2;
 }
 .slide-wrapper {
     min-height: 274px;
@@ -97,12 +99,15 @@ h2 {
     }
 }
 @media(max-width: 719px) {
+    h2 {
+        font-size: 24px;
+    }
     .slide-wrapper {
         gap: 2vw;
     }
     .slide {
         justify-content: center;
-        min-width: 90%;
+        min-width: 80vw;
         .content {
             margin-top: auto;
         }
