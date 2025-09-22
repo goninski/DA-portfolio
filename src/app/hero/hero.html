@@ -3,21 +3,45 @@
     <app-header></app-header>
 
     <section class="">
+
         <div class="container center">
             <h1><span>Frontend Developer </span>François Gonin</h1>
-            <div class="button-wrapper flex-row stack--mob-xs">
+            <div class="button-wrapper flex-row justify-center stack--mob-xs">
                 <button class="btn btn--outline">Check my work</button>
                 <button class="btn btn--outline">Contact me</button>
             </div>
 
+            <div class="scroll-indicator flex-col align-center">
+                <div class="indicator flex center"><img src="assets/icons/arrow-down.svg" alt="arrow-down-icon"></div>
+                <div class="decor"></div>
+            </div>
+
             <div class="quick-contact flex-col align-center">
-                <a class="email" href="mailto:mail@francois-gonin.dev">mail@francois-gonin.dev</a>
-                <a href="https://github.com/goninski" target="_blank"><img src="assets/icons/logo-github-primary.svg" alt="logo github"></a>
-                <a href="https://www.linkedin.com/in/francois-gonin" target="_blank"><img src="assets/icons/logo-linkedin-primary.svg" alt="logo linkedin"></a>
+                <a class="link email" href="mailto:mail@francois-gonin.dev">mail@francois-gonin.dev</a>
+                <a class="icon-link email" href="mailto:mail@francois-gonin.dev"><img
+                        src="assets/icons/email-primary.svg" alt="email icon"></a>
+                <a class="icon-link github" href="https://github.com/goninski" target="_blank"><img
+                        src="assets/icons/logo-github-primary.svg" alt="github logo"></a>
+                <a class="icon-link linkedin" href="https://www.linkedin.com/in/francois-gonin" target="_blank"><img
+                        src="assets/icons/logo-linkedin-primary.svg" alt="linkedin logo"></a>
                 <div class="decor"></div>
             </div>
         </div>
+
+        <div class="marquee-banner fade-shadow-inline">
+            <div class="marquee-content">
+                <span>Frontend Developer</span>
+                <span>Based in Zurich Switzerland</span>
+                <span>Open to Work</span>
+                <span>Available for remote work</span>
+                <!-- duplicate-content for looping -->
+                <span>Frontend Developer</span>
+                <span>Based in Zurich Switzerland</span>
+                <span>Open to Work</span>
+                <span>Available for remote work</span>
+            </div>
+        </div>
+
     </section>
 
 </div>
-

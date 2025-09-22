@@ -35,7 +35,9 @@ $bp-mob-xs: 389px;
     --fs-h2: 64px;
     --fs-h3: 24px;
     --lh-text: 1.25;
-    --transition-duration: 175ms;
+    --transition-duration: 125ms;
+    --fade-shadow: linear-gradient(90deg, #1C1C1C 0%, transparent 10%, transparent 90%, #1C1C1C 100%);
+
 }
 * {
     box-sizing: border-box;   
@@ -143,6 +145,22 @@ section {
 }
 
 /** assets */
+.nav-link {
+    position: relative;
+}
+.nav-link:hover {
+    color: var(--clr-primary);
+}
+.nav-link:hover::after {
+    content: '';
+    position: absolute;
+    display: flex;
+    width: 6.5px;
+    height: 6.5px;
+    border-radius: 50%;
+    background-color: var(--clr-primary);
+    transform: translate(-14px, -14px);
+}
 button {
     border: none;
 }
@@ -200,10 +218,19 @@ input, textarea {
     font-size: inherit;
     color: inherit;
 }
+.fade-shadow-inline::after {
+    content: '';
+    background: var(--fade-shadow);
+    position: absolute;
+    inset: 0;
+}
 
 /** utility classes */
 .bg-debug {
     background-color: red;
+}
+.flex {
+    display: flex;
 }
 .flex-col {
     display: flex;

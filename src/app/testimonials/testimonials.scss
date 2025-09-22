@@ -1,16 +1,9 @@
 section {
     --ct-width: 1440px;
-    --fade-shadow: linear-gradient(90deg, #1C1C1C 0%, rgba(28, 28, 28, 0) 10%, rgba(28, 28, 28, 0) 90%, #1C1C1C 100%);
 }
 .container {
     overflow: hidden;
     position: relative;
-}
-.container::after {
-    content: '';
-    background: var(--fade-shadow);
-    position: absolute;
-    inset: 0;
 }
 h2 {
     font-size: 32px;

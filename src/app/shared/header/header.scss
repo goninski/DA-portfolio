@@ -8,24 +8,14 @@ header {
 }
 nav {
     gap: 1.5rem;
-    ul {
+    .links-wrapper {
         gap: 1.5rem;
-        margin-top: 6px;
-        li {
-            flex-direction: column;
-            gap: 6px;
-            span {
-                font-size: 1.5em;
-                line-height: 0;
-                transform: translateY(-1px);
-                opacity: 0;
-                transition: all 175ms;
-            };
-        }
-        li:hover {
-            color: var(--clr-primary);
-            span {
-                opacity: 1;
+        padding-top: 5px;
+        a:hover::after {
+            transform: translate(-14px, -15.5px);
+            @media(min-width: 720px) {
+                justify-self: anchor-center;
+                transform: translate(0, 5px);
             }
         }
     }
@@ -65,14 +55,18 @@ nav {
 
 .under-construction {
     position: fixed;
-    bottom: 32px;
+    bottom: 64px;
     left: 0px;
-    // rotate: -35deg;
     padding: 24px;
+    // background: linear-gradient(55.22deg, #5e4949 36.26%, #08463B 93.28%);
+    background-color: black;
+    border: dashed 2px;
     border-bottom-right-radius: 30px;
     border-top-right-radius: 30px;
-    background: linear-gradient(55.22deg, #5e4949 36.26%, #08463B 93.28%);
+    border-left: none;    
     z-index: 99;
+    color: var(--clr-primary);
+    font-weight: bold;
 }
 
 
@@ -88,6 +82,7 @@ nav {
         display: none;
     }
     nav.visible {
+        z-index: 99;
         .switch {
             margin-top: 0;
         }
@@ -103,7 +98,7 @@ nav {
         top: 50px;
         font-size: 18px;
         gap: 2px;
-        ul {
+        .links-wrapper {
             margin-top: 0;
             flex-direction: column;
             order: -1;
