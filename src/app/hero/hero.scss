@@ -1,3 +1,16 @@
+@keyframes marquee-single {
+    0% {transform: translateX(100%);}
+    100% {transform: translateX(-100%);}
+}
+@keyframes marquee {
+    0% {transform: translateX(0%);}
+    100% {transform: translateX(-50%);}
+}
+@keyframes bounce {
+    0%, 100% {transform: translateY(0);}
+    50% {transform: translateY(10px);}
+}
+
 .hero-wrapper {
     background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
     min-height: var(--full-height);
@@ -27,16 +40,52 @@ h1 {
     };
 }
 .button-wrapper {
-    margin-top: 48px;
-    gap: 48px;
+    margin-top: 32px;
+    gap: 24px;
     row-gap: 12px;
+    button {
+        padding-inline: 16px;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        div {
+            display: flex;
+            flex-direction: row;
+            white-space: nowrap;
+            width: 100%;
+        }
+        &:first-of-type {
+            min-width: 174px;
+        }
+        &:last-of-type {
+            min-width: 143px;
+        }
+    }
+    @media(max-width: 719px) {
+        button {
+            color: var(--clr-primary);
+            div {
+                position: absolute;
+                animation: marquee-single 1.5s linear infinite;
+                transform: translateX(-100%);
+            }
+            &:last-of-type div {
+                animation-delay: 1s;
+            }
+        }
+    }
+    @media(min-width: 720px) {
+        margin-top: 48px;
+        gap: 48px;
+        button:hover div {
+            position: absolute;
+            animation: marquee-single 1.5s linear infinite;
+            transform: translateX(-100%);
+        }
+    }
 }
 
 /** scroll indicator pillar */
-@keyframes bounce {
-    0%, 100% {transform: translateY(0);}
-    50% {transform: translateY(10px);}
-}
 .scroll-indicator {
     gap: 12px;
     position: absolute;
@@ -113,10 +162,6 @@ h1 {
 }
 
 /** marquee banner */
-@keyframes marquee {
-    0% {transform: translateX(0%);}
-    100% {transform: translateX(-50%);}
-}
 .marquee-banner {
     rotate: -3deg;
     position: absolute;
@@ -139,12 +184,10 @@ h1 {
     display: flex;
     position: absolute;
     white-space: nowrap;
-    will-change: transform;
-    animation: marquee 20s linear infinite;
+    animation: marquee 10s linear infinite;
     transform: translateX(100%);
     font-size: 32px;
     color: var(--clr-primary);
-    width: max-content;
     span {
         margin-right: 112px;
         position: relative;
@@ -174,15 +217,14 @@ h1 {
     }
 }
 @media(max-width: 719px) {
+    .container {
+        transform: translateY(-12vh);
+    }
     h1 {
         font-size: 62px;
         span {
             font-size: 24px;
         }
-    }
-    button-wrapper {
-        margin-top: 32px;
-        gap: 24px;
     }
     .scroll-indicator {
         .decor {
