@@ -34,6 +34,7 @@ $bp-mob-xs: 389px;
     --fs-h2: 64px;
     --fs-h3: 24px;
     --lh-text: 1.25;
+    --transition-duration: 175ms;
 }
 * {
     box-sizing: border-box;   
@@ -230,6 +231,9 @@ input, textarea {
 .flex-wrap {
     flex-wrap: wrap;
 }
+// .align-self-center {
+//     align-self: center;
+// }
 .py-sec {
     padding-block: var(--py-sec);
 }

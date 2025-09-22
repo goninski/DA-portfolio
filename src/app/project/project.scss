@@ -39,6 +39,9 @@
                 bottom: 24px;
                 right: 16px;
             }
+            img {
+                transition: all var(--transition-duration);
+            }
             &:hover {
                 color: var(--clr-base);
                 img {
