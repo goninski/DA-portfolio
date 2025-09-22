@@ -4,6 +4,13 @@ section {
 }
 .container {
     overflow: hidden;
+    position: relative;
+}
+.container::after {
+    content: '';
+    background: var(--fade-shadow);
+    position: absolute;
+    inset: 0;
 }
 h2 {
     font-size: 32px;
@@ -28,6 +35,7 @@ h2 {
     min-height: 100%;
     padding: 48px 40px;
     min-width: 632px;
+    transition: transform 0.5s ease-in-out;
     img {
         display: none;
     }
@@ -71,6 +79,7 @@ h2 {
     }
 }
 .slider-nav {
+    z-index: 1;
     margin-top: 56px;
     gap: 12px;
     img {

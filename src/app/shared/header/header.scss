@@ -63,6 +63,19 @@ nav {
     }
 }
 
+.under-construction {
+    position: fixed;
+    bottom: 32px;
+    left: 0px;
+    // rotate: -35deg;
+    padding: 24px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    background: linear-gradient(55.22deg, #5e4949 36.26%, #08463B 93.28%);
+    z-index: 99;
+}
+
+
 @media(max-width: 719px) {
     figure {
         order: -1;
