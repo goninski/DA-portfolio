@@ -36,9 +36,9 @@ h2 {
     padding: 48px 40px;
     min-width: 632px;
     transition: transform 0.5s ease-in-out;
-    img {
-        display: none;
-    }
+    // img {
+    //     display: none;
+    // }
 }
 .slide.active {
     background-color: var(--clr-primary-hover);
@@ -59,7 +59,7 @@ h2 {
         }
     };
 }
-.slide:where(.next, .previous) {
+.slide:not(.active) {
     margin-block: 13px;
     padding-bottom: 24px;
 }

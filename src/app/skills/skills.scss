@@ -39,10 +39,14 @@ section {
             }
         }
         .growth-mindset {
+            --transition-duration: 225ms; 
             position: relative;
             cursor: pointer;
             transition: all var(--transition-duration);
-            .toaster {
+            img {
+                transition: all var(--transition-duration);
+            }
+            .tooltip {
                 display: none;
                 position: absolute;
                 top: 2px;
@@ -54,6 +58,7 @@ section {
                 gap: 8px;
                 color: var(--clr-primary);
                 font-size: var(--fs-text-sm);
+                transition: all var(--transition-duration);
                 &::after {
                     content: '';
                     position: absolute;
@@ -83,8 +88,14 @@ section {
                     }
                 }
             }
-            &:hover .toaster {
-                display: flex;
+            &:hover {
+                color: var(--clr-primary);
+                img {
+                    scale: 1.1;
+                }
+                .tooltip {
+                    display: flex;
+                }
             }
         
         }

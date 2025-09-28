@@ -5,7 +5,7 @@
                 <p class="subtitle">Technologies</p>
                 <h2>Skill Set</h2>
                 <div class="block block-inner">
-                    <p>A short introduction of your skills. Highlight your experience of  using different front-end technologies and emphasise your openness to learning and adapting to new technologies. Show how important it is for you to keep up with the rapid changes in web development.</p>
+                    <p>{{ intro }}</p>
                     <div>
                         <h3><span>You need </span>another skill?</h3>
                         <p>Feel free to contact me. I look forward to expanding on my previous knowledge.</p>
@@ -15,21 +15,22 @@
             </div>
         </div>
         <div class="block media-block">
-            <figure><img src="assets/icons/logo-html.svg" alt="html-logo"><figcaption>HTML</figcaption></figure>
-            <figure><img src="assets/icons/logo-css.svg" alt="css-logo"><figcaption>CSS</figcaption></figure>
-            <figure><img src="assets/icons/logo-javascript.svg" alt="javascript-logo"><figcaption>JavaScript</figcaption></figure>
-            <figure><img src="assets/icons/logo-typescript.svg" alt="typescript-logo"><figcaption>TypeScript</figcaption></figure>
-            <figure><img src="assets/icons/logo-angular.svg" alt="angular-logo"><figcaption>Angular</figcaption></figure>
-            <figure><img src="assets/icons/logo-firebase.svg" alt="firebase-logo"><figcaption>Firebase</figcaption></figure>
-            <figure><img src="assets/icons/logo-mat-design.svg" alt="material-design-logo"><figcaption>Material Design</figcaption></figure>
-            <figure><img src="assets/icons/logo-git.svg" alt="git-logo"><figcaption>Git</figcaption></figure>
-            <figure><img src="assets/icons/logo-rest-api.svg" alt="rest-api-logo"><figcaption>REST-API</figcaption></figure>
+            @for (item of skills; track $index) {
+                <figure>
+                    <img src="assets/icons/logo-{{ item.toLowerCase().replace(' ', '-').replace('.', '-') }}.svg" alt="{{ item }} logo">
+                    <figcaption>{{ item }}</figcaption>
+                </figure>
+            }
             <figure class="growth-mindset"><img src="assets/icons/icon-growth-mindset.svg" alt="growth-mindset-icon"><figcaption>Growth Mindset</figcaption>
-                <div class="toaster flex-col align-center">
+                <div class="tooltip flex-col align-center">
                     <p>I have a special<br>interest in learning</p>
                     <div class="wrapper flex-row align-center">
-                        <figure><img src="assets/icons/logo-react-branded.svg" alt="react-logo colored"><figcaption>React</figcaption></figure>
-                        <figure><img src="assets/icons/logo-vue-branded.svg" alt="vue-js-logo colored"><figcaption>Vue.js</figcaption></figure>
+                        @for (item of interested; track $index) {
+                            <figure>
+                                <img src="assets/icons/logo-{{ item.toLowerCase().replace(' ', '-').replace('.', '-') }}-branded.svg" alt="{{ item }} logo">
+                                <figcaption>{{ item }}</figcaption>
+                            </figure>
+                        }
                     </div>
                 </div>
             </figure>

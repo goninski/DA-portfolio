@@ -4,27 +4,18 @@
         <h2>What my colleagues say about&nbsp;me</h2>
 
         <ul class="slide-wrapper flex-row justify-center">
-            <li class="slide previous">
-                <img src="assets/icons/quotes.svg" alt="big-quotes-icon">
-                <p class="content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae adipisci voluptatibus eius omnis numquam vel libero laudantium tempora sapiente consequatur? Sequi tempora, maxime vel ipsam sint est culpa. Dolor, sapiente.</p>
-                <div class="name-wrapper">
-                    <div></div><p>Colleague XY</p>
-                </div>
-            </li>
-            <li class="slide active">
-                <img src="assets/icons/quotes.svg" alt="big-quotes-icon">
-                <p class="content">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <div class="name-wrapper">
-                    <div></div><p>Colleague XY</p>
-                </div>
-            </li>
-            <li class="slide next">
-                <img src="assets/icons/quotes.svg" alt="big-quotes-icon">
-                <p class="content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae adipisci voluptatibus eius omnis numquam vel libero laudantium tempora sapiente consequatur? Sequi tempora, maxime vel ipsam sint est culpa. Dolor, sapiente.</p>
-                <div class="name-wrapper">
-                    <div></div><p>Colleague XY</p>
-                </div>
-            </li>
+            @for (item of testimonials; track $index) {
+                <li class="slide" [class.active]="item.active">
+                    @if (item.active) {
+                        <img src="assets/icons/quotes.svg" alt="big-quotes-icon">
+                    }
+                    <p class="content">{{ item.content }}</p>
+                    <div class="name-wrapper">
+                        <div></div>
+                        <p>{{ item.author }}</p>
+                    </div>
+                </li>
+            }
         </ul>
 
         <div class="slider-nav flex-row align-center">
@@ -40,4 +31,3 @@
 
     </div>
 </section>
-
