@@ -8,34 +8,13 @@
     <div class="container main">
         <div class="block project-listing">
             <ul>
-                <li>
-                    <button><div class="label">Join<img src="assets/icons/arrow-outward.svg" alt="open-arrow-icon"></div><div class="tags">JavaScript<span> | </span>CSS<span> | </span>HTML<span> | </span>Firebase</div></button>
-                    <div class="item">
-                        <img class="preview" src="assets/img/project-preview-join.jpg" alt="screenshot project join">
-                        <img class="decor" src="assets/img/deco-pattern-project-preview.svg">
-                    </div>
-                </li>
-                <li>
-                    <button><div class="label">El Pollo Loco<img src="assets/icons/arrow-outward.svg" alt="open-arrow-icon"></div><div class="tags">JavaScript<span> | </span>CSS<span> | </span>HTML<span> | </span>Firebase</div></button>
-                    <div class="item">
-                        <img class="preview" src="assets/img/project-preview-pollo-loco.jpg" alt="screenshot project join">
-                        <img class="decor" src="assets/img/deco-pattern-project-preview.svg">
-                    </div>
-                </li>
-                <li>
-                    <button><div class="label">Bubble<img src="assets/icons/arrow-outward.svg" alt="open-arrow-icon"></div><div class="tags">Angular<span> | </span>Firebase<span> | </span>TypeScript</div></button>
-                    <div class="item">
-                        <img class="preview" src="assets/img/project-preview-bubble.jpg" alt="screenshot project join">
-                        <img class="decor" src="assets/img/deco-pattern-project-preview.svg">
-                    </div>
-                </li>
-
+                @for(item of projects; track item.title) {
+                    <app-project [project]="item"></app-project>
+                }
             </ul>
         </div>
     </div>
 
 </section>
-
-<app-project></app-project>
 
 

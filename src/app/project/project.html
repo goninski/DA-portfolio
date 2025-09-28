@@ -1,34 +1,45 @@
-<div class="dialogue flex-col center">
+<li>
+    <button (click)="openDialogue()">
+        <div class="label">{{ project.title }}<img src="assets/icons/arrow-outward.svg" alt="open-arrow-icon"></div>
+        <div class="tags">
+            @for (tag of project.tags; track tag; let isLast = $last) {
+                <span>{{ tag }}</span>
+                @if(!isLast){<span> | </span>}}
+        </div>
+    </button>
+    <div class="item">
+        <img class="preview" src="{{ project.previewImgUrl }}" alt="screenshot project {{ project.title }}">
+        <img class="decor" src="assets/img/deco-pattern-project-preview.svg">
+    </div>
+</li>
+
+
+<div class="dialogue flex-col center" [class.visible]="isDialogueVisible">
 
     <div class="container flex-row justify-between align-center stack--tabl box-radius">
 
-        <button class="close"><img src="assets/icons/close.svg" alt="icon close"></button>
+        <button class="close" (click)="closeDialogue()"><img src="assets/icons/close.svg" alt="icon close"></button>
         <button class="next btn">Next project<img src="assets/icons/arrow-forward-primary.svg" alt="icon arrow-forward"></button>
 
         <div class="block ct-block">
-            <h1><span>01</span>Join</h1>
+            <h1><span>01</span>{{ project.title }}</h1>
             <div class="description flex-col">
                 <h3>What is the project about?</h3>
-                <p>
-                    Task manager inspired by the Kanban System. Create and organize tasks using drag and drop
-                    functions, assign users and categories.
-                </p>
+                <p>{{ project.description }}</p>
             </div>
             <div class="tags flex-row">
-                <div><img src="assets/icons/logo-css-primary.svg" alt="logo-css">CSS</div>
-                <div><img src="assets/icons/logo-html-primary.svg" alt="logo-html">HTML</div>
-                <div><img src="assets/icons/logo-firebase-primary.svg" alt="logo-firebase">Firebase</div>
-                <div><img src="assets/icons/logo-angular-primary.svg" alt="logo-angular">Angular</div>
-                <div><img src="assets/icons/logo-ts-primary.svg" alt="logo-typescript">TypeScript</div>
+                @for (tag of project.tags; track tag) {
+                    <div><img src="assets/icons/logo-{{ tag | lowercase }}-primary.svg" alt="logo {{ tag }}">{{ tag }}</div>
+                }
             </div>
             <div class="btn-wrapper flex-row ct-gap stack--mob-xs">
-                <a class="btn btn--outline" href="https://github.com/goninski?tab=repositories" target="_blank">GitHub<img src="assets/icons/arrow-outward-primary.svg" alt="icon arrow-outward"></a>
-                <a class="btn btn--outline" href="https://da-join.francois-gonin.dev" target="_blank">Live Test<img src="assets/icons/arrow-outward-primary.svg" alt=""></a>
+                <a class="btn btn--outline" href="{{ project.githubUrl }}" target="_blank">GitHub<img src="assets/icons/arrow-outward-primary.svg" alt="icon arrow-outward"></a>
+                <a class="btn btn--outline" href="{{ project.demoUrl }}" target="_blank">Live Test<img src="assets/icons/arrow-outward-primary.svg" alt=""></a>
             </div>
         </div>
 
         <div class="block media-block box-radius">
-            <img src="assets/img/project-preview-join-lg.jpg" alt="">
+            <img src="{{ project.previewImgUrl }}" alt="screenshot project {{ project.title }}">
         </div>
 
     </div>
