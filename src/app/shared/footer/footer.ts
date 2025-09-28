@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './footer.scss'
 })
 export class Footer {
+  isUnderConstructionClosed = false;
+
+  closeUnderConstruction(): void {
+    this.isUnderConstructionClosed = true;
+  }
 
 }

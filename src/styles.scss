@@ -42,14 +42,14 @@ $bp-mob-xs: 389px;
 * {
     box-sizing: border-box;   
 }
-:focus {
-    outline: none; 
-    box-shadow: var(--box-shadow-focus);
-}
-.hide-focus {
-    outline: none !important;
-    box-shadow: none !important;
-}
+// :focus {
+//     outline: none; 
+//     box-shadow: var(--box-shadow-focus);
+// }
+// .hide-focus {
+//     outline: none !important;
+//     box-shadow: none !important;
+// }
 html {
     scroll-behavior: smooth;
 }
@@ -101,6 +101,10 @@ li {
     list-style-type: none;
     align-items: center;
     gap: 16px;
+}
+figure {
+    display: flex;
+    flex-direction: column;
 }
 img {
     display: block;

@@ -7,13 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './header.scss'
 })
 export class Header {
+  isNavVisible = false;
 
-  toggleNav() {
-    let element = document.getElementById('header-nav');
-    if(element) {
-      element.classList.toggle('visible');
-    }
-  }  
-
+  toggleNav(): void {
+    this.isNavVisible = !this.isNavVisible;
+  }
+    
 }
-

@@ -30,3 +30,38 @@ nav.links-wrapper {
         align-self: start;
     }
 }
+
+.under-construction {
+    position: fixed;
+    bottom: 0;
+    inset-inline: 9vw;
+    padding: 16px;
+    background-color: black;
+    border: dashed 2px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom: none;    
+    z-index: 99;
+    color: var(--clr-primary);
+    font-weight: bold;
+    &.closed {
+        display: none;
+    }
+    button {
+        position: absolute;
+        top: -4px;
+        right: -4px;
+        border: solid 1px var(--clr-primary);
+        border-radius: 50%;
+        background-color: black;
+        height: 24px;
+        width: 24px;
+        padding: 7px;
+        img {
+            height: 100%;
+        }
+        &:hover {
+            border-color: var(--clr-base);
+        }
+    }
+}

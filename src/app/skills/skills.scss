@@ -28,19 +28,65 @@ section {
             column-gap: calc((100% - 270px) / 2);
             row-gap: 16px;
         }
-    }
-    figure {
-        border: solid 1px black;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        // min-height: 124px;
-        img {
-            height: 64px;
-            width: auto;
+        > figure {
+            gap: 8px;
+            img {
+                height: 64px;
+                width: auto;
+            }
+            figcaption {
+                text-align: center;
+            }
         }
-        figcaption {
-            text-align: center;
+        .growth-mindset {
+            position: relative;
+            cursor: pointer;
+            transition: all var(--transition-duration);
+            .toaster {
+                display: none;
+                position: absolute;
+                top: 2px;
+                transform: translateY(-100%);
+                background-color: white;
+                min-width: 188px;
+                padding: 10px;
+                border-radius: 16px;
+                gap: 8px;
+                color: var(--clr-primary);
+                font-size: var(--fs-text-sm);
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -17px;
+                    left: 32px;
+                    width: 0;
+                    height: 0;
+                    border-left: 13px solid transparent;
+                    border-right: 13px solid transparent;
+                    border-top: 17px solid white;
+                }
+                p {
+                    text-align: center;
+                }
+                .wrapper {
+                    gap: 16px;
+                    figure {
+                        gap: 5px;
+                        img {
+                            height: 32px;
+                            width: auto;
+                        }
+                        figcaption {
+                            font-size: 12px;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+            &:hover .toaster {
+                display: flex;
+            }
+        
         }
     }
 }

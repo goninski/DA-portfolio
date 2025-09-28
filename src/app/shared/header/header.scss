@@ -53,21 +53,6 @@ nav {
     }
 }
 
-.under-construction {
-    position: fixed;
-    bottom: 0;
-    inset-inline: 9vw;
-    padding: 16px;
-    background-color: black;
-    border: dashed 2px;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    border-bottom: none;    
-    z-index: 99;
-    color: var(--clr-primary);
-    font-weight: bold;
-}
-
 
 @media(max-width: 719px) {
     figure {

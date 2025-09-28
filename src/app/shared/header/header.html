@@ -1,7 +1,7 @@
 <header class="section">
     <div class="container flex-row justify-between align-center ct-gap">
 
-        <nav id="header-nav" class="flex-row align-center visible">
+        <nav id="header-nav" class="flex-row align-center" [class.visible]="isNavVisible">
             <div class="switch flex-col">
                 <input id="lang-switch" type="checkbox" name="lang">
                 <label for="lang-switch" class="flex-row align-center">
@@ -21,11 +21,7 @@
             <a class="mob" href="/"><img src="assets/img/logo-mob.svg" alt="logo-francois-gonin"></a>
         </figure>
 
-        <button class="hamburger" onclick="toggleNav()"><img src="assets/icons/hamburger.svg" alt="hamburger-menu-icon"></button>
+        <button class="hamburger" (click)="toggleNav()"><img src="assets/icons/hamburger.svg" alt="hamburger-menu-icon"></button>
     </div>
 </header>
-
-<div class="under-construction text-align-center">
-    This site is under construction !
-</div>
 
