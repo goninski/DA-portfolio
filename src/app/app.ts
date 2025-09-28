@@ -6,7 +6,7 @@ import { Skills } from "./skills/skills";
 import { Portfolio } from "./portfolio/portfolio";
 import { Testimonials } from "./testimonials/testimonials";
 import { Contact } from "./contact/contact";
-import { Footer } from "./shared/footer/footer";
+import { Footer } from "./_shared/footer/footer";
 
 @Component({
   selector: 'app-root',

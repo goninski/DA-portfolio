@@ -9,7 +9,10 @@
         <div class="block project-listing">
             <ul>
                 @for(item of projects; track item.title) {
-                    <app-project [project]="item"></app-project>
+                    <app-project
+                        [project]="item"
+                        (showNext)="handleShowNext($index)">
+                    </app-project>
                 }
             </ul>
         </div>

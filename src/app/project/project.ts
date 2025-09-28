@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output, output } from '@angular/core';
 import { ProjectInterface } from '../_interfaces/project.interface';
 import { LowerCasePipe } from '@angular/common';
 
@@ -9,18 +9,20 @@ import { LowerCasePipe } from '@angular/common';
   styleUrl: './project.scss',
 })
 export class Project {
-isDialogueVisible = false;
+  isDialogueVisible = false;
 
-@Input({ required: true }) project!: ProjectInterface;
+  @Input({ required: true }) project!: ProjectInterface;
 
-openDialogue() {
-  this.isDialogueVisible = true;
-  document.body.classList.add('overflow-hidden');
-}
+  showNext = output<void>();
 
-closeDialogue() {
-  this.isDialogueVisible = false;
-  document.body.classList.remove('overflow-hidden');
-}
+  openDialogue() {
+    this.isDialogueVisible = true;
+    document.body.classList.add('overflow-hidden');
+  }
+
+  closeDialogue() {
+    this.isDialogueVisible = false;
+    document.body.classList.remove('overflow-hidden');
+  }
 
 }
