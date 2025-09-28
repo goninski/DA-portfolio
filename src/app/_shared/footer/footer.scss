@@ -36,7 +36,8 @@ nav.links-wrapper {
     bottom: 0;
     inset-inline: 9vw;
     padding: 16px;
-    background-color: black;
+    // background-color: black;
+    background-color: var(--clr-base);
     border: dashed 2px;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, output } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { ProjectInterface } from '../_interfaces/project.interface';
 import { LowerCasePipe } from '@angular/common';
 
@@ -9,9 +9,9 @@ import { LowerCasePipe } from '@angular/common';
   styleUrl: './project.scss',
 })
 export class Project {
-  isDialogueVisible = false;
+  project = input.required<ProjectInterface>();
 
-  @Input({ required: true }) project!: ProjectInterface;
+  isDialogueVisible = false;
 
   showNext = output<void>();
 

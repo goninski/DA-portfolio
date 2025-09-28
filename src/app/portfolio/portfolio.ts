@@ -44,13 +44,10 @@ export class Portfolio {
   handleShowNext(currentIndex: number) {
     const components = this.projectComponents.toArray();
 
-    // Close the current project's dialogue
     components[currentIndex].closeDialogue();
 
-    // Calculate the next project's index, wrapping around if necessary
     const nextIndex = (currentIndex + 1) % components.length;
 
-    // Open the next project's dialogue
     components[nextIndex].openDialogue();
   }
 }

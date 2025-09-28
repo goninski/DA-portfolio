@@ -8,16 +8,16 @@
     <div class="container main">
         <div class="block project-listing">
             <ul>
-                @for(item of projects; track item.title) {
+                @for(item of projects; track item.id; let isLast = $last) {
                     <app-project
                         [project]="item"
-                        (showNext)="handleShowNext($index)">
-                    </app-project>
+                        (showNext)="handleShowNext($index)"
+                        [class.first-item]="$first"
+                        [class.last-item]="$last"
+                    ></app-project>
                 }
             </ul>
         </div>
     </div>
 
 </section>
-
-

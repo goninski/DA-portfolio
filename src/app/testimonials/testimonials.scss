@@ -4,12 +4,19 @@ section {
 .container {
     overflow: hidden;
     position: relative;
+    /* stop fade shadow */
+    @media(max-width: 719px) {
+        &::after {
+            content: unset;
+        }
+    }
 }
 h2 {
     font-size: 32px;
     margin-bottom: 48px;
     text-align: center;
     line-height: 1.2;
+    letter-spacing: unset;
 }
 .slide-wrapper {
     min-height: 274px;

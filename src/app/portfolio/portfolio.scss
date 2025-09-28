@@ -13,4 +13,21 @@ h2 {
 }
 .project-listing ul {
     gap: 0;
+
+    app-project.first-item {
+        .item {
+            top: 28px;
+        }
+    }
+
+    app-project.last-item {
+        button {
+            border-bottom: solid 1px var(--clr-primary);
+        }
+
+        .item {
+            top: -28px;
+        }
+    }
 }
+
