@@ -1,3 +1,5 @@
+@use 'mixins' as m;
+
 section {
     --ct-width: 1440px;
 }
@@ -5,7 +7,7 @@ section {
     overflow: hidden;
     position: relative;
     /* stop fade shadow */
-    @media(max-width: 719px) {
+    @include m.mq(mob) {
         &::after {
             content: unset;
         }
@@ -53,7 +55,7 @@ h2 {
         position: absolute;
         top: -12px;
         left: 0;
-        @media(min-width: 720px) {
+        @include m.mq(mob, $t:min) {
             height: 64px;
             transform: translateX(-50%);
         }
@@ -102,12 +104,13 @@ h2 {
 }
 
 
-@media(max-width: 1099px) {
+// @media(max-width: 1099px) {
+@include m.mq(tabl-md) {
     .slide {
         min-width: 60%;
     }
 }
-@media(max-width: 719px) {
+@include m.mq(mob) {
     h2 {
         font-size: 24px;
     }

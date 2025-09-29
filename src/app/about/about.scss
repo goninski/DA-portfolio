@@ -1,14 +1,16 @@
+@use 'mixins' as m;
+
 .container {
     min-height: 708px;
     // background-color: red;
     .media-block {
-        @media (max-width: 939px) {
+        @include m.mq(tabl) {
             max-width: 370px;
         }
     }
     .media-wrapper {
         position: relative;
-        @media (min-width: 940px) {
+        @include m.mq(tabl, $t:min) {
             left: 28px;
         }
         img {
@@ -22,7 +24,7 @@
             z-index: -1;
             bottom: -12px;
             left: -12px;
-            @media (min-width: 940px) {
+            @include m.mq(tabl, $t:min) {
                 bottom: -30px;
                 left: -46px;
             }
@@ -30,7 +32,7 @@
     }
     .ct-block {
         align-self: end;
-        @media (min-width: 940px) {
+        @include m.mq(tabl, $t:min) {
             max-width: 568px;
         }
     }
@@ -44,7 +46,7 @@ li {
 }
 
 /** responsiv */
-@media (max-width: 939px) {
+@include m.mq(tabl) {
     .container {
         gap: 72px;
     }

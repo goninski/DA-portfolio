@@ -1,0 +1,128 @@
+@mixin bg($bg: red) {
+    background-color: $bg !important;
+}
+
+$bp-ct: 1355px;
+$bp-tabl-md: 1179px;
+$bp-tabl: 939px;
+$bp-mob: 719px;
+$bp-mob-sm: 511px;
+$bp-mob-xs: 389px;
+
+$bp-ct-up: $bp-ct + 1px;
+$bp-tabl-md-up: $bp-tabl-md + 1px;
+$bp-tabl-up: $bp-tabl + 1px;
+$bp-mob-up: $bp-mob + 1px;
+$bp-mob-sm-up: $bp-mob-sm + 1px;
+$bp-mob-xs-up: $bp-mob-xs + 1px;
+
+$breakpoints: (
+  'ct': $bp-ct,
+  'tabl-md': $bp-tabl-md,
+  'tabl': $bp-tabl,
+  'mob': $bp-mob,
+  'mob-sm': $bp-mob-sm,
+  'mob-xs': $bp-mob-xs,
+);
+
+
+/**
+ * Flexible media query
+ * @param {String} $bp - The key from the $breakpoints map (e.g., 'tabl')
+ * @param {String} $t - The query type: 'max' (default) or 'min'
+ */
+@mixin mq($bp, $t: 'max') {
+
+  $value: map-get($breakpoints, $bp);
+
+  @if $value == null {
+    @error "Breakpoint '#{$bp}' not found in $breakpoints map.";
+  }
+
+  $query: '';
+  $final-value: $value;
+
+  @if $t == 'min' {
+    $query: 'min-width';
+    $final-value: $value + 1px;
+  } @else if $t == 'max' {
+    $query: 'max-width';
+  } @else {
+    @error "Invalid media type '#{$t}'. Use 'max' or 'min'.";
+  }
+
+  @media (#{$query}: $final-value) {
+    @content;
+  }
+}
+
+/**
+ * Media Query min-width
+ * @param {String} $bp - The key from the $breakpoints map
+ */
+@mixin mqMin($bp) {
+
+  $value: map-get($breakpoints, $bp);
+
+  @if $value == null {
+    @error "Breakpoint '#{$bp}' not found in $breakpoints map.";
+  }
+
+  $query: 'min-width';
+  $final-value: $value + 1px;
+
+  @media (#{$query}: $final-value) {
+    @content;
+  }
+}
+
+/**
+ * Media Query range min/max
+ * @params - $min/$max breakpoints from map
+ */
+@mixin mqRange($min, $max) {
+
+  $minBase: map-get($breakpoints, $min);
+  $maxBase: map-get($breakpoints, $max);
+
+  @if $minBase == null {
+    @error "Breakpoint '#{$min}' not found in $breakpoints map.";
+  }
+  @if $maxBase == null {
+    @error "Breakpoint '#{$max}' not found in $breakpoints map.";
+  }
+
+  $minValue: $minBase + 1px;
+  $maxValue: $maxBase;
+
+  @media (min-width: $minValue) and (max-width: $maxValue) {
+    @content;
+  }
+}
+
+
+/**
+ * Display flex direction column
+ * @params $g:gap, $ah:align horizontal, $av: align vertical
+ */
+@mixin flex-col($g: var(--ct-gap), $ah: flex-start, $av: flex-start) {
+    display: flex;
+    flex-direction: column;
+    gap: $g;
+    align-items: $ah;
+    justify-content: $av;
+}
+
+/**
+ * Display flex direction row
+ * @params $g:gap, $ah:align horizontal, $av: align vertical
+ */
+@mixin flex-row($g: var(--ct-gap), $ah: flex-start, $av: center) {
+    display: flex;
+    flex-direction: row;
+    gap: $g;
+    justify-content: $ah;
+    align-items: $av;
+}
+
+

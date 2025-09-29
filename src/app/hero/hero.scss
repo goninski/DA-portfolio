@@ -1,3 +1,5 @@
+@use 'mixins' as m;
+
 @keyframes marquee-single {
     0% {transform: translateX(100%);}
     100% {transform: translateX(-100%);}
@@ -11,11 +13,9 @@
     50% {transform: translateY(10px);}
 }
 
-.hero-wrapper {
+section {
     background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
     min-height: var(--full-height);
-}
-section {
     position: relative;
     flex-grow: 1;
     padding-block: 0;
@@ -61,7 +61,7 @@ h1 {
             min-width: 143px;
         }
     }
-    @media(max-width: 719px) {
+    @include m.mq(mob) {
         .btn {
             color: var(--clr-primary);
             div {
@@ -74,7 +74,7 @@ h1 {
             }
         }
     }
-    @media(min-width: 720px) {
+    @include m.mq(mob, $t:min) {
         margin-top: 48px;
         gap: 48px;
         .btn:hover div {
@@ -208,7 +208,7 @@ h1 {
     animation-play-state: paused;        
 }
 
-@media(max-width: 1180px) {
+@include m.mq(tabl-md) {
     h1 {
         font-size: 10vw;
         span {
@@ -216,7 +216,7 @@ h1 {
         }
     }
 }
-@media(max-width: 719px) {
+@include m.mq(mob) {
     .container {
         transform: translateY(-12vh);
     }
@@ -243,7 +243,7 @@ h1 {
         }
     }
 }
-@media(max-width: 389px) {
+@include m.mq(mob-xs) {
     .button-wrapper > * {
         max-width: 60vw;
     }

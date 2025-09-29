@@ -1,17 +1,19 @@
+@use 'mixins' as m;
+
 section {
     padding-top: calc((var(--py-sec) + 32px));
 }
 .container {
     .ct-block {
-        @media (min-width: 940px) {
+        @include m.mqMin(tabl) {
             max-width: 41.66%;
         }
         .block-inner {
             gap: 32px;
             div p {
-                    max-width: 290px;
-                    font-size: var(--fs-text-sm);
-                }
+                max-width: 290px;
+                font-size: var(--fs-text-sm);
+            }
         }
     }
     .media-block {
@@ -20,11 +22,12 @@ section {
         grid-template-rows: repeat(auto-fit, 124px);
         column-gap: calc((100% - 360px) / 3);
         row-gap: 32px;
-        @media(min-width: 720px) and (max-width: 939px) {
+        @include m.mqRange(mob, tabl) {
+        // @media(min-width: 720px) and (max-width: 939px) {
             column-gap: calc((100% - 450px) / 4);
             row-gap: 24px;
         }
-        @media(max-width: 511px) {
+        @include m.mq(mob-sm) {
             column-gap: calc((100% - 270px) / 2);
             row-gap: 16px;
         }

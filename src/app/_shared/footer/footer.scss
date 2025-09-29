@@ -1,3 +1,5 @@
+@use 'mixins' as m;
+
 footer {
     font-size: var(--fs-text-sm);
     padding-block: 32px;
@@ -18,7 +20,7 @@ figure {
     color: var(--clr-primary);
     font-family: var(--ff-secondary);
     font-size: 18px;
-    @media(max-width: 719px) {
+    @include m.mq(mob) {
         order: 9;
         justify-content: center;
     }

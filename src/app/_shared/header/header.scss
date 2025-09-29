@@ -1,5 +1,8 @@
+@use 'mixins' as m;
+
 header {
     position: absolute;
+    z-index: 10;
     padding-block: 32px;
     font-family: var(--ff-secondary);
     font-size: 20px;
@@ -14,7 +17,7 @@ nav {
         padding-top: 5px;
         a:hover::after {
             transform: translate(-14px, -15.5px);
-            @media(min-width: 720px) {
+            @include m.mq(mob, $t:min) {
                 justify-self: anchor-center;
                 transform: translate(0, 5px);
             }
@@ -55,7 +58,7 @@ nav {
 }
 
 
-@media(max-width: 719px) {
+@include m.mq(mob) {
     figure {
         order: -1;
         .desktop {
@@ -95,7 +98,8 @@ nav {
         content: url(../../../assets/icons/hamburger-primary.svg);
     }
 }
-@media(min-width: 720px) {
+
+@include m.mq(mob, $t:min) {
     figure .mob {
         display: none;
     }

@@ -1,10 +1,12 @@
+@use 'mixins' as m;
+
 form {
 }
 .form-group {
     justify-content: center;
     padding: 32px;
     border-bottom: solid 1px var(--clr-primary-subtle);
-    @media(max-width: 939px) {
+    @include m.mq(tabl) {
         padding-inline: 16px;
     }
 }
@@ -98,7 +100,7 @@ input:has(+[role="alert"])::placeholder {
                 color: var(--clr-base);
                 border-bottom: solid 1px var(--clr-primary);
             }
-            @media(max-width: 939px) {
+            @include m.mq(tabl) {
                 span {
                     display: block;
                     margin-bottom: 4px; 

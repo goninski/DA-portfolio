@@ -1,0 +1,126 @@
+@use 'mixins' as m;
+
+
+.flex {
+    display: flex;
+}
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+.justify-center {
+    justify-content: center;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.align-center {
+    align-items: center;
+}
+.center {
+    justify-content: center;
+    align-items: center;
+}
+.flex-grow {
+    flex-grow: 1;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+}
+// .align-self-center {
+//     align-self: center;
+// }
+.py-sec {
+    padding-block: var(--py-sec);
+}
+.py-sec-sm {
+    padding-block: var(--py-sec-sm);
+}
+.py-sec-lg {
+    padding-block: var(--py-sec-lg);
+}
+.ct-gap {
+    gap: var(--ct-gap);
+}
+.block-gap {
+    gap: var(--block-gap);
+}
+.ml-auto {
+    margin-left: auto;
+}
+.mr-auto {
+    margin-right: auto;
+}
+.text-align-center {
+    text-align: center;
+}
+.box-radius {
+    border-radius: var(--box-radius);
+    overflow: hidden;
+    img {
+        border-radius: var(--box-radius);
+    }
+}
+
+
+/** debugs */
+.bg-red {
+    background-color: red !important;
+}
+
+
+/** responsiv */
+@include m.mq(tabl) {
+    .flex-row:where(.stack--tabl, .wrap--tabl) {
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+    .flex-row:where(.stack--tabl) {
+        > * {
+            flex-basis: 100%;
+        }
+    }
+    // .fw--tabl {
+    //     width: 100%;
+    // }
+}
+
+@include m.mq(mob) {
+    .flex-row:where(.stack--mob, .wrap--mob) {
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+    .flex-row:where(.stack--mob) {
+        > * {
+            flex-basis: 100%;
+        }
+    }
+    .fw--mob {
+        width: 100%;
+    }
+}
+@include m.mq(mob-sm) {
+}
+
+@include m.mq(mob-xs) {
+    .flex-row:where(.stack--mob-xs, .wrap--mob-xs) {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+    .flex-row:where(.stack--mob-xs) {
+        > * {
+            flex-basis: 100%;
+        }
+    }
+    // .fw--mob-xs {
+    //     width: 100%;
+    // }
+}
+
+@include m.mq(ct, $t:min) {
+}
+    
