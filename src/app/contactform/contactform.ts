@@ -50,4 +50,12 @@ mailTest = true;
       ngForm.resetForm();
     }
   }
+
+  autoResize(element: EventTarget | null): void {
+    if (element) {
+      const textarea = element as HTMLTextAreaElement;
+      textarea.style.height = 'auto';
+      textarea.style.height = `${textarea.scrollHeight}px`;
+    }
+  }
 }

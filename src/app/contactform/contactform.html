@@ -15,7 +15,7 @@
     </div>
     <div class="form-group">
         <label for="message">How can I help you?</label>
-        <textarea [(ngModel)]="contactData.message" #message="ngModel" id="message" name="message" required minlength="3" maxlength="512" placeholder="Hello François, I am interested in..." rows="1"></textarea>
+        <textarea (input)="autoResize($event.target)" [(ngModel)]="contactData.message" #message="ngModel" id="message" name="message" required minlength="3" maxlength="512" placeholder="Hello François, I am interested in..." rows="1"></textarea>
         @if(!message.valid && message.touched) {
             <div role="alert">What do you need to develop?</div>
         }
@@ -31,6 +31,6 @@
                 <div role="alert" class="alert-gdpr">Please accept the privacy policy</div>
             }
         </div>
-        <button type="submit" class="btn btn--outline" disabled>Say Hello ;)</button>
+        <button type="submit" class="btn btn--outline">Say Hello ;)</button>
     </div>
 </form>
