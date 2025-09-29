@@ -4,9 +4,22 @@
 :root {
     --full-height: 100vh;
     --full-height: 100svh;
+    --focus-offset: 5px;
+    --focus-color: hsl(0, 0%, 50%);
+    --focus-outline: 1px dotted var(--focus-color);
+    --focus-shadow: 0 2px 2px -1px var(--focus-color);
 }
-* {
+* { 
     box-sizing: border-box;   
+}
+:focus {
+    outline-offset: var(--focus-offset);
+}
+:focus:not(:focus-visible) {
+    outline: none; 
+}
+:focus-visible {
+    outline: var(--focus-outline);
 }
 html {
     scroll-behavior: smooth;
@@ -44,6 +57,12 @@ input {
 }
 textarea {
     resize: vertical;
+}
+input:where([type="text"],[type="email"]),
+textarea {
+    width: 100%;
+    background-color: transparent;
+    border: none;
 }
 button, .btn, input, textarea {
     font-family: inherit;

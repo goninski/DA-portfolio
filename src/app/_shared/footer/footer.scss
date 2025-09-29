@@ -35,18 +35,24 @@ nav.links-wrapper {
 
 .under-construction {
     position: fixed;
-    bottom: 0;
-    inset-inline: 9vw;
+    z-index: 99;
+    top: 10vh;
+    bottom: 10vh;
     padding: 16px;
     // background-color: black;
     background-color: var(--clr-base);
     border: dashed 2px;
-    border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    border-bottom: none;    
-    z-index: 99;
+    border-bottom-right-radius: 30px;
+    border-left: none;    
     color: var(--clr-primary);
+    font-size: 120%;
     font-weight: bold;
+    max-width: 80px;
+    white-space: nowrap;
+    div {
+        rotate: -90deg;
+    }
     &.closed {
         display: none;
     }

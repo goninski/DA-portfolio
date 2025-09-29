@@ -5,12 +5,12 @@
 @import url("assets/fonts/karla/karla.css");
 
 :root {
+    --focus-color: var(--clr-primary-subtle);
+    --focus-outline: 1px dotted var(--focus-color);
     --top-spacing: 112px;
     --px-page: 4vw;
     --ct-width: 1248px;
     --py-sec: 75px;
-    // --py-sec-sm: 2.5rem;
-    // --py-sec-lg: 4.0rem;
     --block-gap: 6vw;
     --ct-gap: 2rem;
     --clr-primary: hsl(170, 60%, 53%);
@@ -19,8 +19,6 @@
     --clr-alert: hsla(0, 75%, 70%, 0.8); 
     --clr-base: white;
     --clr-base-subtle: hsla(0, 0%, 85%, 1);
-    --clr-focus: var(--clr-primary-subtle);
-    --box-shadow-focus: 0 0 0 1px var(--clr-focus);
     --box-radius: 30px;
     --ff-primary: "Karla";
     --ff-secondary: "Fira Code";
@@ -49,14 +47,6 @@
     }
 }
 
-// :focus {
-//     outline: none; 
-//     box-shadow: var(--box-shadow-focus);
-// }
-// .hide-focus {
-//     outline: none !important;
-//     box-shadow: none !important;
-// }
 html {
     background: var(--bg-gradient);
 }
@@ -82,8 +72,7 @@ app-root {
         width: 100%;
         z-index: 10;
     }
-    > :nth-child(3) {
-        display: block;
+    > main {
         padding-top: var(--top-spacing);
     }
 }
@@ -93,11 +82,6 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--clr-primary);
     font-weight: 700;
     line-height: 1.15;
-}
-@include m.mqMin(mob) {
-    h1, h2 {
-        // letter-spacing: -3px;
-    }
 }
 h2 {
     font-size: var(--fs-h2);
@@ -198,5 +182,6 @@ button, .btn {
     position: absolute;
     inset: 0;
 }
+
 
 

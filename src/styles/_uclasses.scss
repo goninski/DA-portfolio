@@ -1,6 +1,9 @@
 @use 'mixins' as m;
 
-
+.hide-focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
 .flex {
     display: flex;
 }
@@ -79,12 +82,6 @@
 }
 
 
-/** debugs */
-.bg-red {
-    background-color: red !important;
-}
-
-
 /** responsiv */
 @include m.mq(tabl) {
     .flex-row:where(.stack--tabl, .wrap--tabl) {
@@ -133,6 +130,6 @@
     // }
 }
 
-@include m.mq(ct, $t:min) {
+@include m.mqMin(ct) {
 }
     

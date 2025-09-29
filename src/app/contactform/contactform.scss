@@ -1,5 +1,10 @@
 @use 'mixins' as m;
 
+:host {
+    --focus-color:  hsl(0, 0%, 50%);
+    --focus-shadow: 0 2px 2px -1px var(--focus-color);
+}
+
 form {
 }
 .form-group {
@@ -15,14 +20,11 @@ form {
 }
 input:where([type="text"],[type="email"]),
 textarea {
-    background-color: transparent;
-    border-radius: 3px;
-    border: none;
-    width: 100%;
-    min-height: 30px;
-    &:focus {
-        margin-left: -8px;
-        padding-inline: 8px;        
+    min-height: 22px;
+    padding-bottom: 8px;
+    &:focus-visible {
+        outline: none;
+        box-shadow: var(--focus-shadow);
     }
 }
 textarea {
