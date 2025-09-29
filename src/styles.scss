@@ -5,7 +5,7 @@
 @import url("assets/fonts/karla/karla.css");
 
 :root {
-    --top-spacing: 137px;
+    --top-spacing: 112px;
     --px-page: 4vw;
     --ct-width: 1248px;
     --py-sec: 75px;
@@ -32,6 +32,7 @@
     --lh-text: 1.25;
     --transition-duration: 125ms;
     --fade-shadow: linear-gradient(90deg, #1C1C1C 0%, transparent 10%, transparent 90%, #1C1C1C 100%);
+    --bg-gradient: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
 
     @include m.mq(mob-sm) {
         --px-page: 16px;
@@ -57,8 +58,7 @@
 //     box-shadow: none !important;
 // }
 html {
-    background-color: #1c1c1c;
-    // background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+    background: var(--bg-gradient);
 }
 body {
     color: var(--clr-base);
@@ -69,15 +69,35 @@ body {
         overflow: hidden;
         scrollbar-width: unset;
     }
+    &.home {
+        background-color: #1c1c1c;
+        --top-spacing: 0;
+    }
 }
+app-root {
+    position: relative;
+    app-header {
+        display: block;
+        position: absolute;
+        width: 100%;
+        z-index: 10;
+    }
+    > :nth-child(3) {
+        display: block;
+        padding-top: var(--top-spacing);
+    }
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--ff-secondary);
     color: var(--clr-primary);
     font-weight: 700;
-    line-height: 1;
+    line-height: 1.15;
 }
-h1, h2 {
-    letter-spacing: -3px;
+@include m.mqMin(mob) {
+    h1, h2 {
+        // letter-spacing: -3px;
+    }
 }
 h2 {
     font-size: var(--fs-h2);

@@ -2,6 +2,7 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Header } from './_shared/header/header';
 import { Footer } from "./_shared/footer/footer";
+import { BodyClassService } from './services/body-class.service';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +12,11 @@ import { Footer } from "./_shared/footer/footer";
 })
 export class App {
   protected readonly title = signal('da-portfolio');
+
+  constructor(private bodyClassService: BodyClassService) {}
+
+  ngOnInit() {
+    this.bodyClassService.initRouteListener();
+  }
+
 }

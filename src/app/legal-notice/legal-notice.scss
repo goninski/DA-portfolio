@@ -1,5 +1,53 @@
 @use 'mixins' as m;
 
 section {
-    padding-top: var(--top-spacing);
+    // padding-top: var(--top-spacing);
+    --ct-width: 1032px;
 }
+
+.back-btn {
+    margin-top: -32px;
+    margin-bottom: 40px;
+    @include m.mqMin(mob-sm) {
+        display: none;
+    }
+}
+
+h1 {
+    text-align: center;
+    font-size: var(--fs-h2);
+    margin-bottom: 56px;
+    @include m.mq(mob-sm) {
+        font-size: 32px;
+        text-align: left;
+        letter-spacing: -1px;
+        margin-bottom: 16px;
+        color: var(--clr-base);
+    }
+}
+
+.rich-text {
+    --fs-text: 19px;
+    font-size: var(--fs-text);
+    color: var(--clr-primary);
+    h3 {
+        font-family: var(--ff-primary);
+        font-size: var(--fs-text);
+        color: var(--clr-base);
+        margin-top: 24px;
+        margin-bottom: 0.05em;
+        font-weight: 700
+    }
+    p {
+        margin-bottom: 0.75em;
+    }
+    a, span {
+        color: var(--clr-base);
+    }
+    a:hover {
+        text-decoration: underline;
+        color: var(--clr-base)
+    }
+    
+}
+

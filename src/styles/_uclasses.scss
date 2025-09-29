@@ -65,6 +65,18 @@
         border-radius: var(--box-radius);
     }
 }
+.rich-text ul,
+.ul-classic {
+    gap: 0.15em;
+    li {
+        display: list-item;
+        list-style-type: disc;
+        margin-left: 1em;
+    }
+}
+.clr-inherit:not(:hover) {
+    color: inherit !important;
+}
 
 
 /** debugs */
