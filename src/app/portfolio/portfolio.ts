@@ -9,6 +9,12 @@ import { Project } from "../project/project";
   styleUrl: './portfolio.scss'
 })
 export class Portfolio {
+
+  // openDialogue(index: number) {
+  //     this.isDialogueVisible = true;
+  //     document.body.classList.add('overflow-hidden');
+  // }
+
   projects: ProjectInterface[] = [
     {
       id: '01',

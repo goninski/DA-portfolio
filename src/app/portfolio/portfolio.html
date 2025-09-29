@@ -9,15 +9,41 @@
         <div class="block project-listing">
             <ul>
                 @for(item of projects; track item.id; let isLast = $last) {
+
+                    <!-- <li>
+                        <button (click)="openDialogue($index)">
+                            <div class="label">{{ item.title }}<img src="assets/icons/arrow-outward.svg" alt="open-arrow-icon"></div>
+                            <div class="tags">
+                                @for (tag of item.tags; track tag; let isLast = $last) {
+                                    <span>{{ tag }}</span>
+                                    @if(!isLast){<span> | </span>}}
+                            </div>
+                        </button>
+                        <div class="item">
+                            <img class="preview" src="{{ item.previewImgUrl }}" alt="screenshot project {{ item.title }}">
+                            <img class="decor" src="assets/img/deco-pattern-project-preview.svg">
+                        </div>
+                        
+                        <app-project
+                            [project]="item"
+                            (showNext)="handleShowNext($index)"
+                            [class.first-item]="$first"
+                            [class.last-item]="$last"
+                        ></app-project>
+                    </li> -->
+
                     <app-project
                         [project]="item"
                         (showNext)="handleShowNext($index)"
                         [class.first-item]="$first"
                         [class.last-item]="$last"
                     ></app-project>
+
                 }
             </ul>
         </div>
     </div>
 
 </section>
+
+

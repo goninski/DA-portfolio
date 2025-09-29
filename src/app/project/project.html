@@ -16,10 +16,10 @@
 
 <div class="dialogue flex-col center" [class.visible]="isDialogueVisible">
 
-    <div class="container flex-row justify-between align-center stack--tabl box-radius">
+    <div class="container main flex-row justify-between align-center stack--tabl box-radius">
 
         <button class="close" (click)="closeDialogue()"><img src="assets/icons/close.svg" alt="icon close"></button>
-        <button class="next btn" (click)="showNext.emit()">Next project<img src="assets/icons/arrow-forward-primary.svg" alt="icon arrow-forward"></button>
+        <!-- <button class="next btn" (click)="showNext.emit()">Next project<img src="assets/icons/arrow-forward-primary.svg" alt="icon arrow-forward"></button> -->
 
         <div class="block ct-block">
             <h1><span>{{ project().id }}</span>{{ project().title }}</h1>
@@ -42,5 +42,8 @@
             <img src="{{ project().previewImgUrl }}" alt="screenshot project {{ project().title }}">
         </div>
 
+        <button class="next btn" (click)="showNext.emit()">Next project<img src="assets/icons/arrow-forward-primary.svg" alt="icon arrow-forward"></button>
+
     </div>
+
 </div>

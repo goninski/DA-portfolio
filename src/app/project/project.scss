@@ -104,21 +104,20 @@ li {
     }
 }
 
-// .first-item {
-//     .item {
-//         top: 28px;
-//     }
-// }
+:host.first-item li {
+    .item {
+        top: 28px;
+    }
+}
+:host.last-item li {
+    .item {
+        top: -28px;
+    }
+    button {
+        border-bottom: solid 1px var(--clr-primary);
+    }
+}
 
-// .last-item {
-//     button {
-//         border-bottom: solid 1px var(--clr-primary);
-//     }
-
-//     .item {
-//         top: -28px;
-//     }
-// }
 
 
 .dialogue:not(.visible) {
@@ -144,14 +143,17 @@ li {
         padding-inline: var(--px);
         overflow-y: auto;
         scrollbar-width: none;
+        h1 {
+            letter-spacing: -3px;
+        }
 
         @include m.mq(mob-sm) {
             --fs-h1-xl: 72px;
             --px: 12px;
-            padding-block: var(--py) 96px;
+            padding-block: var(--py) 32px;
         }
 
-        @include m.mq(ct, $t:min) {
+        @include m.mqMin(ct) {
             --px: 80px;
         }
 
@@ -180,15 +182,16 @@ li {
         }
 
         .next {
-            position: absolute;
-            bottom: 48px;
-            right: var(--px);
+            padding: 0;
             gap: 8px;
             color: var(--clr-primary);
-
-            @include m.mq(tabl) {
-                bottom: 24px;
-                right: 16px;
+            max-width: 100%;
+            justify-content: end;
+            margin-top: -16px;
+            @include m.mqMin(tabl) {
+                position: absolute;
+                bottom: 48px;
+                right: var(--px);
             }
 
             img {
