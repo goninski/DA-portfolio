@@ -1,34 +1,34 @@
 <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" action="/submit-form" method="post">
     <div class="form-group">
         <label for="contact_name">What's your name?</label>
-        <input [(ngModel)]="contactData.name" #contactName="ngModel" type="text" id="contact_name" name="contact_name" required minlength="3" maxlength="64" placeholder="Your name goes here">
+        <input [(ngModel)]="contactData.name" #contactName="ngModel" type="text" id="contact_name" name="contact_name" required minlength="3" maxlength="64" placeholder="Your name goes here" [attr.aria-describedby]="!contactName.valid && contactName.touched ? 'name-error' : null">
         @if(!contactName.valid && contactName.touched) {
-            <div role="alert">Oops: it seems your name is missing</div>
+            <div role="alert" id="name-error">Oops: it seems your name is missing</div>
         }
     </div>
     <div class="form-group">
         <label for="email">What's your email?</label>
-        <input [(ngModel)]="contactData.email" #email="ngModel" type="email" id="email" name="email" required maxlength="64" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" placeholder="your-email@domain.com">
+        <input [(ngModel)]="contactData.email" #email="ngModel" type="email" id="email" name="email" required maxlength="64" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" placeholder="your-email@domain.com" [attr.aria-describedby]="!email.valid && email.touched ? 'email-error' : null">
         @if(!email.valid && email.touched) {
-            <div role="alert">Hoppla! your email is required</div>
+            <div role="alert" id="email-error">Hoppla! your email is required</div>
         }
     </div>
     <div class="form-group">
         <label for="message">How can I help you?</label>
-        <textarea (input)="autoResize($event.target)" [(ngModel)]="contactData.message" #message="ngModel" id="message" name="message" required minlength="3" maxlength="512" placeholder="Hello François, I am interested in..." rows="1"></textarea>
+        <textarea (input)="autoResize($event.target)" [(ngModel)]="contactData.message" #message="ngModel" id="message" name="message" required minlength="3" maxlength="512" placeholder="Hello François, I am interested in..." rows="1" [attr.aria-describedby]="!message.valid && message.touched ? 'message-error' : null"></textarea>
         @if(!message.valid && message.touched) {
-            <div role="alert">What do you need to develop?</div>
+            <div role="alert" id="message-error">What do you need to develop?</div>
         }
     </div>
     <div class="form-group submit-wrapper">
         <div class="field-wrapper gdpr flex-row align-items">
             <div class="custom-checkbox-wrapper">
-                <input [(ngModel)]="contactData.gdpr" type="checkbox" #gdpr="ngModel" id="gdpr" name="gdpr" class="hide-focus" required>
+                <input [(ngModel)]="contactData.gdpr" type="checkbox" #gdpr="ngModel" id="gdpr" name="gdpr" class="hide-focus" required [attr.aria-describedby]="!gdpr.valid ? 'gdpr-error' : null">
                 <img src="assets/icons/checkbox.svg" alt="checkbox">
             </div>
-            <label for="gdpr"><span>I've read the<a href="/legal-notice/"> privacy policy </a></span>and agree to the processing of my data as&nbsp;outlined</label>
-            @if(!gdpr.valid) {
-                <div role="alert" class="alert-gdpr">Please accept the privacy policy</div>
+            <label for="gdpr"><span>I've read the<a href="/legal-notice/" target="_blank"> privacy policy </a></span>and agree to the processing of my data as&nbsp;outlined</label>
+            @if(!gdpr.valid && gdpr.touched) {
+                <div role="alert" class="alert-gdpr" id="gdpr-error">Please accept the privacy policy</div>
             }
         </div>
         <button type="submit" class="btn btn--outline" [disabled]="!contactForm.valid">Say Hello ;)</button>
