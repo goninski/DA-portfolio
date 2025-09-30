@@ -1,0 +1,31 @@
+<section>
+    <div class="container center">
+
+        <div class="slider-container" 
+            (mouseenter)="stopAutoPlay()" 
+            (mouseleave)="startAutoPlay()">
+            <div class="slider" [style.transform]="sliderTransform">
+                @for (slide of slides; track slide) {
+                    <div class="slide">
+                        <img [src]="slide.img" [alt]="'Slide ' + ($index + 1)">
+                    </div>
+                }
+            </div>
+
+            <!-- Navigation Buttons -->
+            <button class="nav-btn prev" (click)="changeSlide(-1)">‹</button>
+            <button class="nav-btn next" (click)="changeSlide(1)">›</button>
+
+            <!-- Radio Buttons -->
+            <div class="radio-controls">
+                @for (slide of slides; track slide; let i = $index) {
+                    <div class="radio-btn" 
+                        [class.active]="i === currentSlide" 
+                        (click)="goToSlide(i)">
+                    </div>
+                }
+            </div>
+        </div>
+
+    </div>
+</section>
