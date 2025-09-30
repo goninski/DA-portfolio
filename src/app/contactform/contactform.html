@@ -31,6 +31,6 @@
                 <div role="alert" class="alert-gdpr">Please accept the privacy policy</div>
             }
         </div>
-        <button type="submit" class="btn btn--outline">Say Hello ;)</button>
+        <button type="submit" class="btn btn--outline" [disabled]="!contactForm.valid">Say Hello ;)</button>
     </div>
 </form>

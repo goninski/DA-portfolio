@@ -130,10 +130,6 @@ section {
 button, .btn {
     font-family: var(--ff-secondary);
     color: var(--clr-base);
-    background-color: transparent;
-}
-:where(button, .btn):not(:disabled) {
-    cursor: pointer;
 }
 .btn {
     display: flex;
@@ -152,7 +148,7 @@ button, .btn {
     border: solid 1px currentColor;
     border-radius: 999rem;
 }
-.btn--outline:hover:not(:disabled) {
+.btn--outline:hover {
     color: var(--clr-primary);
 }
 .description-box {

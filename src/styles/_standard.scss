@@ -79,6 +79,13 @@ button, .btn {
 :where(button, .btn):not(:disabled) {
     cursor: pointer;
 }
+:is(button, .btn):disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    &:hover {
+        color: inherit !important;
+    }
+}
 
 
 

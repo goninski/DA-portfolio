@@ -28,7 +28,7 @@ textarea {
         outline: none;
         box-shadow: var(--focus-shadow);
     }
-    &.ng-invalid:not(:focus) {
+    &.ng-invalid:not(:focus, .ng-untouched) {
         opacity: 0;
         cursor: pointer;
     }
@@ -113,19 +113,8 @@ label {
         align-self: center;
         margin-top: 40px;
         font-family: var(--ff-primary);
-        opacity: 0.5;
-        cursor: auto;
-        &:hover {
-            color: inherit;
-        }
-    }
-}
-form.ng-valid {
-    button[type="submit"] {
-        opacity: 1;
-        cursor: pointer;
-        &:hover {
-            color: var(--clr-primary);
+        &:disabled {
+            opacity: 0.5;
         }
     }
 }
