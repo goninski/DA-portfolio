@@ -22,7 +22,10 @@ h2 {
 }
 .slide-wrapper {
     min-height: 274px;
-    gap: 4vw;
+    --slide-gap: 4vw;
+    gap: var(--slide-gap);
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
 }
 .slide {
     position: relative;
@@ -36,7 +39,8 @@ h2 {
     font-size: 20px;
     min-height: 100%;
     padding: 48px 40px;
-    min-width: 632px;
+    --slide-width: 632px;
+    min-width: var(--slide-width);
     transition: transform 0.5s ease-in-out;
     // img {
     //     display: none;
@@ -107,7 +111,8 @@ h2 {
 // @media(max-width: 1099px) {
 @include m.mq(tabl-md) {
     .slide {
-        min-width: 60%;
+        --slide-width: 60vw;
+        min-width: var(--slide-width);
     }
 }
 @include m.mq(mob) {
@@ -115,11 +120,12 @@ h2 {
         font-size: 24px;
     }
     .slide-wrapper {
-        gap: 2vw;
+        --slide-gap: 2vw;
     }
     .slide {
         justify-content: center;
-        min-width: 80vw;
+        --slide-width: 80vw;
+        min-width: var(--slide-width);
         .content {
             margin-top: auto;
         }
@@ -130,6 +136,6 @@ h2 {
 }
 @media(min-width: 1440px) {
     .slide-wrapper {
-        gap: 64px;
+        --slide-gap: 64px;
     }
 }

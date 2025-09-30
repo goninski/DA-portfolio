@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-testimonials',
@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './testimonials.html',
   styleUrl: './testimonials.scss'
 })
-export class Testimonials {
+export class Testimonials implements OnInit {
 
   testimonials = [
     {
@@ -25,5 +25,34 @@ export class Testimonials {
       active: false,
     },
   ]
-  
+
+  currentSlide = 0;
+
+  ngOnInit() {
+    this.currentSlide = this.testimonials.findIndex(t => t.active);
+  }
+
+  showSlide(index: number) {
+    const newIndex = (index + this.testimonials.length) % this.testimonials.length;
+    this.testimonials[this.currentSlide].active = false;
+    this.testimonials[newIndex].active = true;
+    this.currentSlide = newIndex;
+  }
+
+  nextSlide() {
+    this.showSlide(this.currentSlide + 1);
+  }
+
+  prevSlide() {
+    this.showSlide(this.currentSlide - 1);
+  }
+
+  jumpToSlide(index: number) {
+    this.showSlide(index);
+  }
+
+  calculateTransform(): string {
+    return `translateX(calc(50% - var(--slide-width) / 2 - (var(--slide-width) + var(--slide-gap)) * ${this.currentSlide}))`;
+  }
+
 }

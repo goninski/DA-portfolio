@@ -3,7 +3,7 @@
 
         <h2>What my colleagues say about&nbsp;me</h2>
 
-        <ul class="slide-wrapper flex-row justify-center">
+        <ul class="slide-wrapper flex-row" [style.transform]="calculateTransform()">
             @for (item of testimonials; track $index) {
                 <li class="slide" [class.active]="item.active">
                     @if (item.active) {
@@ -19,14 +19,13 @@
         </ul>
 
         <div class="slider-nav flex-row align-center">
-            <button><img src="assets/icons/arrow-backward.svg" alt="arrow-back-icon"></button>
-            <div class="slide-radio-buttons flex-row">
-                <button><img src="assets/icons/bullet.svg" alt="bullet-icon"></button>
-                <button class="active"><img src="assets/icons/bullet.svg" alt="bullet-icon"></button>
-                <button><img src="assets/icons/bullet.svg" alt="bullet-icon"></button>
-                <button><img src="assets/icons/bullet.svg" alt="bullet-icon"></button>
+            <button (click)="prevSlide()"><img src="assets/icons/arrow-backward.svg" alt="arrow-back-icon"></button>
+            <div class="slide-bullets flex-row">
+                @for (item of testimonials; track $index) {
+                    <button [class.active]="$index === currentSlide" (click)="jumpToSlide($index)"><img src="assets/icons/bullet.svg" alt="bullet-icon"></button>
+                }
             </div>
-            <button><img src="assets/icons/arrow-forward.svg" alt="arrow-forward-icon"></button>
+            <button (click)="nextSlide()"><img src="assets/icons/arrow-forward.svg" alt="arrow-forward-icon"></button>
         </div>
 
     </div>
