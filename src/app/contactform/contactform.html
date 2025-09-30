@@ -26,7 +26,7 @@
                 <input [(ngModel)]="contactData.gdpr" type="checkbox" #gdpr="ngModel" id="gdpr" name="gdpr" class="hide-focus" required [attr.aria-describedby]="!gdpr.valid ? 'gdpr-error' : null">
                 <img src="assets/icons/checkbox.svg" alt="checkbox">
             </div>
-            <label for="gdpr"><span>I've read the<a href="/legal-notice/" target="_blank"> privacy policy </a></span>and agree to the processing of my data as&nbsp;outlined</label>
+            <label for="gdpr"><span>I've read the<a href="/legal-notice/" target="_blank" title="open legal notice page"> privacy policy </a></span>and agree to the processing of my data as&nbsp;outlined</label>
             @if(!gdpr.valid && gdpr.touched) {
                 <div role="alert" class="alert-gdpr" id="gdpr-error">Please accept the privacy policy</div>
             }
