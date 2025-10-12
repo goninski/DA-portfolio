@@ -8,7 +8,8 @@ import { CommonModule } from '@angular/common';
   templateUrl: './test-slider.html',
   styleUrl: './test-slider.scss'
 })
-export class TestSlider implements OnInit, OnDestroy {
+// export class TestSlider implements OnInit, OnDestroy {
+export class TestSlider {
   slides = [
     { img: 'https://picsum.photos/600/400?random=1' },
     { img: 'https://picsum.photos/600/400?random=2' },

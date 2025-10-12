@@ -19,10 +19,10 @@ export class Contactform {
     gdpr: false,
   }
 
-mailTest = true;
+mailTest = false;
 
   post = {
-    endPoint: 'https://francois-gonin.dev/sendMail.php',
+    endPoint: '/send-mail-phpmailer.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {

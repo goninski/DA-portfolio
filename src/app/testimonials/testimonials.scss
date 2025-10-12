@@ -42,9 +42,6 @@ h2 {
     --slide-width: 632px;
     min-width: var(--slide-width);
     transition: transform 0.5s ease-in-out;
-    // img {
-    //     display: none;
-    // }
 }
 .slide.active {
     background-color: var(--clr-primary-hover);
@@ -59,7 +56,7 @@ h2 {
         position: absolute;
         top: -12px;
         left: 0;
-        @include m.mq(mob, $t:min) {
+        @include m.mqMin(mob) {
             height: 64px;
             transform: translateX(-50%);
         }

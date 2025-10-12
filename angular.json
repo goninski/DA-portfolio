@@ -28,6 +28,11 @@
                 "glob": "**/*",
                 "input": "src/assets/",
                 "output": "/assets/"
+              },
+              {
+                "glob": "**/*",
+                "input": "public",
+                "output": "/"
               }
             ],
             "stylePreprocessorOptions": {
@@ -41,6 +46,8 @@
           },
           "configurations": {
             "production": {
+              "extractLicenses": false,
+              "sourceMap": false,
               "budgets": [
                 {
                   "type": "initial",

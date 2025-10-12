@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { Header } from "../_shared/header/header";
 
 @Component({
   selector: 'app-hero',
-  imports: [Header],
+  imports: [],
   templateUrl: './hero.html',
   styleUrl: './hero.scss'
 })
