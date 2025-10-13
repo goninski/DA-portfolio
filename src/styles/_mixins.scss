@@ -1,7 +1,35 @@
+/**
+ * Display flex direction column
+ * @params $g:gap, $ah:align horizontal, $av: align vertical
+ */
+@mixin flex-col($g: var(--ct-gap), $ah: flex-start, $av: flex-start) {
+    display: flex;
+    flex-direction: column;
+    gap: $g;
+    align-items: $ah;
+    justify-content: $av;
+}
+
+/**
+ * Display flex direction row
+ * @params $g:gap, $ah:align horizontal, $av: align vertical
+ */
+@mixin flex-row($g: var(--ct-gap), $ah: flex-start, $av: center) {
+    display: flex;
+    flex-direction: row;
+    gap: $g;
+    justify-content: $ah;
+    align-items: $av;
+}
+
 @mixin bg($bg: red) {
     background-color: $bg !important;
 }
 
+
+/**
+ * Breakpoints
+ */
 $bp-ct: 1355px;
 $bp-tabl-md: 1179px;
 $bp-tabl: 939px;
@@ -99,30 +127,4 @@ $breakpoints: (
     @content;
   }
 }
-
-
-/**
- * Display flex direction column
- * @params $g:gap, $ah:align horizontal, $av: align vertical
- */
-@mixin flex-col($g: var(--ct-gap), $ah: flex-start, $av: flex-start) {
-    display: flex;
-    flex-direction: column;
-    gap: $g;
-    align-items: $ah;
-    justify-content: $av;
-}
-
-/**
- * Display flex direction row
- * @params $g:gap, $ah:align horizontal, $av: align vertical
- */
-@mixin flex-row($g: var(--ct-gap), $ah: flex-start, $av: center) {
-    display: flex;
-    flex-direction: row;
-    gap: $g;
-    justify-content: $ah;
-    align-items: $av;
-}
-
 

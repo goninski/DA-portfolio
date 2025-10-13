@@ -118,3 +118,11 @@ label {
         font-family: var(--ff-primary);
     }
 }
+.submit-feedback {
+    color: var(--clr-primary);
+    width: 100%;
+    margin-top: .5rem;
+    &.error {
+        color: var(--clr-alert);
+    }
+}

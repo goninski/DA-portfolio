@@ -19,7 +19,9 @@ export class Contactform {
     gdpr: false,
   }
 
-  mailTest = false;
+  mailTest = true;
+  isSubmitted = 0;
+
 
   post = {
     endPoint: '/sendMail.php',
@@ -40,13 +42,17 @@ export class Contactform {
             ngForm.resetForm();
           },
           error: (error) => {
-            console.error(error);
+            this.isSubmitted = 9;
+            // console.error(error);
           },
-          complete: () => console.info('send post complete'),
+          complete: () => {
+            // console.info('send post complete');
+            this.isSubmitted = 1;
+          },
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-
-      ngForm.resetForm();
+        this.isSubmitted = 1;
+        ngForm.resetForm();
     }
   }
 
