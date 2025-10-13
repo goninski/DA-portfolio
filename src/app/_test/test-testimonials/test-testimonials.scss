@@ -1,30 +1,41 @@
 @use 'mixins' as m;
 
-
+section {
+    --ct-width: 1440px;
+    background-color: #1c1c1c;
+}
+.container {
+    overflow: hidden;
+    position: relative;
+    /* stop fade shadow */
+    @include m.mq(mob) {
+        &::after {
+            content: unset;
+        }
+    }
+}
+h2 {
+    font-size: 32px;
+    margin-bottom: 48px;
+    text-align: center;
+    line-height: 1.2;
+    letter-spacing: unset;
+}
 .slider-container {
     position: relative;
-    min-height: 274px;
-    --slide-gap: 4vw;
-    gap: var(--slide-gap);
-    transition: transform 0.5s ease-in-out;
-    will-change: transform;
-
-    // position: relative;
-    // width: 600px;
-    // height: 400px;
-    // border-radius: 10px;
-    // overflow: hidden;
-    // box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 274px;
+    overflow: visible; /* Allow adjacent slides to be seen */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
-
 .slider {
     position: relative;
     width: 100%;
     height: 100%;
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+    --slide-gap: 4vw;
+    --slide-gap: 20px;
+    gap: var(--slide-gap);
 }
-
 .slide {
     position: relative;
     display: flex;
@@ -35,17 +46,15 @@
     border: solid 1px var(--clr-primary);
     border-radius: var(--box-radius);
     font-size: 20px;
-    min-height: 100%;
+    height: 100%;
     padding: 48px 40px;
-    --slide-width: 632px;
-    min-width: var(--slide-width);
+    // --slide-width: 632px;
+    // min-width: var(--slide-width);
+    // min-width: 60%;
+    flex: 0 0 632px;
+    min-width: 632px;
     transition: transform 0.5s ease-in-out;
-
-    // min-width: 100%;
-    // height: 100%;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
+    overflow: hidden;
 }
 .slide.active {
     background-color: var(--clr-primary-hover);
@@ -64,7 +73,7 @@
             height: 64px;
             transform: translateX(-50%);
         }
-    };
+    }
 }
 .slide:not(.active) {
     margin-block: 13px;
@@ -85,73 +94,58 @@
         white-space: nowrap;
     }
 }
-
-
-
-/* Navigation Buttons */
-.nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    font-size: 18px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 10;
+.slider-controls {
+    z-index: 1;
+    margin-top: 56px;
+    gap: 12px;
+    img {
+        transition: all var(--transition-duration);
+    }
+    > button:first-of-type:hover img {
+        content: url('../../../assets/icons/arrow-backward-primary.svg');
+        transform: translateX(-4px);
+    }
+    > button:last-of-type:hover img {
+        content: url('../../../assets/icons/arrow-forward-primary.svg');
+        transform: translateX(4px);
+    }
+    .radio-controls {
+        gap: 8px;
+        button.active img {
+            content: url('../../../assets/icons/bullet-primary.svg');
+        }
+    }
 }
 
-.nav-btn:hover {
-    background: rgba(0, 0, 0, 0.8);
-    transform: translateY(-50%) scale(1.1);
-}
 
-.prev {
-    left: 20px;
+// @media(max-width: 1099px) {
+@include m.mq(tabl-md) {
+    .slide {
+        --slide-width: 60vw;
+        min-width: var(--slide-width);
+    }
 }
-
-.next {
-    right: 20px;
+@include m.mq(mob) {
+    h2 {
+        font-size: 24px;
+    }
+    .slider {
+        --slide-gap: 2vw;
+    }
+    .slide {
+        justify-content: center;
+        --slide-width: 80vw;
+        min-width: var(--slide-width);
+        .content {
+            margin-top: auto;
+        }
+    }
+    .slider-controls {
+        margin-top: 40px;
+    }
 }
-
-/* Radio Buttons */
-.radio-controls {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    z-index: 10;
-}
-
-.radio-btn {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: 2px solid white;
-    background: rgba(255, 255, 255, 0.3);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.radio-btn.active {
-    background: white;
-    transform: scale(1.2);
-}
-
-.radio-btn:hover {
-    background: rgba(255, 255, 255, 0.6);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .slider-container {
-        width: 90vw;
-        height: 50vh;
+@media(min-width: 1440px) {
+    .slider {
+        --slide-gap: 64px;
     }
 }

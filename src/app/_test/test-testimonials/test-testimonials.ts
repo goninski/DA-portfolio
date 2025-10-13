@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-test-testimonials',
@@ -27,18 +27,19 @@ export class TestTestimonials {
     },
   ]
 
-  // slides = [
-  //   { img: 'https://picsum.photos/600/400?random=1' },
-  //   { img: 'https://picsum.photos/600/400?random=2' },
-  //   { img: 'https://picsum.photos/600/400?random=3' },
-  //   { img: 'https://picsum.photos/600/400?random=4' },
-  //   { img: 'https://picsum.photos/600/400?random=5' },
-  // ];
-
   currentSlide = 0;
+  displayIndex = 1;
   autoPlayInterval: any;
+  transitioning = false;
+  transitionDuration = 500;
+  // slideWidthPercentage = 60;
+  slideWidth = 632; //pixel
+  slideGap = 20; //pixel
+
+  constructor(private renderer: Renderer2, private comp: ElementRef) {}
 
   ngOnInit(): void {
+    this.updateSliderTransform(false);
     this.startAutoPlay();
   }
 
@@ -46,45 +47,71 @@ export class TestTestimonials {
     this.stopAutoPlay();
   }
 
+  // get sliderTransform() {
+  //   const offset = (100 - this.slideWidthPercentage) / 2;
+  //   return `translateX(calc(-${this.displayIndex * this.slideWidthPercentage}% - ${this.displayIndex * this.slideGap}px + ${offset}% + ${this.slideGap}px))`;
+  // }
+
   get sliderTransform() {
-    return `translateX(-${this.currentSlide * 100}%)`;
+    // const offset = (100% - this.slideWidth) / 2;
+    const offset = (100% - 632) / 2;
+    return `translateX(calc(-${this.displayIndex * this.slideWidth}px - ${this.displayIndex * this.slideGap}px + ${offset}% + ${this.slideGap}px))`;
+  }
+
+  updateSliderTransform(enableTransition: boolean) {
+    const sliderEl = this.comp.nativeElement.querySelector('.slider');
+    const transitionStyle = enableTransition ? `transform ${this.transitionDuration}ms ease-in-out` : 'none';
+    this.renderer.setStyle(sliderEl, 'transition', transitionStyle);
   }
 
   changeSlide(direction: number) {
-    this.currentSlide += direction;
+    if (this.transitioning) return;
+    this.transitioning = true;
+    this.displayIndex += direction;
+    this.updateSliderTransform(true);
+    this.currentSlide = (this.currentSlide + direction + this.slides.length) % this.slides.length;
 
-    if (this.currentSlide >= this.slides.length) {
-      this.currentSlide = 0;
-    } else if (this.currentSlide < 0) {
-      this.currentSlide = this.slides.length - 1;
-    }
+    setTimeout(() => {
+      if (this.displayIndex === 0) { 
+        this.displayIndex = this.slides.length;
+        this.updateSliderTransform(false);
+      } else if (this.displayIndex === this.slides.length + 1) {
+        this.displayIndex = 1;
+        this.updateSliderTransform(false);
+      }
+      this.transitioning = false;
+    }, this.transitionDuration);
   }
 
   goToSlide(slideIndex: number) {
+    if (this.transitioning || this.currentSlide === slideIndex) return;
     this.currentSlide = slideIndex;
+    this.displayIndex = slideIndex + 1;
+    this.updateSliderTransform(true);
   }
 
   startAutoPlay() {
+    this.stopAutoPlay();
     this.autoPlayInterval = setInterval(() => {
       this.changeSlide(1);
-    }, 4000); // Change slide every 4 seconds
+    }, 4000);
   }
 
   stopAutoPlay() {
-    clearInterval(this.autoPlayInterval);
+    if (this.autoPlayInterval) {
+      clearInterval(this.autoPlayInterval);
+    }
   }
 
   @HostListener('document:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
+    this.stopAutoPlay();
     if (event.key === 'ArrowLeft') {
       this.changeSlide(-1);
-      this.stopAutoPlay();
-      this.startAutoPlay();
     } else if (event.key === 'ArrowRight') {
       this.changeSlide(1);
-      this.stopAutoPlay();
-      this.startAutoPlay();
     }
+    this.startAutoPlay();
   }
 
 }

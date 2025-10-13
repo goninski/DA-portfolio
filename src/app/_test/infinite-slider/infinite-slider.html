@@ -24,11 +24,11 @@
                 }
             </div>
 
-        </div>
+            <!-- Navigation Buttons -->
+            <button class="nav-btn prev" (click)="changeSlide(-1)">‹</button>
+            <button class="nav-btn next" (click)="changeSlide(1)">›</button>
 
-        <!-- slider controls -->
-        <div class="slider-controls flex-row align-center">
-            <button class="nav-btn prev" (click)="changeSlide(-1)"><img src="assets/icons/arrow-backward.svg" alt="arrow-back-icon"></button>
+            <!-- Radio Buttons -->
             <div class="radio-controls">
                 @for (slide of slides; track slide; let i = $index) {
                     <div class="radio-btn" 
@@ -37,7 +37,6 @@
                     </div>
                 }
             </div>
-            <button class="nav-btn next" (click)="changeSlide(1)"><img src="assets/icons/arrow-forward.svg" alt="arrow-forward-icon"></button>
         </div>
 
     </div>

@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './footer.scss'
 })
 export class Footer {
-  isUnderConstructionClosed = false;
+  isUnderConstructionClosed = (window.location.hostname == 'localhost');
 
   closeUnderConstruction(): void {
     this.isUnderConstructionClosed = true;
