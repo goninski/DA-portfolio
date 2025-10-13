@@ -19,10 +19,10 @@ export class Contactform {
     gdpr: false,
   }
 
-mailTest = false;
+  mailTest = false;
 
   post = {
-    endPoint: '/send-mail-phpmailer.php',
+    endPoint: '/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -37,7 +37,6 @@ mailTest = false;
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
-
             ngForm.resetForm();
           },
           error: (error) => {

@@ -31,7 +31,12 @@
               },
               {
                 "glob": "**/*",
-                "input": "public",
+                "input": "src/vendor/",
+                "output": "/vendor/"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/public/",
                 "output": "/"
               }
             ],
