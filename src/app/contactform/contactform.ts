@@ -10,8 +10,6 @@ import { FormsModule, NgForm } from '@angular/forms';
 })
 export class Contactform {
 
-  http = inject(HttpClient);
-
   contactData =  {
     name: "",
     email: "",
@@ -19,9 +17,9 @@ export class Contactform {
     gdpr: false,
   }
 
-  mailTest = true;
+  http = inject(HttpClient);
   isSubmitted = 0;
-
+  mailTest = window.location.hostname == 'localhost';
 
   post = {
     endPoint: '/sendMail.php',
