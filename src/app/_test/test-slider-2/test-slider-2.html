@@ -5,9 +5,21 @@
             (mouseenter)="stopAutoPlay()" 
             (mouseleave)="startAutoPlay()">
             <div class="slider" [style.transform]="sliderTransform">
+                <!-- Clone of the last slide -->
+                @if (slides.length > 0) {
+                    <div class="slide">
+                        <img [src]="slides[slides.length - 1].img" [alt]="'Slide ' + slides.length">
+                    </div>
+                }
                 @for (slide of slides; track slide; let i = $index) {
                     <div class="slide" [class.active]="i === currentSlide">
                         <img [src]="slide.img" [alt]="'Slide ' + ($index + 1)">
+                    </div>
+                }
+                <!-- Clone of the first slide -->
+                @if (slides.length > 0) {
+                    <div class="slide">
+                        <img [src]="slides[0].img" [alt]="'Slide 1'">
                     </div>
                 }
             </div>

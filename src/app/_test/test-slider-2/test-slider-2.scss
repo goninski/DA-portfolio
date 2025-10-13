@@ -27,7 +27,7 @@ section {
     height: 100%;
     display: flex;
     gap: 20px; // Adds space between slides
-    transition: transform 0.5s ease-in-out;
+    // transition: transform 0.5s ease-in-out; /* This is now controlled by the component */
 }
 
 .slide {
