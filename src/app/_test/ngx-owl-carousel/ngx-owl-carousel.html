@@ -1,0 +1,34 @@
+<section>
+    <div class="container align-center fade-shadow-inline">
+
+        <h2>What my colleagues say (Owl Carousel)</h2>
+
+        <div class="slider-container">
+            <owl-carousel-o [options]="customOptions">
+                @for (slide of slides; track slide.id) {
+                    <ng-template carouselSlide [id]="slide.id">
+                        <div class="slide">
+                            <p class="content">{{ slide.content }}</p>
+                            <div class="name-wrapper">
+                                <div></div>
+                                <p>{{ slide.author }}</p>
+                            </div>
+                        </div>
+                    </ng-template>
+                }
+            </owl-carousel-o>
+        </div>
+
+        <!-- The library generates its own controls, which we will style in SCSS -->
+        <!-- If you wanted fully custom controls, you could do this: -->
+        <!-- 
+        <div class="slider-controls flex-row align-center">
+            <button class="nav-btn prev" (click)="carousel.prev()"><img src="assets/icons/arrow-backward.svg" alt="arrow-back-icon"></button>
+            <div class="radio-controls">
+                ...
+            </div>
+            <button class="nav-btn next" (click)="carousel.next()"><img src="assets/icons/arrow-forward.svg" alt="arrow-forward-icon"></button>
+        </div> 
+        -->
+    </div>
+</section>

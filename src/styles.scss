@@ -3,6 +3,8 @@
 @use 'uclasses';
 @import url("assets/fonts/fira-code/fira-code.css");
 @import url("assets/fonts/karla/karla.css");
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 
 :root {
     --focus-color: var(--clr-primary-subtle);

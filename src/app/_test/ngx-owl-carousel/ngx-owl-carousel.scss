@@ -1,0 +1,112 @@
+@use 'mixins' as m;
+
+:host {
+    --clr-primary: #4CAF50; // Example color
+    --clr-primary-hover: #66BB6A; // Example color
+    --clr-base: #FFFFFF; // Example color
+    --box-radius: 16px;
+    --transition-duration: 0.3s;
+}
+
+section {
+    --ct-width: 1440px;
+    background-color: #1c1c1c;
+    padding: 4rem 0;
+    color: white;
+}
+
+.container {
+    overflow: hidden;
+    position: relative;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 48px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.slider-container {
+    width: 100%;
+    position: relative;
+}
+
+/* Styling the ngx-owl-carousel-o elements */
+::ng-deep {
+    .owl-stage-outer {
+        overflow: visible;
+        padding: 20px 0; /* Add padding to prevent clipping on active scale */
+    }
+
+    .owl-item {
+        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        opacity: 0.5;
+        transform: scale(0.9);
+
+        &.center, &.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    /* Style for the dots (radio buttons) */
+    .owl-dots {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 56px;
+
+        .owl-dot {
+            span {
+                width: 12px;
+                height: 12px;
+                margin: 0;
+                background: url('../../../assets/icons/bullet.svg') no-repeat center center;
+                background-size: contain;
+                display: block;
+            }
+
+            &.active span {
+                background: url('../../../assets/icons/bullet-primary.svg') no-repeat center center;
+                background-size: contain;
+            }
+        }
+    }
+}
+
+/* Individual slide styling (copied from test-testimonials) */
+.slide {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+    background-color: #222E2C;
+    border: solid 1px var(--clr-primary);
+    border-radius: var(--box-radius);
+    font-size: 20px;
+    height: 274px;
+    padding: 48px 40px;
+    box-sizing: border-box;
+
+    .owl-item.center & {
+        background-color: var(--clr-primary-hover);
+    }
+}
+
+.name-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 16px;
+    margin-top: auto;
+    div {
+        width: 100%;
+        border-bottom: solid 1px var(--clr-base);
+        transform: translateY(-50%);
+    }
+    p {
+        white-space: nowrap;
+    }
+}

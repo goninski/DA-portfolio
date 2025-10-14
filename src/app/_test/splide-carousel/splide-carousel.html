@@ -1,0 +1,23 @@
+<section class="">
+    <div class="container align-center fade-shadow-inline">
+
+        <h2>What my colleagues say about&nbsp;me</h2>
+
+        <div class="splide" id="testimonial-slider">
+            <div class="splide__track">
+                <ul class="splide__list slider-container">
+                    @for (slide of slides; track $index) {
+                        <li class="splide__slide slide">
+                            <p class="content">{{ slide.content }}</p>
+                            <div class="name-wrapper">
+                                <div class="line"></div>
+                                <p>{{ slide.author }}</p>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
