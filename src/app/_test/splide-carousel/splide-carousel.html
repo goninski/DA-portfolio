@@ -8,15 +8,24 @@
                 <ul class="splide__list slider-container">
                     @for (slide of slides; track $index) {
                         <li class="splide__slide slide">
-                            <p class="content">{{ slide.content }}</p>
-                            <div class="name-wrapper">
-                                <div class="line"></div>
-                                <p>{{ slide.author }}</p>
+                            <img src="assets/icons/quotes.svg" alt="big-quotes-icon">
+                            <div class="splide__slide__container slide-inner">
+                                <p class="content">{{ slide.content }}</p>
+                                <div class="name-wrapper">
+                                    <div class="line"></div>
+                                    <p>{{ slide.author }}</p>
+                                </div>
                             </div>
                         </li>
                     }
                 </ul>
             </div>
+
+            <div class="slider-controls">
+                <div class="splide__arrows arrows"></div>                
+                <div class="splide__pagination pagination"></div>
+            </div>
+
         </div>
 
     </div>

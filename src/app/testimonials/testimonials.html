@@ -3,29 +3,29 @@
 
         <h2>What my colleagues say about&nbsp;me</h2>
 
-        <ul class="slide-wrapper flex-row" [style.transform]="calculateTransform()">
-            @for (item of testimonials; track $index) {
-                <li class="slide" [class.active]="item.active">
-                    @if (item.active) {
-                        <img src="assets/icons/quotes.svg" alt="big-quotes-icon">
+        <div class="splide" id="testimonial-slider">
+            <div class="splide__track">
+                <ul class="splide__list slider-container">
+                    @for (slide of slides; track $index) {
+                        <li class="splide__slide slide">
+                            <img src="assets/icons/quotes.svg" alt="big-quotes-icon">
+                            <div class="splide__slide__container slide-inner">
+                                <p class="content">{{ slide.content }}</p>
+                                <div class="name-wrapper">
+                                    <div class="line"></div>
+                                    <p>{{ slide.author }}</p>
+                                </div>
+                            </div>
+                        </li>
                     }
-                    <p class="content">{{ item.content }}</p>
-                    <div class="name-wrapper">
-                        <div></div>
-                        <p>{{ item.author }}</p>
-                    </div>
-                </li>
-            }
-        </ul>
-
-        <div class="slider-nav flex-row align-center">
-            <button (click)="prevSlide()"><img src="assets/icons/arrow-backward.svg" alt="arrow-back-icon"></button>
-            <div class="slide-bullets flex-row">
-                @for (item of testimonials; track $index) {
-                    <button [class.active]="$index === currentSlide" (click)="jumpToSlide($index)"><img src="assets/icons/bullet.svg" alt="bullet-icon"></button>
-                }
+                </ul>
             </div>
-            <button (click)="nextSlide()"><img src="assets/icons/arrow-forward.svg" alt="arrow-forward-icon"></button>
+
+            <div class="slider-controls">
+                <div class="splide__arrows arrows"></div>                
+                <div class="splide__pagination pagination"></div>
+            </div>
+
         </div>
 
     </div>

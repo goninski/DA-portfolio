@@ -1,58 +1,38 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit, OnInit } from '@angular/core';
+import { NgxSplideModule } from 'ngx-splide';
+import { Splide } from '@splidejs/splide';
+import { testimonialsContent as slides } from './testimonials-content';
 
 @Component({
   selector: 'app-testimonials',
-  imports: [],
+  imports: [NgxSplideModule],
   templateUrl: './testimonials.html',
   styleUrl: './testimonials.scss'
 })
-export class Testimonials implements OnInit {
+export class Testimonials implements AfterViewInit {
+// export class Testimonials implements OnInit {
 
-  testimonials = [
-    {
-      content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae adipisci voluptatibus eius omnis numquam vel libero laudantium tempora sapiente consequatur? Sequi tempora, maxime vel ipsam sint est culpa. Dolor, sapiente.',
-      author: 'Colleague A',
-      active: false,
-    },
-    {
-      content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
-      author: 'Colleague B',
-      active: true,
-    },
-    {
-      content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae adipisci voluptatibus eius omnis numquam vel libero laudantium tempora sapiente consequatur? Sequi tempora, maxime vel ipsam sint est culpa. Dolor, sapiente.',
-      author: 'Colleague C',
-      active: false,
-    },
-  ]
+    slides = slides;
+    private splide: Splide | undefined;
 
-  currentSlide = 0;
-
-  ngOnInit() {
-    this.currentSlide = this.testimonials.findIndex(t => t.active);
-  }
-
-  showSlide(index: number) {
-    const newIndex = (index + this.testimonials.length) % this.testimonials.length;
-    this.testimonials[this.currentSlide].active = false;
-    this.testimonials[newIndex].active = true;
-    this.currentSlide = newIndex;
-  }
-
-  nextSlide() {
-    this.showSlide(this.currentSlide + 1);
-  }
-
-  prevSlide() {
-    this.showSlide(this.currentSlide - 1);
-  }
-
-  jumpToSlide(index: number) {
-    this.showSlide(index);
-  }
-
-  calculateTransform(): string {
-    return `translateX(calc(50% - var(--slide-width) / 2 - (var(--slide-width) + var(--slide-gap)) * ${this.currentSlide}))`;
-  }
-
+    ngAfterViewInit(): void {
+        this.splide = new Splide('#testimonial-slider', {
+            type       : 'loop',
+            autoWidth  : true,
+            focus      : 'center',   // Ensures each slide is a focus point, creating a dot for each.
+            perMove    : 1,
+            pagination : true,
+            arrows     : true,
+            // breakpoints: {
+            //     1024: {
+            //         perPage: 2, // 2 slides on tablets
+            //     },
+            //     768: {
+            //         perPage: 1, // 1 slide on mobile screens
+            //         arrows: false, // Hides arrows on mobile
+            //     },
+            // },
+        }).mount();
+    }
+    
 }
