@@ -1,14 +1,17 @@
 <section class="">
     <div class="container align-center fade-shadow-inline">
 
-        <h2>What my colleagues say about&nbsp;me</h2>
+        <div class="title-wrapper flex-col">
+            <h2>&nbsp;What my colleagues say about&nbsp;me</h2>
+            <img class="quote" src="assets/icons/quotes.svg" alt="big-start-quote">
+        </div>
 
-        <div class="splide" id="testimonial-slider">
+        <div class="splide">
             <div class="splide__track">
                 <ul class="splide__list slider-container">
                     @for (slide of slides; track $index) {
                         <li class="splide__slide slide">
-                            <img src="assets/icons/quotes.svg" alt="big-quotes-icon">
+                            <!-- <img src="assets/icons/quotes.svg" alt="big-quotes-icon"> -->
                             <div class="splide__slide__container slide-inner">
                                 <p class="content">{{ slide.content }}</p>
                                 <div class="name-wrapper">
