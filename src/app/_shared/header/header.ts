@@ -1,5 +1,6 @@
-import { Component, output } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 
+import { LanguageService } from '../../_services/language.service';
 import { data } from './header.data';
 
 @Component({
@@ -10,17 +11,17 @@ import { data } from './header.data';
 })
 export class Header {
   data = data;
+  languageService = inject(LanguageService);
+  lang = this.languageService.lang;
+  isLangDe = computed(() => this.lang() === 'de');
   isNavVisible = false;
+
+  onLangSwitchChange(): void {
+    this.languageService.toggleLang();
+  }
 
   toggleNav(): void {
     this.isNavVisible = !this.isNavVisible;
   }
 
-  lang: 'en' | 'de' = 'en';
-
-  onLangSwitchChange(event: Event): void {
-    const checkbox = event.target as HTMLInputElement;
-    checkbox.checked ? this.lang = 'de' : this.lang = 'en';
-  }
-  
 }

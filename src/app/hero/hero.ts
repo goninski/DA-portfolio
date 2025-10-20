@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
+import { LanguageService } from '../_services/language.service';
 import { data } from './hero.data';
 
 @Component({
@@ -10,4 +11,6 @@ import { data } from './hero.data';
 })
 export class Hero {
   data = data;
+  languageService = inject(LanguageService);
+  lang = this.languageService.lang;
 }

@@ -3,16 +3,16 @@
 
         <nav id="header-nav" class="flex-row align-center" [class.visible]="isNavVisible">
             <div class="switch flex-col">
-                <input id="lang-switch" type="checkbox" name="lang" (change)="onLangSwitchChange($event)">
+                <input id="lang-switch" type="checkbox" name="lang" [checked]="isLangDe()" (change)="onLangSwitchChange()">
                 <label for="lang-switch" class="flex-row align-center">
                     <span class="lang-en">EN</span>
                     <span class="lang-de">DE</span>
                 </label>
             </div>
             <div class="links-wrapper flex-row">
-                <a class="nav-link" href="#about">{{ data.aboutMe[lang] }}</a>
-                <a class="nav-link" href="#skills">{{ data.skills[lang] }}</a>
-                <a class="nav-link" href="#projects">{{ data.projects[lang] }}</a>
+                <a class="nav-link" href="#about">{{ data.aboutMe[lang()] }}</a>
+                <a class="nav-link" href="#skills">{{ data.skills[lang()] }}</a>
+                <a class="nav-link" href="#projects">{{ data.projects[lang()] }}</a>
             </div>
         </nav>
 
@@ -24,4 +24,3 @@
         <button class="hamburger" (click)="toggleNav()"><img src="assets/icons/hamburger.svg" alt="hamburger-menu-icon"></button>
     </div>
 </header>
-
