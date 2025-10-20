@@ -28,7 +28,7 @@ section {
         width: auto;
         position: absolute;
         bottom: -72px;
-        // left: -20px;
+        left: -20px;
         z-index: 1;
         @include m.mqMin(mob) {
             height: 64px;
@@ -43,9 +43,10 @@ section {
     min-height: 294px;
     display: flex;
     flex-direction: row;
+    max-width: var(--ct-width);
     // --slide-gap: 4vw;
     // gap: var(--slide-gap);
-    max-width: var(--ct-width);
+    gap: 0;
 }
 .slide {
     background-color: #222E2C;
@@ -120,7 +121,6 @@ section {
             transform: none;
             transition: all var(--transition-duration);
             svg {
-                // transform: unset;
                 fill: var(--clr-base);
                 height: 40px;
                 width: 40px;
@@ -166,29 +166,6 @@ section {
         }
     }
 }
-
-// .slider-controls {
-//     z-index: 1;
-//     margin-top: 56px;
-//     gap: 12px;
-//     img {
-//         transition: all var(--transition-duration);
-//     }
-//     > button:first-of-type:hover img {
-//         content: url('../../../assets/icons/arrow-backward-primary.svg');
-//         transform: translateX(-4px);
-//     }
-//     > button:last-of-type:hover img {
-//         content: url('../../../assets/icons/arrow-forward-primary.svg');
-//         transform: translateX(4px);
-//     }
-//     .slide-bullets {
-//         gap: 8px;
-//         button.active img {
-//             content: url('../../../assets/icons/bullet-primary.svg');
-//         }
-//     }
-// }
 
 
 // @media(max-width: 1099px) {
