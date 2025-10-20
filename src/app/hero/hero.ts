@@ -1,16 +1,14 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 
-import { LanguageService } from '../_services/language.service';
 import { data } from './hero.data';
+import { TranslatePipe } from '../_pipes/translate.pipe';
 
 @Component({
   selector: 'app-hero',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './hero.html',
   styleUrl: './hero.scss'
 })
 export class Hero {
   data = data;
-  languageService = inject(LanguageService);
-  lang = this.languageService.lang;
 }

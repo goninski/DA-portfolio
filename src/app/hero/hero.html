@@ -1,10 +1,10 @@
 <section>
 
     <div class="container center">
-        <h1><span>{{ data.title[lang()] }}</span>François Gonin</h1>
+        <h1><span>{{ data.title | translate }}</span>François Gonin</h1>
         <div class="button-wrapper flex-row justify-center stack--mob-xs">
-            <a class="btn btn--outline" href="#projects"><div><span>Check my work</span></div></a>
-            <a class="btn btn--outline" href="#contact"><div><span>Contact me</span></div></a>
+            <a class="btn btn--outline" href="#projects"><div><span>{{ data.linkProjects | translate }}</span></div></a>
+            <a class="btn btn--outline" href="#contact"><div><span>{{ data.linkContact | translate }}</span></div></a>
         </div>
 
         <div class="scroll-indicator flex-col align-center">
@@ -39,4 +39,3 @@
     </div>
 
 </section>
-
