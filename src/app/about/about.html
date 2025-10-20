@@ -8,15 +8,14 @@
         </div>
         <div class="block ct-block">
             <div class="block description-box">
-                <p class="subtitle">Who I Am</p>
-                <h2>About me</h2>
+                <p class="subtitle">{{ data.subtitle | translate }}</p>
+                <h2>{{ data.title | translate }}</h2>
                 <div class="block block-inner">
-                    <p>{{ aboutMe }}</p>
+                    <p>{{ data.description | translate }}</p>
                     <ul>
-                        <li><img src="assets/icons/location.svg" alt="location-icon">{{ located }}</li>
-                        <li><img src="assets/icons/minded.svg" alt="minded-icon">{{ openMinded }}</li>
-                        <li><img src="assets/icons/solved.svg" alt="solved-icon">{{ problemSolvingApproach }}
-</li>
+                        <li><img src="assets/icons/location.svg" alt="location-icon">{{ data.located | translate }}</li>
+                        <li><img src="assets/icons/minded.svg" alt="minded-icon">{{ data.mind | translate }}</li>
+                        <li><img src="assets/icons/solved.svg" alt="solved-icon">{{ data.problemSolving | translate }}</li>
                     </ul>
                 </div>
 

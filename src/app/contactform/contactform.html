@@ -34,7 +34,7 @@
                     class="hide-focus" required [attr.aria-describedby]="!gdpr.valid ? 'gdpr-error' : null">
                 <img src="assets/icons/checkbox.svg" alt="checkbox">
             </div>
-            <label for="gdpr"><span>I've read the<a href="/legal-notice/" target="_blank"
+            <label for="gdpr"><span>I've read the<a routerLink="/legal-notice/" target="_blank"
                         title="open legal notice page"> privacy policy </a></span>and agree to the processing of my data
                 as&nbsp;outlined</label>
             @if(!gdpr.valid && gdpr.touched) {

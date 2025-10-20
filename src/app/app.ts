@@ -1,8 +1,11 @@
-import { Component, signal } from '@angular/core';
+import { Component, effect, inject, Renderer2, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { DOCUMENT } from '@angular/common';
+
+import { BodyClassService } from './_services/body-class.service';
+import { LanguageService } from './_services/language.service';
 import { Header } from './_shared/header/header';
 import { Footer } from "./_shared/footer/footer";
-import { BodyClassService } from './_services/body-class.service';
 
 @Component({
   selector: 'app-root',
@@ -11,9 +14,16 @@ import { BodyClassService } from './_services/body-class.service';
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('da-portfolio');
+  private bodyClassService = inject(BodyClassService);
+  private languageService = inject(LanguageService);
+  private renderer = inject(Renderer2);
+  private document = inject(DOCUMENT);
 
-  constructor(private bodyClassService: BodyClassService) {}
+  constructor() {
+    effect(() => {
+      this.renderer.setAttribute(this.document.documentElement, 'lang', this.languageService.lang());
+    });
+  }
 
   ngOnInit() {
     this.bodyClassService.initRouteListener();

@@ -26,15 +26,15 @@
 
     <div class="marquee-banner fade-shadow-inline">
         <div class="marquee-content">
-            <span>Frontend Developer</span>
-            <span>Based in Zurich Switzerland</span>
-            <span>Open to Work</span>
-            <span>Available for remote work</span>
+            <span>{{ data.title | translate }}</span>
+            <span>{{ data.located | translate }}</span>
+            <span>{{ data.openToWork | translate }}</span>
+            <span>{{ data.remoteWork | translate }}</span>
             <!-- duplicate-content for looping -->
-            <span>Frontend Developer</span>
-            <span>Based in Zurich Switzerland</span>
-            <span>Open to Work</span>
-            <span>Available for remote work</span>
+            <span>{{ data.title | translate }}</span>
+            <span>{{ data.located | translate }}</span>
+            <span>{{ data.openToWork | translate }}</span>
+            <span>{{ data.remoteWork | translate }}</span>
         </div>
     </div>
 
