@@ -4,7 +4,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
 import { TranslatePipe } from '../_pipes/translate.pipe';
-import { dataLabel, dataPlaceholder, dataError } from './contactform.data';
+import { dataLabel, dataPlaceholder, dataError, dataGDPR } from './contactform.data';
 
 @Component({
   selector: 'app-contactform',
@@ -16,6 +16,7 @@ export class Contactform {
   dataLabel = dataLabel;
   dataPlaceholder = dataPlaceholder;
   dataError = dataError;
+  dataGDPR = dataGDPR;
 
   contactData =  {
     name: "",

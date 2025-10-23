@@ -34,26 +34,23 @@
                     class="hide-focus" required [attr.aria-describedby]="!gdpr.valid ? 'gdpr-error' : null">
                 <img src="assets/icons/checkbox.svg" alt="checkbox">
             </div>
-            <label for="gdpr"><span>I've read the<a routerLink="/legal-notice/" target="_blank"
-                        title="open legal notice page"> privacy policy </a></span>and agree to the processing of my data
-                as&nbsp;outlined</label>
+            <label for="gdpr"><span>{{ dataGDPR.label1 | translate }}<a routerLink="/legal-notice/" target="_blank"
+                        title="open legal notice page"> {{ dataGDPR.ppol | translate }} </a></span>{{ dataGDPR.label2 | translate }}</label>
             @if(!gdpr.valid && gdpr.touched) {
-            <div role="alert" class="alert-gdpr" id="gdpr-error">Please accept the privacy policy</div>
+            <div role="alert" class="alert-gdpr" id="gdpr-error">{{ dataGDPR.error | translate }}</div>
             }
         </div>
-        <button type="submit" class="btn btn--outline" [disabled]="!contactForm.valid">Say Hello ;)</button>
+        <button type="submit" class="btn btn--outline" [disabled]="!contactForm.valid">{{ dataLabel.send | translate }}</button>
     </div>
 </form>
 
 @if(isSubmitted && !contactForm.dirty) {
     <div class="submit-feedback flex-col center text-align-center">
-        Thanks for your request. <br>
-        I'll get in touch with you asap.
+        {{ dataError.submitSuccess | translate }}
     </div>
 }
 @if(isSubmitted == 9) {
     <div class="submit-feedback error flex-col center text-align-center">
-        The form could not be sent ! <br>
-        Please try again later or use the email link in the footer.
+        {{ dataError.submit | translate }}        
     </div>
 }

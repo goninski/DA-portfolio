@@ -11,10 +11,6 @@ export const dataLabel = {
     en : "How can I help you?",
     de : "Wie kann ich dir helfen?",
   },
-  gdpr : {
-    en : "I've read the privacy policy and agree to the processing of my data as outlined",
-    de : "Ich habe die Datenschutzbestimmungen gelesen und stimme der entsprechenden Datenbearbeitung zu",
-  },
   send : {
     en : "Say Hello ;)",
     de : "Sag Hallo ;)",
@@ -49,13 +45,32 @@ export const dataError = {
     en : "What do you need to develop?",
     de : "Was möchtest du entwickeln?",
   },
-  send : {
+  submit : {
     en : "Message could not be sent !",
     de : "Nachricht konnte nicht gesandt werden!",
   },
-  succes : {
-    en : "Message has been sent",
-    de : "Nachricht konnte nicht gesandt werden!",
+  submitSuccess : {
+    en : "Thanks for your request. I'll get in Touch with you asap.",
+    de : "Vielen Dank für deine Nachricht. Ich kontaktiere dich raschmöglichst.",
+  },
+}
+
+export const dataGDPR = {
+  label1 : {
+    en : "I've read the",
+    de : "Ich habe die",
+  },
+  label2 : {
+    en : "and agree to the processing of my data as outlined",
+    de : "und stimme der entsprechenden Datenbearbeitung zu",
+  },
+  ppol : {
+    en : "privacy policy",
+    de : "Datenschutzbestimmungen",
+  },
+  error : {
+    en : "Please accept the privacy policy",
+    de : "Bitte akzeptiere die Datenschutzbestimmungen",
   },
 }
 
