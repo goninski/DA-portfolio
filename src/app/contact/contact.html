@@ -3,13 +3,13 @@
 
         <div class="block ct-block">
             <div class="block block-inner">
-                <p class="subtitle"> Contact me</p>
-                <h2>Let's work together</h2>
-                <h3>Got a problem to solve?</h3>
+                <p class="subtitle">{{ data.subtitle | translate }}</p>
+                <h2>{{ data.title | translate }}</h2>
+                <h3>{{ data.descTitle | translate }}</h3>
                 <p>
-                    Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work.
+                    {{ data.description | translate }}
                 </p>
-                <p>Need a Frontend developer? <span>Let's talk!</span></p>
+                <p>{{ data.needADev | translate }} <span>{{ data.letsTalk | translate }}</span></p>
             </div>
         </div>
         <div class="block contact-form">

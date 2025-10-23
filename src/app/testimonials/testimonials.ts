@@ -1,17 +1,22 @@
-import { Component, AfterViewInit, OnInit } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
+
 import { NgxSplideModule } from 'ngx-splide';
 import { Splide } from '@splidejs/splide';
-import { testimonialsContent as slides } from './testimonials-data';
+
+import { TranslatePipe } from '../_pipes/translate.pipe';
+import { data, dataTestimonials as slides } from './testimonials.data';
+
 
 @Component({
   selector: 'app-testimonials',
-  imports: [NgxSplideModule],
+  imports: [NgxSplideModule, TranslatePipe],
   templateUrl: './testimonials.html',
   styleUrl: './testimonials.scss'
 })
 export class Testimonials implements AfterViewInit {
 // export class Testimonials implements OnInit {
 
+    data = data;
     slides = slides;
     private splide: Splide | undefined;
 

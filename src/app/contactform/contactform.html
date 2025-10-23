@@ -1,30 +1,30 @@
 <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" action="/submit-form" method="post">
     <div class="form-group">
-        <label for="contact_name">What's your name?</label>
+        <label for="contact_name">{{ dataLabel.name | translate }}</label>
         <input [(ngModel)]="contactData.name" #contactName="ngModel" type="text" id="contact_name" name="contact_name"
-            required minlength="3" maxlength="64" placeholder="Your name goes here"
+            required minlength="3" maxlength="64" placeholder="{{ dataPlaceholder.name | translate }}"
             [attr.aria-describedby]="!contactName.valid && contactName.touched ? 'name-error' : null">
         @if(!contactName.valid && contactName.touched) {
-        <div role="alert" id="name-error">Oops: it seems your name is missing</div>
+        <div role="alert" id="name-error">{{ dataError.name | translate }}</div>
         }
     </div>
     <div class="form-group">
-        <label for="email">What's your email?</label>
+        <label for="email">{{ dataLabel.email | translate }}</label>
         <input [(ngModel)]="contactData.email" #email="ngModel" type="email" id="email" name="email" required
             maxlength="64" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-            placeholder="your-email@domain.com"
+            placeholder="{{ dataPlaceholder.email | translate }}"
             [attr.aria-describedby]="!email.valid && email.touched ? 'email-error' : null">
         @if(!email.valid && email.touched) {
-        <div role="alert" id="email-error">Hoppla! your email is required</div>
+        <div role="alert" id="email-error">{{ dataError.email | translate }}</div>
         }
     </div>
     <div class="form-group">
-        <label for="message">How can I help you?</label>
+        <label for="message">{{ dataLabel.message | translate }}</label>
         <textarea (input)="autoResize($event.target)" [(ngModel)]="contactData.message" #message="ngModel" id="message"
-            name="message" required minlength="3" maxlength="512" placeholder="Hello François, I am interested in..."
+            name="message" required minlength="3" maxlength="512" placeholder="{{ dataPlaceholder.message | translate }}"
             rows="1" [attr.aria-describedby]="!message.valid && message.touched ? 'message-error' : null"></textarea>
         @if(!message.valid && message.touched) {
-        <div role="alert" id="message-error">What do you need to develop?</div>
+        <div role="alert" id="message-error">{{ dataError.message | translate }}</div>
         }
     </div>
     <div class="form-group submit-wrapper">

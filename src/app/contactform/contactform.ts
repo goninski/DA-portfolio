@@ -2,7 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+
 import { TranslatePipe } from '../_pipes/translate.pipe';
+import { dataLabel, dataPlaceholder, dataError } from './contactform.data';
 
 @Component({
   selector: 'app-contactform',
@@ -11,6 +13,9 @@ import { TranslatePipe } from '../_pipes/translate.pipe';
   styleUrl: './contactform.scss'
 })
 export class Contactform {
+  dataLabel = dataLabel;
+  dataPlaceholder = dataPlaceholder;
+  dataError = dataError;
 
   contactData =  {
     name: "",

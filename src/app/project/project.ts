@@ -1,14 +1,18 @@
 import { Component, input, output } from '@angular/core';
-import { ProjectInterface } from '../_interfaces/project.interface';
 import { LowerCasePipe } from '@angular/common';
+
+import { TranslatePipe } from '../_pipes/translate.pipe';
+import { ProjectInterface } from '../_interfaces/project.interface';
+import { data } from './project.data';
 
 @Component({
   selector: 'app-project',
-  imports: [LowerCasePipe],
+  imports: [LowerCasePipe, TranslatePipe],
   templateUrl: './project.html',
   styleUrl: './project.scss',
 })
 export class Project {
+  data = data;
   project = input.required<ProjectInterface>();
 
   isDialogueVisible = false;

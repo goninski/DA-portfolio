@@ -24,8 +24,8 @@
         <div class="block ct-block">
             <h1><span>{{ project().id }}</span>{{ project().title }}</h1>
             <div class="description flex-col">
-                <h3>What is the project about?</h3>
-                <p>{{ project().description }}</p>
+                <h3>{{ data.about | translate }}</h3>
+                <p>{{ project().description | translate }}</p>
             </div>
             <div class="tags flex-row">
                 @for (tag of project().tags; track tag) {
@@ -42,7 +42,7 @@
             <img src="{{ project().previewImgUrl }}" alt="screenshot project {{ project().title }}">
         </div>
 
-        <button class="next btn" (click)="showNext.emit()">Next project<img src="assets/icons/arrow-forward-primary.svg" alt="icon arrow-forward"></button>
+        <button class="next btn" (click)="showNext.emit()">{{ data.next | translate }}<img src="assets/icons/arrow-forward-primary.svg" alt="icon arrow-forward"></button>
 
     </div>
 

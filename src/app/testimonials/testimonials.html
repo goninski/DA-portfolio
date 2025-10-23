@@ -2,7 +2,7 @@
     <div class="container align-center fade-shadow-inline">
 
         <div class="title-wrapper flex-col">
-            <h2>What my colleagues say about&nbsp;me</h2>
+            <h2>{{ data.title | translate }}</h2>
             <img class="quote" src="assets/icons/quotes.svg" alt="big-start-quote">
         </div>
 
@@ -12,7 +12,7 @@
                     @for (slide of slides; track $index) {
                         <li class="splide__slide slide">
                             <div class="splide__slide__container slide-inner">
-                                <p class="content">{{ slide.content }}</p>
+                                <p class="content">{{ slide.content | translate }}</p>
                                 <div class="name-wrapper">
                                     <div class="line"></div>
                                     <p>{{ slide.author }}</p>

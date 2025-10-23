@@ -1,7 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { NgxSplideModule } from 'ngx-splide';
 import { Splide } from '@splidejs/splide';
-import { testimonialsContent as slides } from '../../testimonials/testimonials-data';
+import { dataTestimonials as slides } from '../../testimonials/testimonials.data';
 
 @Component({
   selector: 'app-splide-carousel',
