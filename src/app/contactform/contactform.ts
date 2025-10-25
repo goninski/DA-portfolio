@@ -5,7 +5,7 @@ import { RouterLink } from '@angular/router';
 
 import { TranslatePipe } from '../_pipes/translate.pipe';
 import { dataLabel, dataPlaceholder, dataError, dataGDPR } from './contactform.data';
-import { pathes } from '../_shared/footer/footer.data';
+import { langRoutes } from '../_shared/footer/footer.data';
 
 @Component({
   selector: 'app-contactform',
@@ -18,7 +18,7 @@ export class Contactform {
   dataPlaceholder = dataPlaceholder;
   dataError = dataError;
   dataGDPR = dataGDPR;
-  pathes = pathes;
+  langRoutes = langRoutes;
 
   contactData =  {
     name: "",

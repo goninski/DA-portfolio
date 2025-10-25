@@ -1,4 +1,4 @@
-export const pathes = {
+export const langRoutes = {
   legalNotice: {
     en: '/legal-notice',
     de: '/impressum',

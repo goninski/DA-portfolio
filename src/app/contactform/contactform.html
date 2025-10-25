@@ -34,7 +34,7 @@
                     class="hide-focus" required [attr.aria-describedby]="!gdpr.valid ? 'gdpr-error' : null">
                 <img src="assets/icons/checkbox.svg" alt="checkbox">
             </div>
-            <label for="gdpr"><span>{{ dataGDPR.label1 | translate }}<a routerLink="{{ pathes.legalNotice | translate }}" target="_blank"
+            <label for="gdpr"><span>{{ dataGDPR.label1 | translate }}<a routerLink="{{ langRoutes.legalNotice | translate }}" target="_blank"
                         title="{{ dataGDPR.linkTitle | translate }}"> {{ dataGDPR.linkText | translate }} </a></span>{{ dataGDPR.label2 | translate }}</label>
             @if(!gdpr.valid && gdpr.touched) {
             <div role="alert" class="alert-gdpr" id="gdpr-error">{{ dataGDPR.error | translate }}</div>

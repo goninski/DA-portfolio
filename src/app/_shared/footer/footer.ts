@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { TranslatePipe } from '../../_pipes/translate.pipe';
-import { data, pathes } from './footer.data';
+import { data, langRoutes } from './footer.data';
 
 @Component({
   selector: 'app-footer',
@@ -12,7 +12,7 @@ import { data, pathes } from './footer.data';
 })
 export class Footer {
   data = data;
-  pathes = pathes;
+  langRoutes = langRoutes;
   isUnderConstructionClosed = (window.location.hostname == 'localhost');
   year = new Date().getFullYear();
 

@@ -2,6 +2,8 @@ import { isPlatformBrowser } from '@angular/common';
 import { Injectable, PLATFORM_ID, effect, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { langRoutes } from '../_shared/footer/footer.data';
+
 export type Language = 'en' | 'de';
 
 @Injectable({
@@ -22,15 +24,18 @@ export class LanguageService {
       }
     }
 
-    // Automatically update the route when the language changes
+    /**
+     * Automatically update the route when language changes
+     */
     effect(() => {
       const currentLang = this.lang();
       const currentUrl = this.router.url;
-
-      if (currentLang === 'de' && currentUrl === '/legal-notice') {
-        this.router.navigate(['/impressum']);
-      } else if (currentLang === 'en' && currentUrl === '/impressum') {
-        this.router.navigate(['/legal-notice']);
+      
+      for (const pathGroup of Object.values(langRoutes)) {
+        if (Object.values(pathGroup).includes(currentUrl)) {
+          this.router.navigate([pathGroup[currentLang]]);
+          break;
+        }
       }
     });
   }
