@@ -40,6 +40,8 @@ ul {
     display: flex;
     flex-direction: column;
     padding: 0;
+}
+ul:not(.slider-container) {
     gap: 0.2em;
 }
 figure, form, .form-group {
