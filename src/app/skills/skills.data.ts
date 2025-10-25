@@ -1,4 +1,3 @@
-
 export const data =
 {
   title : {
@@ -14,8 +13,8 @@ export const data =
     de : 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
   },
   needAnotherSkill : {
-    en : 'You need <span>another Skill?</span>',
-    de : '<span>Weitere Skills</span> erwünscht?',
+    enHtml : 'You need <span>another Skill?</span>',
+    deHtml : '<span>Weitere Skills</span> erwünscht?',
   },
   contactMe : {
     en : 'Feel free to contact me. I look forward to expanding on my previous knowledge.',

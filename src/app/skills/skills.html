@@ -7,7 +7,7 @@
                 <div class="block block-inner">
                     <p>{{ data.description |translate }}</p>
                     <div>
-                        <h3>{{ data.needAnotherSkill | translate }}</h3>
+                        <h3 [innerHTML]="data.needAnotherSkill | translate: true"></h3>
                         <p>{{ data.contactMe | translate }}</p>
                     </div>
                     <a href="#contact" class="btn btn--outline">{{ data.letsTalk | translate }}</a>

@@ -5,8 +5,8 @@ export type Language = 'en' | 'de';
 @Injectable({
   providedIn: 'root',
 })
+
 export class LanguageService {
-  // Use a signal for reactive language state.
   lang = signal<Language>('en');
 
   toggleLang(): void {

@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 
 import { TranslatePipe } from '../_pipes/translate.pipe';
-import { data } from './skills.data';
-import { skills } from './skills.data';
-import { interested } from './skills.data';
+import { data, skills, interested } from './skills.data';
 
 @Component({
   selector: 'app-skills',
@@ -16,6 +14,5 @@ export class Skills {
   skills = skills;
   interested = interested;
   imgUrl: string = 'assets/img/fgonin-skills.png';
-
 
 }

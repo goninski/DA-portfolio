@@ -8,6 +8,11 @@ header {
         position: relative;
     }
 }
+figure {
+    img {
+        height: 60px;
+    }
+}
 nav {
     gap: 1.5rem;
     .links-wrapper {

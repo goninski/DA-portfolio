@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 
-import { data } from './legal-notice.data';
 import { TranslatePipe } from '../../_pipes/translate.pipe';
-
+import { data } from './legal-notice.data';
 
 @Component({
   selector: 'app-legal-notice',

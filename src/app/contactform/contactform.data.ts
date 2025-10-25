@@ -68,6 +68,18 @@ export const dataGDPR = {
     en : "privacy policy",
     de : "Datenschutzbestimmungen",
   },
+  link : {
+    en : "/legal-notice",
+    // de : "/impressum",
+  },
+  linkText : {
+    en : "pen the legal notice page",
+    de : "Seite mit den Datenschutzbestimmungen öffnen",
+  },
+  linkTitle : {
+    en : "open the legal notice page",
+    de : "Seite mit den Datenschutzbestimmungen öffnen",
+  },
   error : {
     en : "Please accept the privacy policy",
     de : "Bitte akzeptiere die Datenschutzbestimmungen",

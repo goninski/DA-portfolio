@@ -2,7 +2,9 @@
     <div class="container">
         <a class="back-btn" href="/" title="back"><img src="assets/icons/arrow-backward.svg" alt="arrow-back-icon"></a>
 
-        {{ data | translate}}
+        <div class="flex-col" [innerHTML]="data | translate: true">
+
+        </div>
 
         <!-- <h1>Legal Notice</h1>
 
