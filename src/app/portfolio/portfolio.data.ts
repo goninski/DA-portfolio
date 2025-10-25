@@ -7,7 +7,6 @@ export const data = {
   },
   subtitle : {
     en : 'Portfolio',
-    de : 'Portfolio',
   },
   description : {
     en : 'Explore a selection of my work here - Interact with projects to see my skills in action.',

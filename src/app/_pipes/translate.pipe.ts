@@ -12,6 +12,6 @@ export class TranslatePipe implements PipeTransform {
   lang = inject(LanguageService).lang;
 
   transform(value: Translatable | undefined): string {
-    return value?.[this.lang()] ?? '';
+    return value?.[this.lang()] ?? value?.['en'] ?? '';
   }
 }
