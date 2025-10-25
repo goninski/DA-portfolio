@@ -1,3 +1,10 @@
+export const pathes = {
+  legalNotice: {
+    en: '/legal-notice',
+    de: '/impressum',
+  },
+};
+
 export const data = {
   title: {
     en: 'Web Developer',

@@ -64,17 +64,9 @@ export const dataGDPR = {
     en : "and agree to the processing of my data as outlined",
     de : "und stimme der entsprechenden Datenbearbeitung zu",
   },
-  ppol : {
+  linkText : {
     en : "privacy policy",
     de : "Datenschutzbestimmungen",
-  },
-  link : {
-    en : "/legal-notice",
-    // de : "/impressum",
-  },
-  linkText : {
-    en : "pen the legal notice page",
-    de : "Seite mit den Datenschutzbestimmungen öffnen",
   },
   linkTitle : {
     en : "open the legal notice page",
