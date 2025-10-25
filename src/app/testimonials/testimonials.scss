@@ -2,7 +2,20 @@
 
 section {
     --ct-width: 1440px;
-}
+    --slide-width: 632px;
+    --slide-gap: 4vw;
+    @include m.mq(tabl-md) {
+        --slide-width: 60vw;
+    }
+    @include m.mq(mob) {
+        --slide-width: 80vw;
+        --slide-gap: 2vw;
+        padding-bottom: 24px;
+    }
+    @media(min-width: 1440px) {
+        --slide-gap: 64px;
+    }
+}    
 .container {
     overflow: hidden;
     position: relative;
@@ -15,26 +28,37 @@ section {
 }
 .title-wrapper {
     position: relative;
-    h2 {
-        font-size: 32px;
-        margin-bottom: 32px;
-        text-align: center;
-        line-height: 1.2;
-        letter-spacing: unset;
+    align-items: center;
+    width: 100%;
+}
+h2 {
+    font-size: 32px;
+    margin-bottom: 32px;
+    text-align: center;
+    line-height: 1.2;
+    letter-spacing: unset;
+    @include m.mq(mob) {
+        font-size: 24px;
     }
-    img {
+}
+.quote-wrapper {
+    // background-color: red;
+    align-items: start;
+    width: var(--slide-width);
+    margin-bottom: -60px;
+    .quote {
         display: block;
         height: 48px;
         width: auto;
-        position: absolute;
-        bottom: -72px;
-        left: -20px;
         z-index: 1;
-        @include m.mqMin(mob) {
+    }
+    @include m.mqMin(mob) {
+        margin-bottom: -72px;
+        .quote {
             height: 64px;
-            transform: translateX(-50%);
+            transform: translateX(-47%);
         }
-    };
+    }
 }
 .splide {
     padding-bottom: 90px;
@@ -44,9 +68,14 @@ section {
     display: flex;
     flex-direction: row;
     max-width: var(--ct-width);
-    // --slide-gap: 4vw;
     // gap: var(--slide-gap);
     gap: 0;
+    @include m.mq(tabl) {
+        min-height: 340px;
+    }
+    @include m.mq(mob-sm) {
+        min-height: 420px;
+    }
 }
 .slide {
     background-color: #222E2C;
@@ -56,14 +85,22 @@ section {
     min-height: 100%;
     padding: 48px 40px;
     margin-top: 20px;
-    --slide-width: 632px;
     width: var(--slide-width);
+    min-width: var(--slide-width);
     transition: margin 175ms, background-color 175ms;
+    @include m.mq(mob) {
+        justify-content: center;
+        .content {
+            margin-top: auto;
+            font-size: 18px;
+        }
+        .name-wrapper {
+            font-size: 18px;
+        }
+    }
 }
 .slide.is-active {
     background-color: var(--clr-primary-hover);
-    margin-top: 20px;
-    padding-bottom: 40px;
 }
 .slide:not(.is-active) {
     margin-block: 33px 13px;
@@ -108,6 +145,9 @@ section {
         transform: translateX(-50%);
         z-index: 1;
         padding-bottom: 3px;
+        @include m.mq(mob) {
+            // margin-top: 74px;
+        }
     }
     .splide__arrows {
         display: flex;
@@ -152,7 +192,7 @@ section {
         gap: 12px;
         /** fixes */
         position: relative;
-        display: flex;
+        display: flex !important;
         flex-direction: row;
         flex-wrap: nowrap;
         bottom: 4px;
@@ -169,34 +209,3 @@ section {
 }
 
 
-// @media(max-width: 1099px) {
-@include m.mq(tabl-md) {
-    .slide {
-        --slide-width: 60vw;
-        min-width: var(--slide-width);
-    }
-}
-@include m.mq(mob) {
-    h2 {
-        font-size: 24px;
-    }
-    .slider-container {
-        --slide-gap: 2vw;
-    }
-    .slide {
-        justify-content: center;
-        --slide-width: 80vw;
-        min-width: var(--slide-width);
-        .content {
-            margin-top: auto;
-        }
-    }
-    .slider-controls {
-        margin-top: 74px;
-    }
-}
-@media(min-width: 1440px) {
-    .slide-container {
-        --slide-gap: 64px;
-    }
-}

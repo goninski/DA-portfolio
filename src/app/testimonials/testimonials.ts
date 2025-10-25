@@ -1,20 +1,17 @@
 import { Component, AfterViewInit } from '@angular/core';
 
-import { NgxSplideModule } from 'ngx-splide';
 import { Splide } from '@splidejs/splide';
-
 import { TranslatePipe } from '../_pipes/translate.pipe';
 import { data, dataTestimonials as slides } from './testimonials.data';
 
-
 @Component({
   selector: 'app-testimonials',
-  imports: [NgxSplideModule, TranslatePipe],
+  imports: [TranslatePipe],
   templateUrl: './testimonials.html',
   styleUrl: './testimonials.scss'
 })
-export class Testimonials implements AfterViewInit {
 // export class Testimonials implements OnInit {
+export class Testimonials implements AfterViewInit {
 
     data = data;
     slides = slides;
@@ -26,7 +23,7 @@ export class Testimonials implements AfterViewInit {
             gap        : '64px',
             autoWidth  : true,
             type       : 'loop',
-            focus      : 'center',   // Ensures each slide is a focus point, creating a dot for each.
+            focus      : 'center',
             perMove    : 1,
             pagination : true,
             arrows     : true,
@@ -36,6 +33,9 @@ export class Testimonials implements AfterViewInit {
             breakpoints: {
                 1439: {
                     gap: '4vw'
+                },
+                719: {
+                    gap: '2vw'
                 },
             }
         }).mount();

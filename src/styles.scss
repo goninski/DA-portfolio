@@ -36,6 +36,7 @@
 
     @include m.mq(mob-sm) {
         --px-page: 16px;
+        --py-sec: 60px;
         --fs-text: 16px;
         --fs-text-lg: 20px;
         --fs-h2: 56px;
