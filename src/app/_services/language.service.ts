@@ -1,6 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Injectable, PLATFORM_ID, effect, inject, signal } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 
 import { langRoutes } from '../_shared/footer/footer.data';
 
@@ -25,6 +26,34 @@ export class LanguageService {
     }
 
     /**
+     * Check if the URL matches a localized route and update the language.
+     * (this allows direct navigation to a localized URL)
+     */
+    this.router.events
+      .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        const currentUrl = event.urlAfterRedirects;
+
+        for (const pathGroup of Object.values(langRoutes)) {
+          for (const [lang, path] of Object.entries(pathGroup)) {
+            if (path === currentUrl && this.lang() !== lang) {
+              this.lang.set(lang as Language);
+              return;
+            }
+          }
+        }
+      });
+
+    /**
+     * add language changes to localStorage automatically
+     */  
+    effect(() => {
+      if (isPlatformBrowser(this.platformId)) {
+        localStorage.setItem('lang', this.lang());
+      }
+    });
+
+    /**
      * Automatically update the route when language changes
      */
     effect(() => {
@@ -40,11 +69,12 @@ export class LanguageService {
     });
   }
 
+  /**
+   * Toggle language
+   */
   toggleLang(): void {
     this.lang.update((current) => (current === 'en' ? 'de' : 'en'));
-    if (isPlatformBrowser(this.platformId)) {
-      localStorage.setItem('lang', this.lang());
-    }
   }
+
   
 }
