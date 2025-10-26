@@ -100,7 +100,7 @@ h3 {
 h3 span {
     color: white;
 }
-ul {
+ul:not(.skip-gap) {
     gap: 16px;
 }
 li {

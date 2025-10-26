@@ -12,8 +12,8 @@ export const data = {
     de : "Gibt's ein Problem zu lösen?",
   },
   description : {
-    en : "Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work.",
-    de : "deutsch...",
+    en : "Maybe I can help you with my love for cool projects.",
+    de : "Möglicherweise kann ich dir mit meiner Freude an coolen Projekten weiterhelfen.",
   },
   needADev : {
     en : "Need a Frontend developer?",

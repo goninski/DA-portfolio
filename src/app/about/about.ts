@@ -11,7 +11,4 @@ import { data } from './about.data';
 })
 export class About {
   data = data;
-  // imgUrl: string = 'assets/img/fgonin-about.png';
-  imgUrl: string = 'assets/img/fgonin-about-03.webp';
-
 }

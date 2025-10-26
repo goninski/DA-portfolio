@@ -46,10 +46,5 @@ export class Testimonials implements AfterViewInit {
 
         this.splide = splide.mount();
 
-        // if ( splide.state.is( Splide.STATES.IDLE ) ) {
-        //     const currentPosition = splide.Components.Move.getPosition();
-        //     splide.go(currentPosition + 64);
-        // }        
-
     }
 }

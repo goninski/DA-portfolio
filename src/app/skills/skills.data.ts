@@ -9,16 +9,16 @@ export const data =
     de : 'Technologien',
   },
   description : {
-    en : 'A short introduction of your skills. Highlight your experience of using different front-end technologies and emphasise your openness to learning and adapting to new technologies. Show how important it is for you to keep up with the rapid changes in web development.',
-    de : 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
+    en : "The technology icons tell you what I've used in projects so far. I started my developer journey thanks to Wordpress. That's why I'm particularly familiar with it. But in general I can't wait to expand my skillset and for my next project I intend to use Laravel and Svelte.",
+    de : 'Die Technologie-Icons verraten, womit ich in Projekten bisher gearbeitet habe. Mit Wordpress bin ich besonders vertraut. Wordpress ist es auch zu verdanken, dass ich den Weg als Webentwickler gestartet bin. Ich kann es aber kaum erwarten, meine Skills zu erweitern und so plane ich, mein nächstes Projekt mit Laravel und Svelte umzusetzen.',
   },
   needAnotherSkill : {
     enHtml : 'You need <span>another Skill?</span>',
     deHtml : '<span>Weitere Skills</span> erwünscht?',
   },
   contactMe : {
-    en : 'Feel free to contact me. I look forward to expanding on my previous knowledge.',
-    de : 'Kontaktiere mich unverbindlich. Ich freue mich, mein Skillset zu erweitern.',
+    en : "Feel free to contact me. I'm interested in virtually all technologies.",
+    de : 'Mich interessieren praktisch alle Technologien. Kontaktiere mich unverbindlich.',
   },
   letsTalk : {
     en : "Let's Talk",
@@ -38,16 +38,17 @@ export const skills:string[] =
   'TypeScript',
   'Angular',
   'Firebase',
-  'PHP',
-  'Laravel',
+  // 'Laravel',
   'Wordpress',
+  'PHP',
   'Git',
   'REST-API',
-  // 'Material Design',
+  'Material Design',
 ];
 
 export const interested:string [] =
 [
+  'Laravel',
   'Svelte',
-  'Vue.js',
+  'React',
 ];

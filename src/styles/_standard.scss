@@ -41,7 +41,7 @@ ul {
     flex-direction: column;
     padding: 0;
 }
-ul:not(.slider-container) {
+:where(ul:not(.skip-gap)) {
     gap: 0.2em;
 }
 figure, form, .form-group {

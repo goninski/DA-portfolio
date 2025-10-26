@@ -1,4 +1,5 @@
 export const data = {
+  imgUrl : 'assets/img/fgonin-about-04.webp',
   title : {
     en : 'About me',
     de : 'Über mich',
@@ -8,20 +9,20 @@ export const data = {
     de : 'Wer ich bin',
   },
   description : {
-    en : 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis itaque deleniti eligendi ipsum, molestiae aut omnis quaerat magnam fugit odio iste minima sed tenetur dignissimos ea dolore pariatur numquam voluptatem!',
-    de : 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
+    en : "Software has always fascinated me. However, as a power user I am it also regularly frustrates me because hardly any software meets my expectations. There's so much more to it, and nothing brings more motivation to me than tapping into its potential and creating user-friendly software.",
+    de : 'Software fasziniert mich seit jeher. Als Power User frustriert sie mich aber auch regelmässig, da kaum eine Software meinen Vorstellungen entspricht. Da liegt soviel mehr drin und nichts motiviert mich mehr, als dieses Potential auszuschöpfen und Anwendergerechte Software zu kreieren.',
   },
   located : {
-    en : 'Located in Zurich, Switzerland',
-    de : 'Ich lebe in Zürich, Schweiz',
+    en : "I'm located near the city of Zurich in beautiful Switzerland. Remote Work is welcome.",
+    de : 'Ich lebe in der Nähe der Stadt Zürich in der schönen Schweiz. Remote Work ist willkommen.',
   },
   mind : {
-    en : 'visionary, dedicated, open minded',
-    de : 'visionär, hingebungsvoll, offener Geist',
+    en : 'As a visionary, open-minded free spirit, I love to fully dedicate myself to a promising cause.',
+    de : 'Als visionärer, offener Freigeist liebe ich es, mich einer verheissungsvollen Sache so richtig zu verschreiben.',
   },
   problemSolving : {
-    en : 'A brief description of your problem-solving approach. Do you learn from each challenge as you search for the most efficient or elegant solution? You can include some keywords like: analytical thinking, creativity, persistence and collaboration.',
-    de : 'eine kurze Beschreibung meiner Lösungstechnik (Ansatz für Problemlösungen).',
+    en : 'I always strive to solve things with clarity and foresight, but I am also not afraid to explore unconventional approaches.',
+    de : 'Ich bin immer bestrebt, Dinge mit Klarheit und Weitsicht zu lösen, scheue mich aber auch nicht, unkonventionelle Lösungsansätze zu erforschen.',
   },
 
 }

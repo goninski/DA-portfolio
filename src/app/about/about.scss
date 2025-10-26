@@ -2,7 +2,6 @@
 
 .container {
     min-height: 708px;
-    // background-color: red;
     .media-block {
         @include m.mq(tabl) {
             max-width: 370px;
@@ -10,7 +9,7 @@
     }
     .media-wrapper {
         position: relative;
-        @include m.mq(tabl, $t:min) {
+        @include m.mqMin(tabl) {
             left: 28px;
         }
         img {
@@ -24,7 +23,7 @@
             z-index: -1;
             bottom: -12px;
             left: -12px;
-            @include m.mq(tabl, $t:min) {
+            @include m.mqMin(tabl) {
                 bottom: -30px;
                 left: -46px;
             }
