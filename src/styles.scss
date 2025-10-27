@@ -100,7 +100,7 @@ h3 {
 h3 span {
     color: white;
 }
-ul:not(.skip-gap) {
+:where(ul:not(.skip-gap, .ul-classic)) {
     gap: 16px;
 }
 li {

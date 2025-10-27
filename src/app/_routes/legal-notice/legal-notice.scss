@@ -28,6 +28,10 @@ section {
             color: var(--clr-base);
         }
     }
+    h2 {
+        font-size: 32px;
+        margin-bottom: 16px;
+    }
 
     .rich-text {
         --fs-text: 19px;
@@ -38,8 +42,15 @@ section {
             font-size: var(--fs-text);
             color: var(--clr-base);
             margin-top: 24px;
-            margin-bottom: 0.05em;
+            margin-bottom: 0.1em;
             font-weight: 700
+        }
+        h4 {
+            font-family: var(--ff-primary);
+            color: var(--clr-base);
+            margin-top: 0.66em;
+            margin-bottom: 0.33em;
+            font-weight: 400;
         }
         p {
             margin-bottom: 0.75em;
@@ -50,6 +61,12 @@ section {
         a:hover {
             text-decoration: underline;
             color: var(--clr-base)
+        }
+    }
+    #privacy-policy {
+        margin-top: 48px;
+        h3 {
+            margin-top: 32px;            
         }
     }
 

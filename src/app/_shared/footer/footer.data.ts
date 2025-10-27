@@ -1,7 +1,7 @@
 export const langRoutes = {
   legalNotice: {
     en: '/legal-notice',
-    de: '/impressum',
+    de: '/rechtliches',
   },
 };
 
@@ -16,6 +16,6 @@ export const data = {
   },
   legalNotice: {
     en: 'Legal Notice',
-    de: 'Impressum',
+    de: 'Rechtliches',
   }
 };

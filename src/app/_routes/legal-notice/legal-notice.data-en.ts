@@ -1,54 +1,110 @@
 export const htmlEn =
     `
-    <h1>Legal Notice</h1>
+    <h1>Rechtliches</h1>
 
-    <h3>Imprint</h3>
+
+   <div id="impressum">
+    <h2>Impressum</h2>
+
+    <h3>Verantwortlich</h3>
+    <p>
+        François Gonin<br>
+        Rütiwisstrasse&nbsp;2, 8604&nbsp;Volketswil<br>
+        Schweiz
+    </p>
+    <p>Email: <a href="mailto:info@francois-gonin.dev" class="clr-inherit">info@francois-gonin.dev</a></p>
+
+
+    <h3>Urheberrechtserklärung</h3>
+    <p>
+        Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf dieser Website, gehören ausschliesslich François Gonin oder den speziell genannten Rechteinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung des Urheberrechtsträgers im Voraus einzuholen.
+    </p>
+
+
+    <h3>Umfang und Eigentum des Produkts</h3>
+    <p>
+        <span class="mark">Portfolio</span> wurde im Rahmen eines Projekts des Frontend-Entwickler-Bootcamps der <a href="https://developerakademie.com/" target="_blank">Developer Akademie GmbH</a> entwickelt.
+        Das Design von <span class="mark">Portfolio</span> ist Eigentum von <a href="https://developerakademie.com/" target="_blank">Developer Akademie GmbH</a>. Die unbefugte Verwendung, Reproduktion, Änderung, Verbreitung oder Vervielfältigung des Designs ist strengstens untersagt.
+    </p>
+
+
+    <h3>Haftungsausschluss</h3>
+    <p>
+        Der Autor übernimmt keine Gewähr für die Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit der Informationen. Haftungsansprüche gegen den Autor wegen Schäden materieller oder immaterieller Art, die aus dem Zugriff oder der Nutzung bzw. Nichtnutzung der veröffentlichten Informationen, durch Missbrauch der Verbindung oder durch technische Störungen entstanden sind, werden ausgeschlossen.
+    </p>
+    <p>
+        Alle Angebote sind freibleibend. Der Autor behält es sich ausdrücklich vor, Teile der Seiten oder das gesamte Angebot ohne gesonderte Ankündigung zu verändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen.
+    </p>
+
+   </div>
+
+
+
+   <div id="privacy-policy">
+   
+   <h2>Datenschutzerklärung</h2>
+
+    <h3>1. Verantwortliche Stelle</h3>
+    <p>
+        François Gonin<br>
+        Rütiwisstrasse&nbsp;2, 8604&nbsp;Volketswil<br>
+        Email: <a href="mailto:info@goninski.dev.dev" class="clr-inherit">info@goninski.dev</a>
+    </p>
+
+    <h3>2. Datenerfassung auf dieser Website</h3>
+    <h4>2a) Server-Logfiles</h4>
+    <p>
+        Der Provider der Seiten erhebt und speichert automatisch Informationen in sogenannten Server-Logfiles, die Ihr Browser automatisch an uns übermittelt. Dies sind:
+    </p>
     <ul>
-        <li>François Gonin</li>
-        <li>8604 Volketswil, Switzerland</li>
+        <li>IP-Adresse</li> 
+        <li>Datum und Uhrzeit der Anfrage</li>
+        <li>Hostname des zugreifenden Rechners</li>
+        <li>Browsertyp und Browserversion</li>
+        <li>verwendetes Betriebssystem</li>
+        <li>Referrer URL (die zuvor besuchte Seite)</li>
+    </ul>
+    <p>
+        Diese Daten sind technisch notwendig, um Ihnen unsere Website anzuzeigen, und dienen der Gewährleistung der Sicherheit und Stabilität des Systems. Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Rechtsgrundlage für die Verarbeitung ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der sicheren Darstellung der Website).
+    </p>
+
+    <h4>2b) Kontaktformular</h4>
+    <p>
+        Wenn Du mir über das Kontaktformular Anfragen zukommen lässt, werden deine Angaben aus dem Anfrageformular inklusive der von dir dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne deine Einwilligung weiter.
+    </p>
+    <ul>
+        <li>
+            <strong>Welche Daten werden erhoben?</strong> Name, E-Mail-Adresse und der Text deiner Nachricht.
+        </li>
+        <li>
+            <strong>Zweck der Verarbeitung:</strong> Die Verarbeitung dieser Daten erfolgt ausschließlich zum Zweck der Beantwortung deiner Anfrage.
+        </li>
+        <li>
+            <strong>Rechtsgrundlage:</strong> Die Verarbeitung dieser Daten beruht auf deiner Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) und/oder der Erfüllung eines Vertrags oder vorvertraglicher Maßnahmen (Art. 6 Abs. 1 lit. b DSGVO). Du kannst deine Einwilligung jederzeit widerrufen.
+        </li>
+        <li>
+            <strong>Speicherdauer:</strong> Die von dir im Kontaktformular eingegebenen Daten verbleiben bei uns, bis du uns zur Löschung aufforderst, deine Einwilligung widerrufst oder der Zweck für die Datenspeicherung entfällt (z.B. nach abgeschlossener Bearbeitung deiner Anfrage). Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt.
+        </li>
     </ul>
 
-    <h3>Exploring the Board</h3>
-    <p>Email: <a href="mailto:mail@francois-gonin.dev" class="clr-inherit">mail@francois-gonin.dev</a></p>
 
-    <h3>Acceptance of terms</h3>
+    <h3>3. Keine Cookies</h3>
     <p>
-        By accessing and using <span class="mark">Portfolio</span> (Product), you acknowledge and agree to the following terms and conditions, and any policies, guidelines, or amendments thereto that may be presented to you from time to time. I may update or change the terms and conditions from time to time without notice.
+        Diese Website verwendet keine Cookies, die eine Speicherung von Daten auf dem Endgerät des Nutzers erforderlich machen würden.
     </p>
 
-    <h3>Scope and ownership of the product</h3>
+
+    <h3>4. Deine Rechte</h3>
     <p>
-        <span class="mark">Portfolio</span> has been developed as part of a project in a web development bootcamp at the <a href="https://developerakademie.com/" target="_blank">Developer Akademie GmbH</a>. It has an educational purpose and is not intended for extensive personal & business usage. As such, I cannot guarantee consistent availability, reliability, accuracy, or any other aspect of quality regarding this Product.
-    </p>
-    <p>
-        The design of <span class="mark">Portfolio</span> is owned by the <a href="https://developerakademie.com/" target="_blank">Developer Akademie GmbH</a>. Unauthorized use, reproduction, modification, distribution, or replication of the design is strictly prohibited.
+        Du hast das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16 DSGVO), Löschung (Art. 17 DSGVO), Einschränkung der Verarbeitung (Art. 18 DSGVO), Datenübertragbarkeit (Art. 20 DSGVO) und Widerspruch (Art. 21 DSGVO). Wende dich hierzu bitte an die oben genannte verantwortliche Stelle. Des Weiteren steht dir ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.
     </p>
 
-    <h3>Proprietary rights</h3>
+
+    <h3>5. Stand</h3>
     <p>
-        Aside from the design owned by <a href="https://developerakademie.com/" target="_blank">Developer Akademie GmbH</a>, I retain all proprietary rights in <span class="mark">Portfolio</span>, including any associated copyrighted material, trademarks, and other proprietary information.
+        27. Oktober 2025
     </p>
 
-    <h3>Use of the product</h3>
-    <p>
-        <span class="mark">Portfolio</span> is intended to be used for lawful purposes only, in accordance with all applicable laws and regulations. Any use of Portfolio for illegal activities, or to harass, harm, threaten, or intimidate another person, is strictly prohibited. You are solely responsible for your interactions with other users of <span class="mark">Portfolio</span>.
-    </p>
+   </div>
 
-    <h3>Disclaimer of warranties and limitation of liability</h3>
-    <p>
-        <span class="mark">Portfolio</span> is provided "as is" without warranty of any kind, whether express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, and non-infringement. In no event will I or the <a href="https://developerakademie.com/" target="_blank">Developer Akademie</a>, be liable for any direct, indirect, incidental, special, consequential or exemplary damages, including but not limited to, damages for loss of profits, goodwill, use, data, or other intangible losses, even if we have been advised of the possibility of such damages, arising out of or in connection with the use or performance of <span class="mark">Portfolio</span>.
-    </p>
-
-    <h3>Indemnity</h3>
-    <p>
-        You agree to indemnify, defend and hold harmless me, the <a href="https://developerakademie.com/" target="_blank">Developer Akademie</a> and our affiliates, partners, officers, directors, agents, and employees, from and against any claim, demand, loss, damage, cost, or liability (including reasonable legal fees) arising out of or relating to your use of <span class="mark">Portfolio</span> and/or your breach of this Legal Notice.
-    </p>
-    <p>
-        For any questions or notices, please contact me
-        <a href="mailto:mail@francois-gonin.dev" class="clr-inherit">mail@francois-gonin.dev</a>
-    </p>
-    <p>
-        Date: October 23, 2025
-    </p>
-  `;
-
+    `;
