@@ -4,7 +4,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
 import { TranslatePipe } from '../_pipes/translate.pipe';
-import { dataLabel, dataPlaceholder, dataError, dataGDPR } from './contactform.data';
+import { dataLabel, dataPlaceholder, dataError, dataGDPR, dataSubmit } from './contactform.data';
 import { langRoutes } from '../_shared/footer/footer.data';
 
 @Component({
@@ -18,6 +18,7 @@ export class Contactform {
   dataPlaceholder = dataPlaceholder;
   dataError = dataError;
   dataGDPR = dataGDPR;
+  dataSubmit = dataSubmit
   langRoutes = langRoutes;
 
   contactData =  {
@@ -44,6 +45,7 @@ export class Contactform {
 
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+      this.isSubmitted = 2;
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
@@ -59,8 +61,11 @@ export class Contactform {
           },
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+      this.isSubmitted = 2;
+      setTimeout(() => {
         this.isSubmitted = 1;
         ngForm.resetForm();
+      }, 1000);
     }
   }
 

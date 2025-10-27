@@ -25,6 +25,11 @@ section {
     flex-grow: 1;
     transform: translateY(-56px);
     padding-block: var(--py-sec);
+    @include m.mq(mob) {
+        @media(max-height: 799px) {
+            padding-top: 190px;
+        }
+    }
 }
 h1 {
     text-align: center;

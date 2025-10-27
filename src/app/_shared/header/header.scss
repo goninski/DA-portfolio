@@ -8,9 +8,9 @@ header {
         position: relative;
     }
 }
-figure {
+.logo-wrapper {
     img {
-        height: 60px;
+        height: 72px;
     }
 }
 nav {
@@ -62,12 +62,17 @@ nav {
 
 
 @include m.mq(mob) {
-    figure {
+header {
+    padding-block: 12px;
+}
+    .logo-wrapper {
         order: -1;
         .desktop {
             display: none;
         }
-    
+        img {
+            // height: 80px;
+        }
     }
     nav {
         display: none;
@@ -86,7 +91,7 @@ nav {
         padding-inline: 77px;
         flex-direction: column;
         right: 0;
-        top: 50px;
+        top: 70px;
         font-size: 18px;
         gap: 2px;
         .links-wrapper {
@@ -102,8 +107,8 @@ nav {
     }
 }
 
-@include m.mq(mob, $t:min) {
-    figure .mob {
+@include m.mqMin(mob) {
+    .logo-wrapper .mob {
         display: none;
     }
     .hamburger {

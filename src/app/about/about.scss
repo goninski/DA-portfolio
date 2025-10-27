@@ -16,11 +16,11 @@
             border-radius: var(--box-radius);
         }
         .img {
+            position: relative;
             background-color: var(--clr-primary);
         }
         .decor {
             position: absolute;
-            z-index: -1;
             bottom: -12px;
             left: -12px;
             @include m.mqMin(tabl) {

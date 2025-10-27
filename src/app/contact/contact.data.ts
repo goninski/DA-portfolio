@@ -12,8 +12,8 @@ export const data = {
     de : "Gibt's ein Problem zu lösen?",
   },
   description : {
-    en : "Maybe I can help you with my love for cool projects.",
-    de : "Möglicherweise kann ich dir mit meiner Freude an coolen Projekten weiterhelfen.",
+    en : "Let's check how I can help you.",
+    de : "Lass uns checken, wie ich dir helfen kann.",
   },
   needADev : {
     en : "Need a Frontend developer?",

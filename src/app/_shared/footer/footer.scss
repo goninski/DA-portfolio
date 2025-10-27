@@ -7,10 +7,10 @@ footer {
 .container {
     gap: 2rem;
 }
-figure {
+.logo-wrapper {
     gap: 1.25rem;
     img {
-        height: 60px;
+        height: 72px;
     }
     figcaption {
         line-height: 1.8;
@@ -28,8 +28,9 @@ figure {
 nav.links-wrapper {
     align-self: end;
     gap: 8px;
+    padding-bottom: 4px;
     @media(max-width: 719px) {
-        align-self: start;
+        // align-self: center;
     }
 }
 

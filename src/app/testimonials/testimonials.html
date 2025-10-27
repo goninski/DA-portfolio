@@ -1,8 +1,8 @@
-<section class="">
+<section  id="testimonials">
     <div class="container align-center fade-shadow-inline">
 
         <div class="title-wrapper flex-col flex-grow">
-            <h2>{{ data.title | translate }}</h2>
+            <h2 [innerHTML]="data.title | translate"></h2>
             <div class="quote-wrapper flex-col">
                 <img class="quote" src="assets/icons/quotes.svg" alt="big-start-quote">
             </div>
@@ -10,6 +10,7 @@
         </div>
 
         <div class="splide">
+
             <div class="splide__track">
                 <ul class="splide__list slider-container skip-gap">
                     @for (slide of slides; track $index) {

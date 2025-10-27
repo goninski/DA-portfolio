@@ -1,5 +1,5 @@
 export const data = {
-  imgUrl : 'assets/img/fgonin-about-04.webp',
+  imgUrl : 'assets/img/fgonin-about.webp',
   title : {
     en : 'About me',
     de : 'Über mich',

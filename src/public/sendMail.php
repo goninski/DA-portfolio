@@ -27,15 +27,16 @@ switch ($_SERVER['REQUEST_METHOD']) {
         $json = file_get_contents('php://input');
         $params = json_decode($json);
 
-        $subject = "New form request from <$params->email>";
-        $message = 'You got a new form request on francois-gonin.dev' . ' <br>' . 'from:' . $params->name . ' <br>' . $params->message ;
+        $name = htmlspecialchars($params->name);
+        $email = htmlspecialchars($params->email);
+        $messageBody = nl2br(htmlspecialchars($params->message));
 
-        $headers   = array();
-        $headers[] = 'MIME-Version: 1.0';
-        $headers[] = 'Content-type: text/html;
-        charset=utf-8';
-        $headers[] = 'From: ' . MailConfig::EMAIL_FROM_ADDR;
-
+        $subject = "New form request from $name";
+        $message = "You got a new form request on francois-gonin.dev from:<br><br>" .
+                   "<b>Name: </b>$name<br>" .
+                   "<b>Email: </b>$email<br>" .
+                   "<b>Message: </b><br>$messageBody";
+        
         sendEmail($subject, $message);
         break;
 
@@ -64,6 +65,7 @@ function sendEmail($subject, $message) {
     try {
         // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
         $mail->isSMTP();
+        $mail->CharSet = 'UTF-8';
         $mail->Host = MailConfig::SMTP_HOST;
         $mail->SMTPAuth = MailConfig::SMTP_AUTH;
         $mail->Port = MailConfig::SMTP_PORT;
@@ -75,6 +77,7 @@ function sendEmail($subject, $message) {
         $mail->Username = MailConfig::SMTP_USER;
         $mail->Password = MailConfig::SMTP_PASSWORD;
 
+        $mail->isHTML(true);
         $mail->setFrom(MailConfig::EMAIL_FROM_ADDR, MailConfig::EMAIL_FROM_NAME);
         $mail->addAddress(MailConfig::EMAIL_TO_ADDR);
         $mail->Subject = $subject;
@@ -91,4 +94,3 @@ function sendEmail($subject, $message) {
     }
 
 }
-

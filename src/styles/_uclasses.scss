@@ -114,8 +114,16 @@
     }
 }
 @include m.mq(mob-sm) {
+    .flex-row:where(.stack--mob-sm, .wrap--mob-sm) {
+        flex-wrap: wrap;
+        gap: 32px;
+    }
+    .flex-row:where(.stack--mob-sm) {
+        > * {
+            flex-basis: 100%;
+        }
+    }
 }
-
 @include m.mq(mob-xs) {
     .flex-row:where(.stack--mob-xs, .wrap--mob-xs) {
         flex-wrap: wrap;

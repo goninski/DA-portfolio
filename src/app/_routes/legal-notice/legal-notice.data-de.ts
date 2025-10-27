@@ -1,4 +1,4 @@
-export const htmlDe =
+export const de =
     `
     <h1>Rechtliches</h1>
 
@@ -12,7 +12,7 @@ export const htmlDe =
         Rütiwisstrasse&nbsp;2, 8604&nbsp;Volketswil<br>
         Schweiz
     </p>
-    <p>Email: <a href="mailto:info@francois-gonin.dev" class="clr-inherit">info@francois-gonin.dev</a></p>
+    <p>Email: <a href="mailto:info&#64;goninski.dev" class="clr-inherit">info[at]goninski.dev</a></p>
 
 
     <h3>Urheberrechtserklärung</h3>
@@ -21,7 +21,7 @@ export const htmlDe =
     </p>
 
 
-    <h3>Umfang und Eigentum des Produkts</h3>
+    <h3>Umfang und Eigentum</h3>
     <p>
         <span class="mark">Portfolio</span> wurde im Rahmen eines Projekts des Frontend-Entwickler-Bootcamps der <a href="https://developerakademie.com/" target="_blank">Developer Akademie GmbH</a> entwickelt.
         Das Design von <span class="mark">Portfolio</span> ist Eigentum von <a href="https://developerakademie.com/" target="_blank">Developer Akademie GmbH</a>. Die unbefugte Verwendung, Reproduktion, Änderung, Verbreitung oder Vervielfältigung des Designs ist strengstens untersagt.
@@ -48,7 +48,7 @@ export const htmlDe =
     <p>
         François Gonin<br>
         Rütiwisstrasse&nbsp;2, 8604&nbsp;Volketswil<br>
-        Email: <a href="mailto:info@goninski.dev.dev" class="clr-inherit">info@goninski.dev</a>
+        Email: <a href="mailto:info&#64;goninski.dev" class="clr-inherit">info[at]goninski.dev</a>
     </p>
 
     <h3>2. Datenerfassung auf dieser Website</h3>

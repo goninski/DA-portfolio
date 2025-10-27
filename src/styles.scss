@@ -45,7 +45,7 @@
     @include m.mq(mob-xs) {
         --fs-h2: 48px;
     }
-    @include m.mq(ct, $t:min) {
+    @include m.mqMin(ct) {
         --block-gap: 4rem;
     }
 }

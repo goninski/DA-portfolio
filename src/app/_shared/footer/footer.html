@@ -1,6 +1,6 @@
 <footer class="section">
     <div class="container flex-row justify-between align-center wrap--mob">
-        <figure class="flex-col flex-grow">
+        <figure class="flex-col flex-grow logo-wrapper">
             <a routerLink="/"><img class="mr-auto" src="assets/img/logo.webp" alt="logo-francois-gonin"></a>
             <figcaption>{{ data.title | translate }}<br>{{ data.location | translate }}</figcaption>
         </figure>
@@ -8,13 +8,13 @@
         <nav class="links-wrapper flex-col">
             <a class="nav-link" href="https://github.com/goninski" target="_blank">GitHub</a>
             <a class="nav-link" href="https://www.linkedin.com/in/francois-gonin" target="_blank">LinkedIn</a>
-            <a class="nav-link" href="mailto:mail@goninski.dev" target="_blank">Email</a>
+            <a class="nav-link" href="mailto:contact&#64;goninski.dev" target="_blank">Email</a>
             <a class="nav-link" routerLink="{{ langRoutes.legalNotice | translate }}">{{ data.legalNotice | translate }}</a>
         </nav>
     </div>
 </footer>
 
-<div class="under-construction flex center text-align-center" [class.closed]="isUnderConstructionClosed">
+<!-- <div class="under-construction flex center text-align-center" [class.closed]="isUnderConstructionClosed">
     <div>This site is under construction !</div>
     <button (click)="closeUnderConstruction()"><img src="assets/icons/close.svg" alt="close-icon"></button>
-</div>
+</div> -->

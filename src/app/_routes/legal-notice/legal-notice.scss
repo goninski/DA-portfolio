@@ -31,6 +31,10 @@ section {
     h2 {
         font-size: 32px;
         margin-bottom: 16px;
+        @include m.mq(mob-sm) {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
     }
 
     .rich-text {

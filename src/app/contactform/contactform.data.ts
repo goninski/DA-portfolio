@@ -78,3 +78,17 @@ export const dataGDPR = {
   },
 }
 
+export const dataSubmit = {
+  sending : {
+    en : "sending...",
+    de : "wird gesendet...",
+  },
+  error : {
+    en : "Message could not be sent !",
+    de : "Nachricht konnte nicht gesandt werden!",
+  },
+  success : {
+    en : "Thanks for your request. I'll get in Touch with you asap.",
+    de : "Vielen Dank für deine Nachricht. Ich kontaktiere dich raschmöglichst.",
+  },
+}

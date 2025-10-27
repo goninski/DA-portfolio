@@ -1,7 +1,9 @@
 @use 'mixins' as m;
 
 section {
-    padding-top: calc((var(--py-sec) + 32px));
+    @include m.mqMin(mob-xs) {
+        padding-top: calc((var(--py-sec) + 32px));
+    }
 }
 .container {
     .ct-block {

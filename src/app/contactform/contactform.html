@@ -44,13 +44,18 @@
     </div>
 </form>
 
+@if(isSubmitted == 2) {
+    <div class="submit-feedback flex-col center text-align-center">
+        {{ dataSubmit.sending | translate }}
+    </div>
+}
 @if(isSubmitted && !contactForm.dirty) {
     <div class="submit-feedback flex-col center text-align-center">
-        {{ dataError.submitSuccess | translate }}
+        {{ dataSubmit.success | translate }}
     </div>
 }
 @if(isSubmitted == 9) {
     <div class="submit-feedback error flex-col center text-align-center">
-        {{ dataError.submit | translate }}        
+        {{ dataSubmit.error | translate }}        
     </div>
 }
