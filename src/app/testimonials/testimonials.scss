@@ -4,29 +4,31 @@ section {
     --ct-width: 1440px;
     --slide-width: 632px;
     --slide-gap: 4vw;
-    --slider-bottom-space: 140px;
-    --slider-height: calc(274px + var(--slider-bottom-space));
+    --slider-height: 400px;
     @include m.mq(tabl-md) {
-        --slider-bottom-space: 160px;
+        --slider-height: 440px;
         --slide-width: 60vw;
     }
     @include m.mq(tabl) {
-        --slider-height: calc(340px + var(--slider-bottom-space));
+        --slider-height: 475px;
     }
     @include m.mq(mob) {
         --slide-width: 80vw;
         --slide-gap: 2vw;
-        --slider-bottom-space: 90px;
+        --slider-height: 450px;
         padding-bottom: 24px;
     }
     @include m.mq(mob-sm) {
-        --slider-height: calc(420px + var(--slider-bottom-space));
+        --slider-height: 500px;
     }
     @media(max-width: 450px) {
-        --slider-height: calc(440px + var(--slider-bottom-space));
+        --slider-height: 540px;
     }
-    @media(max-width: 340px) {
-        // --slider-height: calc(500px + var(--slider-bottom-space));
+    @include m.mq(mob-xs) {
+        // --slider-height: 475px;
+    }
+    @media(max-width: 350px) {
+        --slider-height: 540px;
     }
     @media(min-width: 1440px) {
         --slide-gap: 64px;

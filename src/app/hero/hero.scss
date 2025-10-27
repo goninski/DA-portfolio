@@ -24,13 +24,9 @@ section {
 .container {
     flex-grow: 1;
     padding-block: var(--py-sec);
-    @media(min-height: 800px) {
-        transform: translateY(-56px);
-    }
-    @include m.mq(mob) {
-        @media(max-height: 799px) {
-            padding-top: 190px;
-        }
+    transform: translateY(-56px);
+    @media(max-height: 799px) {
+        padding-top: 190px;
     }
 }
 h1 {

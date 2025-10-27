@@ -1,7 +1,7 @@
 <header class="section">
     <div class="container flex-row justify-between align-center ct-gap">
 
-        <nav id="header-nav" class="flex-row align-center" [class.visible]="isNavVisible">
+        <nav #navMenu id="header-nav" class="flex-row align-center" [class.visible]="isNavVisible()">
             <div class="switch flex-col">
                 <input id="lang-switch" type="checkbox" name="lang" [checked]="isLangDe()" (change)="onLangSwitchChange()">
                 <label for="lang-switch" class="flex-row align-center">
@@ -10,17 +10,17 @@
                 </label>
             </div>
             <div class="links-wrapper flex-row">
-                <a class="nav-link" href="#about">{{ data.aboutMe | translate }}</a>
-                <a class="nav-link" href="#skills">{{ data.skills | translate }}</a>
-                <a class="nav-link" href="#projects">{{ data.projects | translate }}</a>
+                <a class="nav-link" href="#about" (click)="closeNav()">{{ data.aboutMe | translate }}</a>
+                <a class="nav-link" href="#skills" (click)="closeNav()">{{ data.skills | translate }}</a>
+                <a class="nav-link" href="#projects" (click)="closeNav()">{{ data.projects | translate }}</a>
             </div>
         </nav>
 
         <figure class="logo-wrapper">
-            <a class="desktop" routerLink="/"><img src="assets/img/logo.webp" alt="logo-francois-gonin"></a>
-            <a class="mob" routerLink="/"><img src="assets/img/logo.webp" alt="logo-francois-gonin"></a>
+            <a class="desktop" routerLink="/" (click)="closeNav()"><img src="assets/img/logo.webp" alt="logo-francois-gonin"></a>
+            <a class="mob" routerLink="/" (click)="closeNav()"><img src="assets/img/logo.webp" alt="logo-francois-gonin"></a>
         </figure>
 
-        <button class="hamburger" (click)="toggleNav()"><img src="assets/icons/hamburger.svg" alt="hamburger-menu-icon"></button>
+        <button #navToggle class="hamburger" (click)="toggleNav()"><img src="assets/icons/hamburger.svg" alt="hamburger-menu-icon"></button>
     </div>
 </header>
