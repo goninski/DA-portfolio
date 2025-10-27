@@ -23,8 +23,10 @@ section {
 }
 .container {
     flex-grow: 1;
-    transform: translateY(-56px);
     padding-block: var(--py-sec);
+    @media(min-height: 800px) {
+        transform: translateY(-56px);
+    }
     @include m.mq(mob) {
         @media(max-height: 799px) {
             padding-top: 190px;

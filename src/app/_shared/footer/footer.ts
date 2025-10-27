@@ -13,7 +13,8 @@ import { data, langRoutes } from './footer.data';
 export class Footer {
   data = data;
   langRoutes = langRoutes;
-  isUnderConstructionClosed = (window.location.hostname == 'localhost');
+  isUnderConstructionClosed = true;
+  // isUnderConstructionClosed = (window.location.hostname == 'localhost');
   year = new Date().getFullYear();
 
   closeUnderConstruction(): void {
