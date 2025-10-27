@@ -1,4 +1,4 @@
-import { Component, computed, inject, HostListener, ElementRef, ViewChild, signal } from '@angular/core';
+import { Component,  HostListener, inject, signal, computed } from '@angular/core';
 
 import { LanguageService } from '../../_services/language.service';
 import { TranslatePipe } from '../../_pipes/translate.pipe';
@@ -17,18 +17,10 @@ export class Header {
   isLangDe = computed(() => this.languageService.lang() === 'de');
   isNavVisible = signal(false);
 
-  @ViewChild('navMenu') navMenu!: ElementRef;
-  @ViewChild('navToggle') navToggle!: ElementRef;
-
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent): void {
     if (this.isNavVisible()) {
-      const clickedInsideNav = this.navMenu.nativeElement.contains(event.target);
-      const clickedOnToggle = this.navToggle.nativeElement.contains(event.target);
-
-      if (!clickedInsideNav && !clickedOnToggle) {
         this.closeNav();
-      }
     }
   }
 
