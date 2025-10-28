@@ -13,8 +13,8 @@ export const data =
     de : 'Die Technologie-Icons verraten, womit ich in Projekten bisher gearbeitet habe. Mit Wordpress bin ich besonders vertraut. Wordpress ist es auch zu verdanken, dass ich den Weg als Webentwickler gestartet bin. Ich kann es aber kaum erwarten, meine Skills zu erweitern und so plane ich, mein nächstes Projekt mit Laravel und Svelte umzusetzen.',
   },
   needAnotherSkill : {
-    enHtml : 'You need <span>another Skill?</span>',
-    deHtml : '<span>Weitere Skills</span> erwünscht?',
+    en : 'You need <span>another Skill?</span>',
+    de : '<span>Weitere Skills</span> erwünscht?',
   },
   contactMe : {
     en : "Feel free to contact me. I'm interested in virtually all technologies.",

@@ -61,12 +61,12 @@ h1 {
             width: 100%;
         }
     }
-    @include m.mq(mob) {
+    @include m.mq(mob-sm) {
         .btn {
             color: var(--clr-primary);
             div {
                 position: absolute;
-                animation: marquee-single 1.5s linear infinite;
+                animation: marquee-single 2.5s linear infinite;
                 transform: translateX(-100%);
             }
             &:last-of-type div {

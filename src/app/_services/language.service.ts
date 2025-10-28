@@ -27,7 +27,7 @@ export class LanguageService {
 
     /**
      * Check if the URL matches a localized route and update the language.
-     * (this allows direct navigation to a localized URL)
+     * (for direct navigation to a localized URL)
      */
     this.router.events
       .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
@@ -45,7 +45,7 @@ export class LanguageService {
       });
 
     /**
-     * add language changes to localStorage automatically
+     * Add language changes to localStorage automatically
      */  
     effect(() => {
       if (isPlatformBrowser(this.platformId)) {
@@ -54,12 +54,11 @@ export class LanguageService {
     });
 
     /**
-     * Automatically update the route when language changes
+     * Update the route when language changes
      */
     effect(() => {
       const currentLang = this.lang();
       const currentUrl = this.router.url;
-      
       for (const pathGroup of Object.values(langRoutes)) {
         if (Object.values(pathGroup).includes(currentUrl)) {
           this.router.navigate([pathGroup[currentLang]]);
