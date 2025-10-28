@@ -1,9 +1,11 @@
 # Portfolio
 
-** UNDER CONSTRUCTION | Aug 2025 **
-
-
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.0.
+
+
+## Scope and Ownership
+Portfolio was developed as part of a project for the Frontend Developer Bootcamp of Developer Akademie GmbH (https://developerakademie.com). The design of Portfolio is the property of Developer Akademie GmbH. Unauthorized use, reproduction, modification, distribution, or duplication of the design is strictly prohibited.
+
 
 ## Development server
 
