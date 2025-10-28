@@ -4,31 +4,13 @@ section {
     --ct-width: 1440px;
     --slide-width: 632px;
     --slide-gap: 4vw;
-    --slider-height: 400px;
     @include m.mq(tabl-md) {
-        --slider-height: 440px;
         --slide-width: 60vw;
-    }
-    @include m.mq(tabl) {
-        --slider-height: 475px;
     }
     @include m.mq(mob) {
         --slide-width: 80vw;
         --slide-gap: 2vw;
-        --slider-height: 450px;
         padding-bottom: 24px;
-    }
-    @include m.mq(mob-sm) {
-        --slider-height: 500px;
-    }
-    @media(max-width: 450px) {
-        --slider-height: 540px;
-    }
-    @include m.mq(mob-xs) {
-        // --slider-height: 475px;
-    }
-    @media(max-width: 350px) {
-        --slider-height: 540px;
     }
     @media(min-width: 1440px) {
         --slide-gap: 64px;
@@ -78,7 +60,7 @@ h2 {
     }
 }
 .splide {
-    min-height: var(--slider-height);
+    pointer-events: auto;
 }
 .slider-container {
     display: flex;
@@ -170,16 +152,15 @@ h2 {
         left: 50%;
         transform: translateX(-50%);
         z-index: 1;
+        pointer-events: none;
         padding-bottom: 3px;
-        @include m.mq(mob) {
-            // margin-top: 74px;
-        }
     }
     .splide__arrows {
         display: flex;
         justify-content: space-between;
         width: 100%;
         min-height: 34px;
+        pointer-events: auto;
         .splide__arrow {
             z-index: 2;
             opacity: 1;
@@ -223,6 +204,7 @@ h2 {
         flex-wrap: nowrap;
         bottom: 4px;
         padding-inline: 54px;
+        pointer-events: auto;
         button {
             opacity: 1;
             background-color: var(--clr-base);
@@ -233,5 +215,3 @@ h2 {
         }
     }
 }
-
-
