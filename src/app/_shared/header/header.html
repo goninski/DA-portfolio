@@ -2,7 +2,7 @@
     <div class="container flex-row justify-between align-center ct-gap">
 
         <nav #navMenu id="header-nav" class="flex-row align-center" [class.visible]="isNavVisible()" (click)=" $event.stopPropagation()">
-            <div class="switch flex-col">
+            <div class="lang-switch flex-col">
                 <input id="lang-switch" type="checkbox" name="lang" [checked]="isLangDe()" (change)="onLangSwitchChange()">
                 <label for="lang-switch" class="flex-row align-center">
                     <span class="lang-en">EN</span>
@@ -21,6 +21,6 @@
             <a class="mob" routerLink="/"><img src="assets/img/logo.webp" alt="logo-francois-gonin"></a>
         </figure>
 
-        <button #navToggle class="hamburger" (click)="toggleNav(); $event.stopPropagation()"><img src="assets/icons/hamburger.svg" alt="hamburger-menu-icon"></button>
+        <button #navToggle class="hamburger" [class.hover]="isNonTouchDevice" (click)="toggleNav(); $event.stopPropagation()"><img src="assets/icons/hamburger.svg" alt="hamburger-menu-icon"></button>
     </div>
 </header>

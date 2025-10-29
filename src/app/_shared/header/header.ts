@@ -1,5 +1,5 @@
-import { Component,  HostListener, inject, signal, computed } from '@angular/core';
-
+import { Component, HostListener, inject, signal, computed, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { LanguageService } from '../../_services/language.service';
 import { TranslatePipe } from '../../_pipes/translate.pipe';
 import { data } from './header.data';
@@ -16,6 +16,7 @@ export class Header {
   languageService = inject(LanguageService);
   isLangDe = computed(() => this.languageService.lang() === 'de');
   isNavVisible = signal(false);
+  isNonTouchDevice = isPlatformBrowser(inject(PLATFORM_ID)) && !('ontouchstart' in window || navigator.maxTouchPoints > 0);
 
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent): void {

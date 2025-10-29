@@ -1,16 +1,20 @@
 @use 'mixins' as m;
 
+
+:host {
+    display: block;
+    position: absolute;
+    z-index: 10;
+    inset-inline: 0;
+}
+
+
 header {
     padding-block: 32px;
     font-family: var(--ff-secondary);
     font-size: 20px;
     .container {
         position: relative;
-    }
-}
-.logo-wrapper {
-    img {
-        height: 72px;
     }
 }
 nav {
@@ -27,7 +31,15 @@ nav {
         }
     }
 }
-.switch {
+.logo-wrapper {
+    img {
+        height: 72px;
+    }
+}
+.hamburger.hover:hover img {
+    content: url(../../../assets/icons/hamburger-primary.svg);
+}
+.lang-switch {
     margin-top: -16px;
     input {
         width: 0;
@@ -101,9 +113,6 @@ header {
             align-items: start;
             gap: 16px;
         }
-    }
-    .hamburger:hover img {
-        content: url(../../../assets/icons/hamburger-primary.svg);
     }
 }
 

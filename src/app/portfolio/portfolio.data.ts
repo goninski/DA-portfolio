@@ -35,7 +35,7 @@ export const projects: ProjectInterface[] = [
       de : 'Spring-, Lauf- und Wurfspiel mit objektorientiertem Ansatz. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen die verrückte Henne zu kämpfen.',
     },
     githubUrl: 'https://github.com/goninski/DA-el-pollo-locco',
-    demoUrl: 'https://da-pollo-loco.goninski.dev.dev',
+    demoUrl: 'https://da-pollo-loco.goninski.dev',
     previewImgUrl: 'assets/img/project-preview-pollo-loco.jpg',
     tags: ['JavaScript', 'CSS', 'HTML'], 
   },
