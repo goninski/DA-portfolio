@@ -62,7 +62,7 @@ export const dataGDPR = {
   },
   label2 : {
     en : "and agree to the processing of my data as outlined",
-    de : "und stimme der entsprechenden Datenbearbeitung zu",
+    de : "gelesen und stimme der entsprechenden Datenbearbeitung zu",
   },
   linkText : {
     en : "privacy policy",
